@@ -30,7 +30,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist/PES-Grup-12-Subgrup-1-Frontend
+          FOLDER: dist/SecurEvent
       - name: Discord
         uses: sarisia/actions-status-discord@v1.7.1
         if: always()
