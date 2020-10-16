@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod"
+    "deploy": "ng build --prod --base-href=/PES-Grup-12-Subgrup-1-Frontend/"
   },
   "private": true,
   "dependencies": {
