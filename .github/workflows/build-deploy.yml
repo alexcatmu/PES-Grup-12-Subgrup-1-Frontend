@@ -30,6 +30,9 @@ jobs:
         run: |
           npm install
           npm run-script deploy
+      - name: Tests
+        run: |
+          npm run-script test-headless
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
