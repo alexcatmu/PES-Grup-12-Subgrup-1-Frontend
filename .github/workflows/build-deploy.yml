@@ -21,15 +21,15 @@ jobs:
           key: ${{ runner.os }}--node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Build
-        run: |
-          npm install
-          npm run-script deploy
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Build
+        run: |
+          npm install
+          npm run-script deploy
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
