@@ -165,7 +165,6 @@ fieldset {line-height: 1;}
  */
 input[type="checkbox"] {
   vertical-align: middle;
-  *vertical-align: middle;
 }
 
 /* vertical alignment of input fields for IE 6 */
