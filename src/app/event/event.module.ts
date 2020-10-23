@@ -10,7 +10,7 @@ import { EventUpdateComponent } from './event-update.component';
   declarations: [EventComponent, EventUpdateComponent],
   imports: [
     CommonModule,
-    EventRoutingModule
-  ]
+    EventRoutingModule,
+  ],
 })
 export class EventModule { }

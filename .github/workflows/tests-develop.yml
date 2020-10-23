@@ -1,0 +1,31 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '12.x'
+      - uses: actions/cache@v2.1.2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}--node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build
+        run: |
+          npm install
+          npm run-script deploy
+      - name: Tests
+        run: |
+          npm run-script test-headless
+      - name: e2e Tests
+        run: |
+          npm run e2e
