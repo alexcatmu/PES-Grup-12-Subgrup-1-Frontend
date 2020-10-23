@@ -7,10 +7,13 @@ import { EventUpdateComponent } from './event-update.component';
 
 
 @NgModule({
-  declarations: [EventComponent, EventUpdateComponent],
+  declarations: [
+    EventComponent,
+    EventUpdateComponent
+  ],
   imports: [
     CommonModule,
-    EventRoutingModule,
+    EventRoutingModule
   ],
 })
 export class EventModule { }
