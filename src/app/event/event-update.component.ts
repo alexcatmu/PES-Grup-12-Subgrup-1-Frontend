@@ -41,4 +41,12 @@ export class EventUpdateComponent implements OnInit {
       console.error('Ha habido un error al hacer create de evento', error);
     });
   }
+
+  public delete(id:number): void {
+    this.eventService.delete(id).subscribe((response) => {
+      console.log("Evento con id: " + id + "borrado");
+    }, error => {
+      console.error("Ha habido un error al hacer delete del evento", error);
+    })
+  }
 }

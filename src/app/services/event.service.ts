@@ -16,13 +16,17 @@ export class EventService {
     return this.http.get<Event[]>(this.baseURL);
   }
 
-  get(id: string): Observable<Event>{
+  get(id: number): Observable<Event>{
     const url = this.baseURL + id;
     return this.http.get<Event>(url);
   }
 
   create(event: Event): Observable<Event>{
     return this.http.post<Event>(this.baseURL, event);
+  }
+
+  delete(id: number): Observable<Object>{
+    return this.http.delete(this.baseURL+id);
   }
 
 }
