@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EventComponent } from './event.component';
 import { EventUpdateComponent } from './event-update.component';
-import { EventCreationComponent } from '../event-creation/event-creation.component';
+import { EventDetailComponent } from './event-detail.component';
 
 const routes: Routes = [
   { path: '', component: EventComponent },
   { path: ':id/update', component: EventUpdateComponent },
+  { path: ':id/details', component: EventDetailComponent},
   { path: 'new', component: EventUpdateComponent },
-  { path: 'event-creation', component: EventCreationComponent }
   ];
 
 @NgModule({

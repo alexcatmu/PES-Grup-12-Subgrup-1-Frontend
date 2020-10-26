@@ -1,3 +1,34 @@
-<a routerLink="/event/event-creation">Create Event</a>
+<form [formGroup]="formEvent" (ngSubmit)="onSubmit(formEvent.value)">
+    <div>
+        <label>Name of the event:
+            <input type="text" formControlName="name" required>
+        </label><br>
+        <label>Name of the street:
+            <input type="text" formControlName="street" required>
+        </label><br>
+        <label>Date of the event:
+            <input type="text" formControlName="date" required>
+        </label><br>
+        <label>Starts at:
+            <input type="text" formControlName="hourIni" required>
+        </label><br>
+        <label>Finishes at:
+            <input type="text" formControlName="hourEnd" required>
+        </label><br>
+        <label>Price:
+            <input type="text" formControlName="price_range">
+        </label><br>
+        <label>Measures:
+            <input type="text" formControlName="measures">
+        </label><br>
+        <label>Ratings:
+            <input type="text" formControlName="ratings">
+        </label><br>
+        <label>Link:
+            <input type="text" formControlName="link">
+        </label><br>
+    </div>
+    <button type="submit" [disabled]="!formEvent.valid">Save</button>
 
-<p>update works!</p>
+</form>
+
