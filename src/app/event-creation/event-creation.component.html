@@ -1,0 +1,18 @@
+<div>
+    <label>Name of the event:
+        <input #name />
+    </label><br>
+    <label>Name of the street:
+        <input #street />
+    </label><br>
+    <label>Date of the event:
+        <input #date />
+    </label><br>
+    <label>Starts at:
+        <input #hourIni />
+    </label><br>
+    <label>Finishes at:
+        <input #hourEnd />
+    </label><br>
+</div>
+<button (click)="create(name.value, street.value, date.value, hourIni.value, hourEnd.value)"> Save </button>

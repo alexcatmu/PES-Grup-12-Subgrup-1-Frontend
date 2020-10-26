@@ -8,7 +8,10 @@ import { Event } from '../models/event';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
+
+  selectedEvent: Event;
   public events: Event[];
+
   constructor(protected eventService: EventService) { }
 
   ngOnInit(): void {
@@ -18,6 +21,18 @@ export class EventComponent implements OnInit {
     }, error => {
       console.error('Ha habido un error al hacer get de eventos');
     });
+  }
+
+  public delete(id:number): void {
+    this.eventService.delete(id).subscribe((response) => {
+      console.log("Evento con id: " + id + " borrado");
+    }, error => {
+      console.error("Ha habido un error al hacer delete del evento", error);
+    })
+  }
+
+  onSelect(event: Event): void {
+    this.selectedEvent = event;
   }
 
 }

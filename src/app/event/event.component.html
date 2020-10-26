@@ -1,3 +1,13 @@
-<a routerLink="new"><span>Manage Events</span></a><br>
-<br>
-{{events}}
+<a routerLink="new"><span>Manage Events</span></a>
+
+<ul class="events">
+
+    <li *ngFor="let event of events"
+        [class.selected]="event === selectedEvent"
+        (click)="onSelect(event)">
+        <span class="badge">ID: {{event._id}}</span> NAME: {{event.name}} 
+        <button (click)="delete(event._id)"> Delete </button>
+
+    </li>
+</ul>
+<app-event-detail [event]="selectedEvent"></app-event-detail>
