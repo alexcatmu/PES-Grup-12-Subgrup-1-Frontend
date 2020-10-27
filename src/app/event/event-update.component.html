@@ -1,0 +1,133 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>
+      Create a new event
+    </mat-card-title>
+
+    <form [formGroup]="formEvent" autocomplete="off" novalidate (ngSubmit)="onSubmit(formEvent.value)" fxLayout="column wrap"
+          fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card-content>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Name of the event</mat-label>
+          <input matInput type="text" placeholder="Name of the event" formControlName="name" id="name">
+          <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 60 characters</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Name of the street</mat-label>
+          <input matInput type="text" placeholder="Name of the street" formControlName="street" id="street">
+          <mat-hint align="end">Not more then 100 characters long.</mat-hint>
+          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 100 characters</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+          </label>
+          <mat-error *ngIf="hasError('date', 'required')">Date is required</mat-error>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Starts at</mat-label>
+          <input matInput type="text" placeholder="Starts at" formControlName="hourIni" id="hourIni">
+          <mat-error *ngIf="hasError('hourIni', 'required')">Start is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Finishes at</mat-label>
+          <input matInput type="text" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
+          <mat-error *ngIf="hasError('hourEnd', 'required')">Finish is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput type="text" placeholder="Price" formControlName="price_range" id="price_range">
+          <mat-error *ngIf="hasError('price_range', 'required')">Price range is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Measures</mat-label>
+          <input matInput type="text" placeholder="Measures" formControlName="measures" id="measures">
+          <mat-error *ngIf="hasError('measures', 'required')">Measures is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Ratings</mat-label>
+          <input matInput type="text" placeholder="Ratings" formControlName="ratings" id="ratings">
+          <mat-error *ngIf="hasError('ratings', 'required')">Ratings is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Link</mat-label>
+          <input matInput type="text" placeholder="Link" formControlName="link" id="link">
+          <mat-error *ngIf="hasError('link', 'required')">Link is required</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+
+
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="!formEvent.valid">Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<form [formGroup]="formEvent" (ngSubmit)="onSubmit(formEvent.value)">-->
+<!--    <div>-->
+<!--        <label>Name of the event:-->
+<!--            <input type="text" formControlName="name" required>-->
+<!--        </label><br>-->
+<!--        <label>Name of the street:-->
+<!--            <input type="text" formControlName="street" required>-->
+<!--        </label><br>-->
+<!--        <label>Date of the event:-->
+<!--            <input type="text" formControlName="date" required>-->
+<!--        </label><br>-->
+<!--        <label>Starts at:-->
+<!--            <input type="text" formControlName="hourIni" required>-->
+<!--        </label><br>-->
+<!--        <label>Finishes at:-->
+<!--            <input type="text" formControlName="hourEnd" required>-->
+<!--        </label><br>-->
+<!--        <label>Price:-->
+<!--            <input type="text" formControlName="price_range">-->
+<!--        </label><br>-->
+<!--        <label>Measures:-->
+<!--            <input type="text" formControlName="measures">-->
+<!--        </label><br>-->
+<!--        <label>Ratings:-->
+<!--            <input type="text" formControlName="ratings">-->
+<!--        </label><br>-->
+<!--        <label>Link:-->
+<!--            <input type="text" formControlName="link">-->
+<!--        </label><br>-->
+<!--    </div>-->
+<!--    <button type="submit" [disabled]="!formEvent.valid">Save</button>-->
+
+<!--</form>-->
+
