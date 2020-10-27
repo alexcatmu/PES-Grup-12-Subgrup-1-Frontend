@@ -39,21 +39,21 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Starts at</mat-label>
-          <input matInput type="text" placeholder="Starts at" formControlName="hourIni" id="hourIni">
+          <input matInput type="time" placeholder="Starts at" formControlName="hourIni" id="hourIni">
           <mat-error *ngIf="hasError('hourIni', 'required')">Start is required</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
           <mat-label>Finishes at</mat-label>
-          <input matInput type="text" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
+          <input matInput type="time" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
           <mat-error *ngIf="hasError('hourEnd', 'required')">Finish is required</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
           <mat-label>Price</mat-label>
-          <input matInput type="text" placeholder="Price" formControlName="price_range" id="price_range">
+          <input matInput type="number" placeholder="Price" formControlName="price_range" id="price_range">
           <mat-error *ngIf="hasError('price_range', 'required')">Price range is required</mat-error>
         </mat-form-field>
 
@@ -65,7 +65,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Ratings</mat-label>
-          <input matInput type="text" placeholder="Ratings" formControlName="ratings" id="ratings">
+          <input matInput type="number" placeholder="Ratings" formControlName="ratings" id="ratings">
           <mat-error *ngIf="hasError('ratings', 'required')">Ratings is required</mat-error>
         </mat-form-field>
 

@@ -1,17 +1,38 @@
-<div *ngIf="event">
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxLayoutAlign="center center" fxFlex="1000px" fxFlex.xs="50%">
+        <div *ngIf="event">
+            <mat-list>
+                <mat-card-title fxLayoutAlign="center center">{{event.name | uppercase}}</mat-card-title>
+                <mat-card-subtitle fxLayoutAlign="center center">Details</mat-card-subtitle>
 
-    <h2>{{event.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{event._id}}</div>
-    <div><span>name: </span>{{event.name}}</div>
-    <div><span>street: </span>{{event.street}}</div>
-    <div><span>date: </span>{{event.date}}</div>
-    <div><span>hourIni: </span>{{event.hourIni}}</div>
-    <div><span>hourEnd: </span>{{event.hourEnd}}</div>
-    <div><span>price: </span>{{event.price_range}}</div>
-    <div><span>measures: </span>{{event.measures}}</div>
-    <div><span>ratings: </span>{{event.ratings}}</div>
-    <div><span>link: </span>{{event.link}}</div>
+                <mat-divider></mat-divider>
 
+                <mat-list-item>Name of the event: {{event.name}}</mat-list-item>
+                <mat-divider></mat-divider>
 
+                <mat-list-item>Address of the event: {{event.street}}</mat-list-item>
+                <mat-divider></mat-divider>
 
-</div>>
+                <mat-list-item>Date of the event:{{event.date}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Starts at: {{event.hourIni}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Finishes at: {{event.hourEnd}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Price: {{event.price_range}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Measures: {{event.measures}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Link: {{event.link}}</mat-list-item>
+            </mat-list>
+        </div>
+    </mat-card>
+</section>
