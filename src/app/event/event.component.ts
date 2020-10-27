@@ -1,38 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { EventService } from '../services/event.service';
 import { Event } from '../models/event';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css']
 })
-export class EventComponent implements OnInit {
+export class EventComponent implements OnInit, AfterViewInit {
+
+  public displayedColumns = ['name', 'date', 'hourIni', 'price_range', 'ratings', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];
+  public dataSource = new MatTableDataSource<Event>();
 
-  constructor(protected eventService: EventService) { }
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+
+  constructor(protected eventService: EventService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.eventService.getAll().subscribe((events) => {
       console.log(events);
       this.events = events;
+      this.dataSource.data = events as Event[];
     }, error => {
       console.error('Ha habido un error al hacer get de eventos');
     });
   }
 
-  public delete(id:number): void {
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+
+  public delete(id: number): void {
     this.eventService.delete(id).subscribe((response) => {
-      console.log("Evento con id: " + id + " borrado");
+      console.log('Evento con id: ' + id + ' borrado');
     }, error => {
-      console.error("Ha habido un error al hacer delete del evento", error);
-    })
+      console.error('Ha habido un error al hacer delete del evento', error);
+    });
   }
 
   onSelect(event: Event): void {
     this.selectedEvent = event;
   }
 
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
+
+  public customSort = (event) => {
+    console.log(event);
+  }
+
+  public redirectToDetails = (id: string) => {
+    this.router.navigate([`/event/${id}/details`]);
+  }
+
+  public redirectToUpdate = (id: any) => {
+    this.router.navigate([`/event/${id}/update`]);
+  }
 }

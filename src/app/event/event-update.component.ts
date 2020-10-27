@@ -42,6 +42,10 @@ export class EventUpdateComponent implements OnInit {
       this.eventId = params.id;
       if (this.eventId) {
         console.log('estamos en el update');
+        this.eventService.get(Number(this.eventId)).subscribe((event) => {
+          event = event[0];
+          this.updateForm(event);
+        });
       } else {
         console.log('estamos en el new');
       }
@@ -49,9 +53,24 @@ export class EventUpdateComponent implements OnInit {
     });
   }
 
+  private updateForm(event: Event): void {
+    this.formEvent.patchValue({
+      _id: event._id,
+      name: event.name,
+      street: event.street,
+      date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
+      hourEnd: event.hourIni,
+      hourIni: event.hourEnd,
+      price_range: event.price_range,
+      measures: event.measures,
+      ratings: event.ratings,
+      link: event.link
+    });
+  }
+
   public onSubmit(event): void {
     this.event = {
-      _id: Math.floor((Math.random() * 100) + 1),
+      _id: this.eventId ? Number(this.eventId) : Math.floor((Math.random() * 100) + 1),
       name: event.name,
       street: event.street,
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
