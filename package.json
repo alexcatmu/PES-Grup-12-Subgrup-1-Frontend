@@ -9,7 +9,8 @@
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href=/PES-Grup-12-Subgrup-1-Frontend/"
+    "deploy": "ng build --prod --base-href=/PES-Grup-12-Subgrup-1-Frontend/",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "@angular/common": "~10.1.6",
     "@angular/compiler": "~10.1.6",
     "@angular/core": "~10.1.6",
+    "@angular/flex-layout": "^10.0.0-beta.32",
     "@angular/forms": "~10.1.6",
     "@angular/material": "^10.2.5",
     "@angular/platform-browser": "~10.1.6",

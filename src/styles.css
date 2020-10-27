@@ -161,33 +161,6 @@ hr {
  */
 fieldset {line-height: 1;}
 
-/* vertical alignment of checkboxes (a different value is served to IE 7)
- */
-input[type="checkbox"] {
-  vertical-align: middle;
-}
-
-/* vertical alignment of input fields for IE 6 */
-input {_vertical-align: middle;}
-
-/* a specific font-size is set for these elements */
-input, button, textarea, select, optgroup, option {
-  font-size: 100%;
-}
-
-/* this is to fix IE 6 and 7 which create extra right/left padding on buttons
- * IMPORTANT: because IE 6 does not understand the first selector below, you need to apply the class "inputButton" to all input of type="button" in your documents
- * the first declaration is for IE 6 and 7, the second one for IE 6 only, the third one is for all browsers.
- */
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-.inputButton {
-  *overflow: visible;
-  _width: 0;
-  padding: .2em .4em;
-}
 
 /* styling for links and visited links as well as for links in a hovered, focus and active state
  * make sure to keep these rules in that order, with :active being last
@@ -197,7 +170,6 @@ input[type="button"],
  */
 a:link, a:visited {color: #000;}
 a:focus,:focus {outline: 1px dotted #000;}
-a:active, input:active, select:active, textarea:active {outline: none;}
 
 /* slightly enhanced, universal clearfix hack */
 .grouped:after {
@@ -240,33 +212,7 @@ abbr {
   border: none;
 }
 
-input, textarea {
-  font-size:110%;
-}
 
 select {
   font-size:120%;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="file"]:focus,
-input[type="email"]:focus,
-textarea:focus, select:focus {
-  border:2px solid #2c2c2c;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="file"],
-input[type="email"],
-textarea, select {
-  width: 300px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border:2px solid #D2D1CF;
-  color:#555555;
-  outline: 0 none;
-  padding:5px;
 }
