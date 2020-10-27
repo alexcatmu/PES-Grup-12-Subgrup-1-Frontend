@@ -27,7 +27,16 @@ export class EventComponent implements OnInit, AfterViewInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.eventService.getAll().subscribe((events) => {
+    this.fetchData();
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  fetchData(): void {
+    this.eventService.getAll().subscribe(events => {
       console.log(events);
       this.events = events;
       this.dataSource.data = events as Event[];
@@ -36,15 +45,11 @@ export class EventComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
 
-
-  public delete(id: number): void {
-    this.eventService.delete(id).subscribe((response) => {
+  delete(id: number): void {
+    this.eventService.delete(id).subscribe(response => {
       console.log('Evento con id: ' + id + ' borrado');
+      this.fetchData();
     }, error => {
       console.error('Ha habido un error al hacer delete del evento', error);
     });
