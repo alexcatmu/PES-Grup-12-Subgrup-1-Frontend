@@ -1,7 +1,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
-      Create a new event
+      {{ titleForm }}
     </mat-card-title>
 
     <form [formGroup]="formEvent" autocomplete="off" novalidate (ngSubmit)="onSubmit(formEvent.value)" fxLayout="column wrap"
