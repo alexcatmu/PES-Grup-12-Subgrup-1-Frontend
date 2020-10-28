@@ -18,6 +18,7 @@ export class EventUpdateComponent implements OnInit {
 
   eventId: string;
   event: Event;
+  titleForm = 'Create a new event';
 
   formEvent = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
@@ -45,6 +46,7 @@ export class EventUpdateComponent implements OnInit {
         this.eventService.get(Number(this.eventId)).subscribe((event) => {
           event = event[0];
           this.updateForm(event);
+          this.titleForm = 'Update event ' + this.formEvent.value.name;
         });
       } else {
         console.log('estamos en el new');

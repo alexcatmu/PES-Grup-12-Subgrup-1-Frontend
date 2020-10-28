@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {CommonModule, DatePipe} from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 

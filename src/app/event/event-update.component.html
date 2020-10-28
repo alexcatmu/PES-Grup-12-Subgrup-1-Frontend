@@ -1,7 +1,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
-      Create a new event
+      {{ titleForm }}
     </mat-card-title>
 
     <form [formGroup]="formEvent" autocomplete="off" novalidate (ngSubmit)="onSubmit(formEvent.value)" fxLayout="column wrap"
@@ -39,21 +39,21 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Starts at</mat-label>
-          <input matInput type="text" placeholder="Starts at" formControlName="hourIni" id="hourIni">
+          <input matInput type="time" placeholder="Starts at" formControlName="hourIni" id="hourIni">
           <mat-error *ngIf="hasError('hourIni', 'required')">Start is required</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
           <mat-label>Finishes at</mat-label>
-          <input matInput type="text" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
+          <input matInput type="time" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
           <mat-error *ngIf="hasError('hourEnd', 'required')">Finish is required</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
           <mat-label>Price</mat-label>
-          <input matInput type="text" placeholder="Price" formControlName="price_range" id="price_range">
+          <input matInput type="number" placeholder="Price" formControlName="price_range" id="price_range">
           <mat-error *ngIf="hasError('price_range', 'required')">Price range is required</mat-error>
         </mat-form-field>
 
@@ -65,7 +65,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Ratings</mat-label>
-          <input matInput type="text" placeholder="Ratings" formControlName="ratings" id="ratings">
+          <input matInput type="number" placeholder="Ratings" formControlName="ratings" id="ratings">
           <mat-error *ngIf="hasError('ratings', 'required')">Ratings is required</mat-error>
         </mat-form-field>
 
@@ -85,49 +85,3 @@
     </form>
   </mat-card>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<form [formGroup]="formEvent" (ngSubmit)="onSubmit(formEvent.value)">-->
-<!--    <div>-->
-<!--        <label>Name of the event:-->
-<!--            <input type="text" formControlName="name" required>-->
-<!--        </label><br>-->
-<!--        <label>Name of the street:-->
-<!--            <input type="text" formControlName="street" required>-->
-<!--        </label><br>-->
-<!--        <label>Date of the event:-->
-<!--            <input type="text" formControlName="date" required>-->
-<!--        </label><br>-->
-<!--        <label>Starts at:-->
-<!--            <input type="text" formControlName="hourIni" required>-->
-<!--        </label><br>-->
-<!--        <label>Finishes at:-->
-<!--            <input type="text" formControlName="hourEnd" required>-->
-<!--        </label><br>-->
-<!--        <label>Price:-->
-<!--            <input type="text" formControlName="price_range">-->
-<!--        </label><br>-->
-<!--        <label>Measures:-->
-<!--            <input type="text" formControlName="measures">-->
-<!--        </label><br>-->
-<!--        <label>Ratings:-->
-<!--            <input type="text" formControlName="ratings">-->
-<!--        </label><br>-->
-<!--        <label>Link:-->
-<!--            <input type="text" formControlName="link">-->
-<!--        </label><br>-->
-<!--    </div>-->
-<!--    <button type="submit" [disabled]="!formEvent.valid">Save</button>-->
-
-<!--</form>-->
-
