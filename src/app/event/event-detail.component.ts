@@ -5,6 +5,9 @@ import { EventService } from '../services/event.service';
 import {ActivatedRoute} from '@angular/router';
 
 
+import { Component, OnInit, Input } from '@angular/core';
+import { Event } from '../models/event';
+
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
