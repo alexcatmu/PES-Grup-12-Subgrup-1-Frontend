@@ -1,12 +1,7 @@
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import {ActivatedRoute} from '@angular/router';
-
-
-import { Component, OnInit, Input } from '@angular/core';
-import { Event } from '../models/event';
 
 @Component({
   selector: 'app-event-detail',
@@ -14,7 +9,7 @@ import { Event } from '../models/event';
 })
 
 export class EventDetailComponent implements OnInit {
-  
+
   eventId: string;
   event: Event;
 
