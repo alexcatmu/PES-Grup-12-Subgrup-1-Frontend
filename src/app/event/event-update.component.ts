@@ -6,8 +6,6 @@ import { Event } from '../models/event';
 import { DatePipe } from '@angular/common';
 
 
-
-
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
@@ -22,14 +20,14 @@ export class EventUpdateComponent implements OnInit {
 
   formEvent = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-    street: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+    street: new FormControl('', [Validators.required]),
     date: new FormControl(new Date(), [Validators.required]),
     hourIni: new FormControl('', [Validators.required]),
     hourEnd: new FormControl('', [Validators.required]),
-    price_range: new FormControl('', [Validators.required]),
-    measures: new FormControl('', [Validators.required]),
-    ratings: new FormControl('', [Validators.required]),
-    link: new FormControl('', [Validators.required])
+    minPrice: new FormControl(''),
+    maxPrice: new FormControl(''),
+    measures: new FormControl(''),
+    link: new FormControl('')
   });
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -42,14 +40,11 @@ export class EventUpdateComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
       if (this.eventId) {
-        console.log('estamos en el update');
         this.eventService.get(Number(this.eventId)).subscribe((event) => {
           event = event[0];
           this.updateForm(event);
           this.titleForm = 'Update event ' + this.formEvent.value.name;
         });
-      } else {
-        console.log('estamos en el new');
       }
       this.formEvent.get('street').valueChanges.subscribe(value => console.log('value changed', value));
     });
@@ -63,9 +58,9 @@ export class EventUpdateComponent implements OnInit {
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
       hourEnd: event.hourIni,
       hourIni: event.hourEnd,
-      price_range: event.price_range,
+      maxPrice: event.min,
+      minPrice: event.max,
       measures: event.measures,
-      ratings: event.ratings,
       link: event.link
     });
   }
@@ -78,17 +73,17 @@ export class EventUpdateComponent implements OnInit {
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
       hourEnd: event.hourIni,
       hourIni: event.hourEnd,
-      price_range: event.price_range,
+      min: event.minPrice,
+      max: event.maxPrice,
       measures: event.measures,
-      ratings: event.ratings,
       link: event.link
     };
 
     console.log(this.event);
 
-    this.eventService.create(this.event).subscribe((response) => {
+    this.eventService.create(this.event).subscribe(() => {
       console.log(this.event);
-      this.route.navigate(['/event']);
+      this.route.navigate(['/event']).then(() => console.log('Go to event'));
     }, error => {
       console.error('Ha habido un error al hacer create de evento', error);
     });

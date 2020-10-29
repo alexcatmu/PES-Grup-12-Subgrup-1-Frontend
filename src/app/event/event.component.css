@@ -22,3 +22,12 @@ th.mat-header-cell {
   text-align: left;
   max-width: 300px;
 }
+
+.form-40-input {
+  width: 40%;
+}
+
+.span-separator-between-inputs {
+  padding-left: 10px;
+  padding-right: 10px;
+}

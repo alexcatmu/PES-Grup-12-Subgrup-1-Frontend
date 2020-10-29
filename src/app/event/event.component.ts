@@ -39,15 +39,14 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.eventService.getAll().subscribe(events => {
       console.log(events);
       this.events = events;
-      this.dataSource.data = events as Event[];
+      this.dataSource.data = events;
     }, error => {
-      console.error('Ha habido un error al hacer get de eventos');
+      console.error('Ha habido un error al hacer get de eventos', error);
     });
   }
 
-
   delete(id: number): void {
-    this.eventService.delete(id).subscribe(response => {
+    this.eventService.delete(id).subscribe(() => {
       console.log('Evento con id: ' + id + ' borrado');
       this.fetchData();
     }, error => {
@@ -59,8 +58,8 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.selectedEvent = event;
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  public doFilter = (event: any) => {
+    this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
 
   public customSort = (event) => {
@@ -68,10 +67,10 @@ export class EventComponent implements OnInit, AfterViewInit {
   }
 
   public redirectToDetails = (id: string) => {
-    this.router.navigate([`/event/${id}/details`]);
+    this.router.navigate([`/event/${id}/details`]).then(() => console.log('redirect to event details'));
   }
 
   public redirectToUpdate = (id: any) => {
-    this.router.navigate([`/event/${id}/update`]);
+    this.router.navigate([`/event/${id}/update`]).then(() => console.log('redirect to event update'));
   }
 }

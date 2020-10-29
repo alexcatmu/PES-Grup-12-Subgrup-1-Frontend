@@ -9,19 +9,18 @@
       <mat-card-content>
 
         <mat-form-field appearance="fill">
-          <mat-label>Name of the event</mat-label>
-          <input matInput type="text" placeholder="Name of the event" formControlName="name" id="name">
+          <mat-label for="name">Name of the event</mat-label>
+          <label for="name"></label><input matInput type="text" placeholder="Name of the event" formControlName="name" id="name">
           <mat-hint align="end">Not more then 60 characters long.</mat-hint>
           <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
           <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 60 characters</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Name of the street</mat-label>
-          <input matInput type="text" placeholder="Name of the street" formControlName="street" id="street">
+          <mat-label for="street">Name of the street</mat-label>
+          <label for="street"></label><input matInput type="text" placeholder="Name of the street" formControlName="street" id="street">
           <mat-hint align="end">Not more then 100 characters long.</mat-hint>
           <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
-          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 100 characters</mat-error>
         </mat-form-field>
 
 
@@ -39,39 +38,40 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Starts at</mat-label>
-          <input matInput type="time" placeholder="Starts at" formControlName="hourIni" id="hourIni">
+          <label for="hourIni"></label><input matInput type="time" placeholder="Starts at" formControlName="hourIni" id="hourIni">
           <mat-error *ngIf="hasError('hourIni', 'required')">Start is required</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
           <mat-label>Finishes at</mat-label>
-          <input matInput type="time" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
+          <label for="hourEnd"></label><input matInput type="time" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
           <mat-error *ngIf="hasError('hourEnd', 'required')">Finish is required</mat-error>
         </mat-form-field>
 
-
-        <mat-form-field appearance="fill">
-          <mat-label>Price</mat-label>
-          <input matInput type="number" placeholder="Price" formControlName="price_range" id="price_range">
-          <mat-error *ngIf="hasError('price_range', 'required')">Price range is required</mat-error>
-        </mat-form-field>
+        <div>
+          <mat-label>Price Range</mat-label>
+          <br>
+          <mat-form-field appearance="fill" class="form-40-input">
+            <mat-label>Minimum</mat-label>
+            <label for="minPrice"></label><input matInput type="number" placeholder="Min" formControlName="minPrice" id="minPrice">
+          </mat-form-field>
+          <span class="span-separator-between-inputs"></span>
+          <mat-form-field appearance="fill" class="form-40-input">
+            <mat-label>Maximum</mat-label>
+            <label for="maxPrice"></label><input matInput type="number" placeholder="Max" formControlName="maxPrice" id="maxPrice">
+          </mat-form-field>
+        </div>
 
         <mat-form-field appearance="fill">
           <mat-label>Measures</mat-label>
-          <input matInput type="text" placeholder="Measures" formControlName="measures" id="measures">
+          <label for="measures"></label><input matInput type="text" placeholder="Measures" formControlName="measures" id="measures">
           <mat-error *ngIf="hasError('measures', 'required')">Measures is required</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Ratings</mat-label>
-          <input matInput type="number" placeholder="Ratings" formControlName="ratings" id="ratings">
-          <mat-error *ngIf="hasError('ratings', 'required')">Ratings is required</mat-error>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
           <mat-label>Link</mat-label>
-          <input matInput type="text" placeholder="Link" formControlName="link" id="link">
+          <label for="link"></label><input matInput type="text" placeholder="Link" formControlName="link" id="link">
           <mat-error *ngIf="hasError('link', 'required')">Link is required</mat-error>
         </mat-form-field>
       </mat-card-content>
