@@ -1,5 +1,10 @@
 img {
-  margin-right: 50px;
-  width:200; 
-  height:58px;
+  margin-right: 30px;
+  margin-top: 0.4em;
+  max-width: 42px;
+  max-height: 42px;
+}
+
+.mat-toolbar.mat-primary {
+  background: darkred;
 }
