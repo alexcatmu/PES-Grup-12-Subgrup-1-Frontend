@@ -8,6 +8,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
+  styles: ['span {  margin-right: 50px }']
 })
 
 export class EventDetailComponent implements OnInit {
