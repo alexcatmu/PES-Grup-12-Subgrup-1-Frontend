@@ -5,7 +5,8 @@ export interface Event {
   date: string;
   hourIni: string;
   hourEnd: string;
-  price_range?: string;
+  min?: number;
+  max?: number;
   measures?: string;
   ratings?: number;
   link?: string;
