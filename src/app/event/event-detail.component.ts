@@ -20,7 +20,7 @@ export class EventDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
       console.log('estamos en el details con id: ' + this.eventId);
-      this.eventService.get(Number(this.eventId)).subscribe((event) => {
+      this.eventService.get(this.eventId).subscribe((event) => {
         this.event = event[0];
       });
     });

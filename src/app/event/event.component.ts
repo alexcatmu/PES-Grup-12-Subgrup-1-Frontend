@@ -45,7 +45,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     });
   }
 
-  delete(id: number): void {
+  delete(id: string): void {
     this.eventService.delete(id).subscribe(() => {
       console.log('Evento con id: ' + id + ' borrado');
       this.fetchData();

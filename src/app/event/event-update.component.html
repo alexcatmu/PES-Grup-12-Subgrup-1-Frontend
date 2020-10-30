@@ -62,8 +62,9 @@
           <span class="span-separator-between-inputs"></span>
           <mat-form-field appearance="fill" class="form-40-input">
             <mat-label>Maximum</mat-label>
-            <label for="maxPrice"></label><input matInput type="number" placeholder="Max" formControlName="maxPrice" id="maxPrice">
+            <label for="maxPrice"></label><input matInput type="number" placeholder="Max" formControlName="maxPrice" id="maxPrice" [errorStateMatcher]="errorMatcher">
             <mat-error *ngIf="hasError('maxPrice', 'required')">Maximum price is required</mat-error>
+            <mat-error *ngIf="formEvent.hasError('range')">Invalid range</mat-error>
           </mat-form-field>
         </div>
 
