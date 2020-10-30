@@ -21,7 +21,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule} from '@angular/material/dialog';
-import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
   declarations: [],
@@ -47,9 +46,8 @@ import { Ng5SliderModule } from 'ng5-slider';
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule,
-    Ng5SliderModule,
-  ],
+    MatDialogModule
+    ],
   exports: [
     MatTabsModule,
     MatSidenavModule,
@@ -72,7 +70,6 @@ import { Ng5SliderModule } from 'ng5-slider';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    Ng5SliderModule,
   ]
 })
 export class MaterialModule { }
