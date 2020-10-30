@@ -6,6 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
+  styles: ['span {  margin-right: 50px }']
 })
 
 export class EventDetailComponent implements OnInit {
@@ -19,7 +20,7 @@ export class EventDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
       console.log('estamos en el details con id: ' + this.eventId);
-      this.eventService.get(Number(this.eventId)).subscribe((event) => {
+      this.eventService.get(this.eventId).subscribe((event) => {
         this.event = event[0];
       });
     });

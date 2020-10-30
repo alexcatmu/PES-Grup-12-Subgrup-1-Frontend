@@ -16,7 +16,7 @@ export class EventService {
     return this.http.get<Event[]>(this.baseURL);
   }
 
-  get(id: number): Observable<Event>{
+  get(id: string): Observable<Event>{
     const url = this.baseURL + id;
     return this.http.get<Event>(url);
   }
@@ -25,7 +25,7 @@ export class EventService {
     return this.http.post<Event>(this.baseURL, event);
   }
 
-  delete(id: number): Observable<Object>{
+  delete(id: string): Observable<Object>{
     return this.http.delete(this.baseURL +id);
   }
 

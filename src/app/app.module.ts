@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MaterialModule } from '../app/material/material.module'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

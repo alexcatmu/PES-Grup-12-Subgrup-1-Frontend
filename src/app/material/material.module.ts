@@ -47,7 +47,7 @@ import { MatDialogModule} from '@angular/material/dialog';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule
-  ],
+    ],
   exports: [
     MatTabsModule,
     MatSidenavModule,
@@ -69,7 +69,7 @@ import { MatDialogModule} from '@angular/material/dialog';
     MatExpansionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 export class MaterialModule { }
