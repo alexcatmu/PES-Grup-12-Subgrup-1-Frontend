@@ -20,7 +20,8 @@
           <mat-label for="street">Name of the street</mat-label>
           <label for="street"></label><input matInput type="text" placeholder="Name of the street" formControlName="street" id="street">
           <mat-hint align="end">Not more then 100 characters long.</mat-hint>
-          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('street', 'required')">Name is required</mat-error>
+          <mat-error *ngIf="hasError('street', 'maxlength')">You have more than 100 characters</mat-error>
         </mat-form-field>
 
 
@@ -55,11 +56,14 @@
           <mat-form-field appearance="fill" class="form-40-input">
             <mat-label>Minimum</mat-label>
             <label for="minPrice"></label><input matInput type="number" placeholder="Min" formControlName="minPrice" id="minPrice">
+            <mat-error *ngIf="hasError('minPrice', 'required')">Minimum price is required</mat-error>
+
           </mat-form-field>
           <span class="span-separator-between-inputs"></span>
           <mat-form-field appearance="fill" class="form-40-input">
             <mat-label>Maximum</mat-label>
             <label for="maxPrice"></label><input matInput type="number" placeholder="Max" formControlName="maxPrice" id="maxPrice">
+            <mat-error *ngIf="hasError('maxPrice', 'required')">Maximum price is required</mat-error>
           </mat-form-field>
         </div>
 

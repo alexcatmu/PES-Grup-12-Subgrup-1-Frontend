@@ -5,9 +5,11 @@ export interface Event {
   date: string;
   hourIni: string;
   hourEnd: string;
-  min?: number;
-  max?: number;
-  measures?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  measures?: Array<string>;
   ratings?: number;
   link?: string;
+  id_manager: string;
+  id_room: string;
 }

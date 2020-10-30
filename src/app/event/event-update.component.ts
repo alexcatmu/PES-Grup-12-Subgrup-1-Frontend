@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from '../services/event.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Event } from '../models/event';
 import { DatePipe } from '@angular/common';
-
 
 @Component({
   selector: 'app-event-update',
@@ -20,21 +19,27 @@ export class EventUpdateComponent implements OnInit {
 
   formEvent = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-    street: new FormControl('', [Validators.required]),
+    street: new FormControl('', [Validators.required, Validators.maxLength(100)]),
     date: new FormControl(new Date(), [Validators.required]),
     hourIni: new FormControl('', [Validators.required]),
     hourEnd: new FormControl('', [Validators.required]),
-    minPrice: new FormControl(''),
-    maxPrice: new FormControl(''),
+    minPrice: new FormControl('', [Validators.required]),
+    maxPrice: new FormControl('', [Validators.required]),
     measures: new FormControl(''),
     link: new FormControl('')
   });
+
   constructor(
     protected activatedRoute: ActivatedRoute,
     private eventService: EventService,
     private datePipe: DatePipe,
     private route: Router) {
+      console.log(activatedRoute);
+      console.log(datePipe);
+      console.log(route);
+      console.log(eventService);
   }
+
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -56,10 +61,10 @@ export class EventUpdateComponent implements OnInit {
       name: event.name,
       street: event.street,
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
-      hourEnd: event.hourIni,
-      hourIni: event.hourEnd,
-      maxPrice: event.min,
-      minPrice: event.max,
+      hourIni: event.hourIni,
+      hourEnd: event.hourEnd,
+      minPrice: event.minPrice,
+      maxPrice: event.maxPrice,
       measures: event.measures,
       link: event.link
     });
@@ -73,10 +78,12 @@ export class EventUpdateComponent implements OnInit {
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
       hourEnd: event.hourIni,
       hourIni: event.hourEnd,
-      min: event.minPrice,
-      max: event.maxPrice,
-      measures: event.measures,
-      link: event.link
+      minPrice: event.minPrice,
+      maxPrice: event.maxPrice,
+      measures: ["1", "2"],
+      link: event.link,
+      id_manager: "123",
+      id_room: "1234"
     };
 
     console.log(this.event);
