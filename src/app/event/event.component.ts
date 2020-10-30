@@ -47,6 +47,7 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   delete(id: string): void {
     this.eventService.delete(id).subscribe(() => {
+
       console.log('Evento con id: ' + id + ' borrado');
       this.fetchData();
     }, error => {
@@ -61,7 +62,7 @@ export class EventComponent implements OnInit, AfterViewInit {
   public doFilter = (event: any) => {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
-
+  
   public customSort = (event) => {
     console.log(event);
   }
