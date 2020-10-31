@@ -10,15 +10,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MaterialModule } from './material/material.module';
 import {SharedModule} from './shared/shared.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +27,8 @@ import {SharedModule} from './shared/shared.module';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
