@@ -13,3 +13,6 @@ span {
   background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
 }
 
+.spacer-for-right {
+  flex: 1 1 auto;
+}

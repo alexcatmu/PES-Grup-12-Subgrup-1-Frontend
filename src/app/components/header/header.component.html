@@ -4,5 +4,14 @@
       <img src="../../../assets/logo.png" alt="logo" id="logo">
     </a>
     <a routerLink="/event" style="color:white; text-decoration: none;"><span>My events</span></a>
+    <span class="spacer-for-right"></span>
+    <button mat-button routerLink="/" (click)="login()">
+      <mat-icon>power_settings_new</mat-icon>
+      Login
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
   </mat-toolbar>
 </p>
