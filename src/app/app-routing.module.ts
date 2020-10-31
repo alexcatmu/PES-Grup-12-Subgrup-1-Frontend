@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./event/event.module').then(m => m.EventModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   }
