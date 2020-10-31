@@ -15,15 +15,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(): void {
-    this.authService.login().subscribe( (user) => {
-      console.log(user);
-      localStorage.setItem('token', user.token);
-    }, (error => {
-      console.error('Error with login', error);
-    }));
-  }
-
   logout(): void {
     this.authService.logout().subscribe( (response) => {
       console.log(response);

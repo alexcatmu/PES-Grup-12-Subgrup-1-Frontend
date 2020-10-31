@@ -5,7 +5,7 @@
     </mat-card-title>
 
     <form autocomplete="off" novalidate fxLayout="column wrap"
-          fxLayoutAlign="center center" fxLayoutGap="10px">
+          fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="onSubmit(formLogin.value)">
 
       <mat-card-content>
         <mat-form-field appearance="fill">
@@ -24,7 +24,7 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!formLogin.valid">Log in</button>
       </mat-card-actions>
     </form>
   </mat-card>

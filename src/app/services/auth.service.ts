@@ -13,10 +13,10 @@ export class AuthService {
   logoutURL = this.baseURL + 'logout';
   constructor(private http: HttpClient) {}
 
-  login(): Observable<any>{
+  login(login): Observable<any>{
     return this.http.post<any>(this.loginURL, {
-      username: 'Alex',
-      password: '1234'
+      username: login.username,
+      password: login.password,
     });
   }
 
