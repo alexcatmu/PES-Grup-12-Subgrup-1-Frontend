@@ -1,10 +1,10 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
-      Log in
+      Create an account
     </mat-card-title>
 
-    <form [formGroup]="formLogin" autocomplete="off" novalidate (ngSubmit)="onSubmit(formLogin.value)" fxLayout="column wrap"
+    <form [formGroup]="formSignup" autocomplete="off" novalidate (ngSubmit)="onSubmit(formSignup.value)" fxLayout="column wrap"
           fxLayoutAlign="center center" fxLayoutGap="10px">
 
       <mat-card-content>
@@ -21,16 +21,21 @@
           <input matInput type="password" placeholder="Password" id="Password" formControlName="password">
           <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
         </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password Confirmation</mat-label>
+          <label for="PasswordConfirmation"></label>
+          <input matInput type="password" placeholder="Password" id="PasswordConfirmation" formControlName="passwordConfirmation" [errorStateMatcher]="errorMatcher">
+          <mat-error *ngIf="hasError('passwordConfirmation', 'required')">Repeat the password</mat-error>
+          <mat-error *ngIf="formSignup.hasError('equal')">Passwords not equal</mat-error>
+        </mat-form-field>
+
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!formLogin.valid">Log in</button>
+        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!formSignup.valid">Sign up</button>
       </mat-card-actions>
     </form>
-
-    <mat-card-subtitle fxLayoutAlign="center center">
-      <a routerLink="/signup" mat-button color="primary">Do you have an account?</a>
-    </mat-card-subtitle>
 
   </mat-card>
 </section>
