@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SignupComponent} from './signup.component';
+import {ApplicationFormComponent} from './application-form.component';
 import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {SignupRoutingModule} from './signup-routing.module';
+import {ApplicationFormRoutingModule} from './application-form-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
-  declarations: [SignupComponent],
+  declarations: [ApplicationFormComponent],
   imports: [
     CommonModule,
-    SignupRoutingModule,
+    ApplicationFormRoutingModule,
     SharedModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -23,5 +23,5 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSliderModule
   ]
 })
-export class SignupModule {
+export class ApplicationFormModule {
 }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,8 +17,8 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule)
+    path: 'application-form',
+    loadChildren: () => import('./application-form/application-form.module').then(m => m.ApplicationFormModule)
   },
   {
     path: '**',
