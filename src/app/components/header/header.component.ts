@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {Observable} from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import {map, shareReplay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +10,14 @@ import {AuthService} from '../../services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = 'SecurEvent';
 
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
-  constructor(protected authService: AuthService) { }
+  constructor(protected authService: AuthService, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
