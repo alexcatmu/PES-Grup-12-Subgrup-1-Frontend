@@ -62,7 +62,7 @@ export class EventComponent implements OnInit, AfterViewInit {
   public doFilter = (event: any) => {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
-  
+
   public customSort = (event) => {
     console.log(event);
   }

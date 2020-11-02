@@ -1,4 +1,4 @@
 export interface Measure {
-    name: string,
-    indications: string
+    name: string;
+    indications: string;
 }

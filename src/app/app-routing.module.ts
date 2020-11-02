@@ -17,9 +17,13 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'application-form',
+    loadChildren: () => import('./application-form/application-form.module').then(m => m.ApplicationFormModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
-  }
+  },
 ];
 
 @NgModule({

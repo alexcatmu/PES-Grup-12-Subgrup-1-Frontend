@@ -3,6 +3,6 @@ import { ErrorStateMatcher } from '@angular/material/core';
 
 export class CrossFieldErrorMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | null): boolean {
-        return control.dirty && form.hasError('range');
+        return control.dirty && (form.hasError('range') || form.hasError('equal'));
     }
 }
