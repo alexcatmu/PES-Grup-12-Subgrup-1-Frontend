@@ -23,6 +23,25 @@
 
         <span class="spacer-for-right"></span>
 
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="translate">
+            <mat-icon>translate</mat-icon>
+            <span>Translate</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>contact_page</mat-icon>
+            <span>Contact</span>
+          </button>
+        </mat-menu>
+        <mat-menu #translate="matMenu">
+          <button mat-menu-item>English</button>
+          <button mat-menu-item>Spanish</button>
+          <button mat-menu-item>Catalan</button>
+        </mat-menu>
+
         <button mat-button routerLink="login" routerLinkActive="active">
           <mat-icon>login</mat-icon>
           Login

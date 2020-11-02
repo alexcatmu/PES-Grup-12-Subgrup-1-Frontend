@@ -10,7 +10,7 @@ import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.direct
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
-  styleUrls: ['./event.component.css']
+  styleUrls: ['./event-update.component.css']
 })
 
 export class EventUpdateComponent implements OnInit {

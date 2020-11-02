@@ -6,8 +6,9 @@ section {
 }
 
 mat-card{
-  opacity: 0.95;
-  max-height: 330px;
+  opacity: 0.99;
+  min-width: 500px;
+  max-height: 900px;
 }
 
 mat-card-title{

@@ -10,8 +10,9 @@
   background: white;
   margin: 60px;
   border: groove #ffffff;
+  border-radius: 10px;
   padding: 40px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 #title {
