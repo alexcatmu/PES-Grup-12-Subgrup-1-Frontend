@@ -10,6 +10,7 @@ import {AuthService} from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
+  hide = true;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.formLogin = this.fb.group({

@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class EventComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'date', 'hourIni', 'price_range', 'ratings', 'actions'];
+  public displayedColumns = ['name', 'date', 'hourIni', 'price_range', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];
