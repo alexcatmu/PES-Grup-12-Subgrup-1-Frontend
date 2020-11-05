@@ -46,6 +46,11 @@
           Login
         </button>
 
+      <button mat-button routerLink="login" routerLinkActive="active">
+        <mat-icon>login</mat-icon>
+        {{user?.username}}
+      </button>
+
         <button mat-button (click)="logout()">
           <mat-icon>exit_to_app</mat-icon>
           Logout
