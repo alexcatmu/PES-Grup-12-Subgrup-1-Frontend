@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   constructor(public storageService: StorageService) { }
 
   ngOnInit(): void {
-    console.log(this.storageService.getCurrentUser());
   }
 
 }

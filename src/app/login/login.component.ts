@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     };
 
     this.authService.login(login).subscribe((data: Login) => {
-      console.log(data);
       this.storageService.setCurrentSession(data);
       this.router.navigate(['/']).then(r => console.log(r));
     }, (error => {

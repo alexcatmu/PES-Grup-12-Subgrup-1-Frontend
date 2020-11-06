@@ -77,7 +77,6 @@ export class EventUpdateComponent implements OnInit {
     };
 
     this.eventService.create(this.event).subscribe(() => {
-      console.log(this.event);
       this.route.navigate(['/event']).then(() => console.log('Go to event'));
     }, error => {
       console.error('Ha habido un error al hacer create de evento', error);

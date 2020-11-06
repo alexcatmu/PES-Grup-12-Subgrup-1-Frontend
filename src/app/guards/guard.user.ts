@@ -12,7 +12,6 @@ export class GuardUser implements CanActivate {
   }
 
   canActivate(): boolean {
-    console.log(this.storageService.isAuthenticated());
     if (this.storageService.isAuthenticated()) {
       return true;
     }

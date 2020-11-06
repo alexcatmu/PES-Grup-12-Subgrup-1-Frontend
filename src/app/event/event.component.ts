@@ -37,7 +37,6 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   fetchData(): void {
     this.eventService.getAll().subscribe(events => {
-      console.log(events);
       this.events = events;
       this.dataSource.data = events;
     }, error => {
@@ -63,8 +62,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
 
-  public customSort = (event) => {
-    console.log(event);
+  public customSort = () => {
   }
 
   public redirectToDetails = (id: string) => {
