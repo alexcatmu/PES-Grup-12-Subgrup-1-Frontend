@@ -5,3 +5,37 @@ body {
   margin: 0;
   padding: 0;
 }
+
+mat-form-field{
+  width: 450px;
+  margin-bottom: 20px;
+}
+mat-card-title{
+  text-align: center;
+}
+
+mat-card {
+  margin: 50px;
+}
+
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+
+.form-40-input {
+  width: 40%;
+}
+
+.span-separator-between-inputs {
+  padding-left: 10px;
+  padding-right: 10px;
+}
