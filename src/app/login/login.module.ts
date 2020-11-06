@@ -1,36 +1,27 @@
 import {NgModule} from '@angular/core';
-import {CommonModule, DatePipe} from '@angular/common';
+import {CommonModule} from '@angular/common';
+import {LoginComponent} from './login.component';
+import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {LoginRoutingModule} from './login-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-
-
-import {EventRoutingModule} from './event-routing.module';
-import {EventComponent} from './event.component';
-import {EventUpdateComponent} from './event-update.component';
-import {EventDetailComponent} from './event-detail.component';
-import {SharedModule} from '../shared/shared.module';
 import {MatSliderModule} from '@angular/material/slider';
 
-
 @NgModule({
-  declarations: [
-    EventComponent,
-    EventUpdateComponent,
-    EventDetailComponent
-  ],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
-    EventRoutingModule,
+    LoginRoutingModule,
+    SharedModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
     SharedModule,
     MatSliderModule
-  ],
-  providers: [DatePipe]
+  ]
 })
-export class EventModule {
+export class LoginModule {
 }

@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class EventComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'date', 'hourIni', 'price_range', 'ratings', 'actions'];
+  public displayedColumns = ['name', 'date', 'hourIni', 'price_range', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];
@@ -37,7 +37,6 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   fetchData(): void {
     this.eventService.getAll().subscribe(events => {
-      console.log(events);
       this.events = events;
       this.dataSource.data = events;
     }, error => {
@@ -62,10 +61,6 @@ export class EventComponent implements OnInit, AfterViewInit {
   public doFilter = (event: any) => {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
-  
-  public customSort = (event) => {
-    console.log(event);
-  }
 
   public redirectToDetails = (id: string) => {
     this.router.navigate([`/event/${id}/details`]).then(() => console.log('redirect to event details'));
@@ -74,4 +69,5 @@ export class EventComponent implements OnInit, AfterViewInit {
   public redirectToUpdate = (id: any) => {
     this.router.navigate([`/event/${id}/update`]).then(() => console.log('redirect to event update'));
   }
+
 }

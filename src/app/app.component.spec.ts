@@ -4,13 +4,19 @@ import {FooterComponent} from './components/footer/footer.component';
 import {HeaderComponent} from './components/header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {SharedModule} from './shared/shared.module';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         MatToolbarModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule,
+        SharedModule,
+        NoopAnimationsModule
       ],
       declarations: [
         AppComponent,

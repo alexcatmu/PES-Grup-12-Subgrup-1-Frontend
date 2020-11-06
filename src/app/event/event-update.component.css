@@ -1,0 +1,23 @@
+section {
+  background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+mat-card{
+  opacity: 0.99;
+  min-width: 500px;
+  max-height: 900px;
+}
+
+mat-card-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+mat-card-content{
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
