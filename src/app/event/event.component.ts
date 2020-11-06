@@ -62,9 +62,6 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
 
-  public customSort = () => {
-  }
-
   public redirectToDetails = (id: string) => {
     this.router.navigate([`/event/${id}/details`]).then(() => console.log('redirect to event details'));
   }
@@ -72,4 +69,5 @@ export class EventComponent implements OnInit, AfterViewInit {
   public redirectToUpdate = (id: any) => {
     this.router.navigate([`/event/${id}/update`]).then(() => console.log('redirect to event update'));
   }
+
 }
