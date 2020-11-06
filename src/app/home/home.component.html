@@ -1,1 +1,7 @@
-<div><p>home works!</p></div>
+<div>
+  <p>home works!!!!</p>
+  <p *ngIf="!storageService.isAuthenticated()">You are not authenticated</p>
+  <p *ngIf="storageService.isAuthenticated()">Hello, {{storageService.getCurrentUser().username}}</p>
+  <p>hiiii</p>
+</div>
+

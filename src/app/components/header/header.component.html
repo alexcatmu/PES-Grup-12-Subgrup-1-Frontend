@@ -5,7 +5,9 @@
                [opened]="(isHandset$ | async) === true">
     <mat-toolbar>
       <span class="spacer-for-right"></span>
-      <button mat-button (click)="sidenav.toggle()"><mat-icon id="west">west</mat-icon></button>
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon id="west">west</mat-icon>
+      </button>
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#" style="color:white">Home</a>
@@ -14,47 +16,46 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-        <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-
-        <a routerLink="/">
-          <img src="assets/logo.png" alt="logo" id="logo">
-        </a>
-
-        <span class="spacer-for-right"></span>
-
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item [matMenuTriggerFor]="translate">
-            <mat-icon>translate</mat-icon>
-            <span>Translate</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>contact_page</mat-icon>
-            <span>Contact</span>
-          </button>
-        </mat-menu>
-        <mat-menu #translate="matMenu">
-          <button mat-menu-item>English</button>
-          <button mat-menu-item>Spanish</button>
-          <button mat-menu-item>Catalan</button>
-        </mat-menu>
-
-        <button mat-button routerLink="login" routerLinkActive="active">
-          <mat-icon>login</mat-icon>
-          Login
-        </button>
-
-      <button mat-button routerLink="login" routerLinkActive="active">
-        <mat-icon>login</mat-icon>
-        {{user?.username}}
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
 
-        <button mat-button (click)="logout()">
-          <mat-icon>exit_to_app</mat-icon>
-          Logout
+      <a routerLink="/">
+        <img src="assets/logo.png" alt="logo" id="logo">
+      </a>
+
+      <span class="spacer-for-right"></span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="translate">
+          <mat-icon>translate</mat-icon>
+          <span>Translate</span>
         </button>
+        <button mat-menu-item>
+          <mat-icon>contact_page</mat-icon>
+          <span>Contact</span>
+        </button>
+      </mat-menu>
+      <mat-menu #translate="matMenu">
+        <button mat-menu-item>English</button>
+        <button mat-menu-item>Spanish</button>
+        <button mat-menu-item>Catalan</button>
+      </mat-menu>
+
+      <button *ngIf="!storageService.isAuthenticated()" mat-button routerLink="login" routerLinkActive="active">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
+
+      <label *ngIf="storageService.isAuthenticated()">Wellcome, {{storageService?.getCurrentUser()?.username}}</label>
+
+      <button *ngIf="storageService.isAuthenticated()" mat-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>

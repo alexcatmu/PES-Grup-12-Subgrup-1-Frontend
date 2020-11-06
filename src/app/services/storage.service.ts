@@ -24,7 +24,7 @@ export class StorageService {
 
   loadSessionData(): Session {
     const sessionStr = this.localStorageService.getItem('currentUser');
-    return (sessionStr) ? sessionStr as unknown as Session : null;
+    return (sessionStr) ? JSON.parse(sessionStr) as Session : null;
   }
 
   getCurrentSession(): Session {
@@ -38,6 +38,7 @@ export class StorageService {
 
   getCurrentUser(): User {
     const session: Session = this.getCurrentSession();
+    console.log('getcurrentuser', session);
     return (session && session.user) ? session.user : null;
   }
 
@@ -52,6 +53,6 @@ export class StorageService {
 
   logout(): void {
     this.removeCurrentSession();
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(r => console.log(r));
   }
 }

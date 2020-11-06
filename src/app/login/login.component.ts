@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 import {StorageService} from '../services/storage.service';
 import {Login} from '../models/login';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
-              private storageService: StorageService) {
+              private storageService: StorageService,
+              private router: Router) {
     this.formLogin = this.fb.group({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(login).subscribe((data: Login) => {
       console.log(data);
       this.storageService.setCurrentSession(data);
+      this.router.navigate(['/']).then(r => console.log(r));
     }, (error => {
       console.error('Error with login', error);
     }));
