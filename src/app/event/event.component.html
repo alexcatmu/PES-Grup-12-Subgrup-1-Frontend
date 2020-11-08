@@ -30,6 +30,11 @@
         <td mat-cell *matCellDef="let element"> {{element.hourIni}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="hourEnd">
+        <th id="ends-at" mat-header-cell *matHeaderCellDef mat-sort-header> Ends at </th>
+        <td mat-cell *matCellDef="let element"> {{element.hourEnd}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="price_range">
         <th id="price-range" mat-header-cell *matHeaderCellDef mat-sort-header> Price range </th>
         <td mat-cell *matCellDef="let element"> {{element.minPrice}} - {{element.maxPrice}}</td>
