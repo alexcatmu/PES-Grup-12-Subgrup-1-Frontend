@@ -1,0 +1,39 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxLayoutAlign="center center" fxFlex="1000px" fxFlex.xs="50%">
+        <div *ngIf="event">
+            <mat-list>
+                <mat-card-title fxLayoutAlign="center center">{{event.name | uppercase}}</mat-card-title>
+                <mat-card-subtitle fxLayoutAlign="center center">Details</mat-card-subtitle>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Name of the event: {{event.name}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Address of the event: {{event.street}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Date of the event:{{event.date}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Starts at: {{event.hourIni}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Finishes at: {{event.hourEnd}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Price: {{event.minPrice}} - {{event.maxPrice}}</mat-list-item>
+
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Measures: {{event.measures}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
+                <mat-divider></mat-divider>
+
+                <mat-list-item>Link: {{event.link}}</mat-list-item>
+            </mat-list>
+        </div>
+    </mat-card>
+</section>

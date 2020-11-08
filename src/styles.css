@@ -1,4 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* margin and padding values are reset for all these elements
+ * you could remove from there elements you do not used in your documents, but I don't think it'd worth it
+ */
+body {
+  margin: 0;
+  padding: 0;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-form-field{
+  width: 450px;
+  margin-bottom: 20px;
+}
+mat-card-title{
+  text-align: center;
+}
+
+mat-card {
+  margin: 50px;
+}
+
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+
+.form-40-input {
+  width: 40%;
+}
+
+.span-separator-between-inputs {
+  padding-left: 10px;
+  padding-right: 10px;
+}
