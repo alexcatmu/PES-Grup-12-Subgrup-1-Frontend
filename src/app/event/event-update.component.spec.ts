@@ -68,27 +68,6 @@ describe('Update: Working', () => {
 
     });
 
-    it('street field validity', () => {
-        const street = eventUpdate.formEvent.controls.street;
-        expect(street.valid).toBeFalsy();
-
-        // Street field is required
-        errors = street.errors || {};
-        expect(errors.required).toBeTruthy();
-
-        // Set street to sth
-        street.setValue('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-        errors = street.errors || {};
-        expect(errors.required).toBeFalsy();
-        expect(errors.maxlength).toBeTruthy();
-
-        // Set street to sth correct
-        street.setValue('Camp Nou, Barcelona');
-        errors = street.errors || {};
-        expect(errors.required).toBeFalsy();
-        expect(errors.maxLength).toBeFalsy();
-    });
-
     it('hourIni field validity', () => {
         const hourIni = eventUpdate.formEvent.controls.hourIni;
         expect(hourIni.valid).toBeFalsy();
