@@ -6,6 +6,7 @@ import {Event} from '../models/event';
 import {DatePipe} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-event-update',
@@ -27,11 +28,11 @@ export class EventUpdateComponent implements OnInit {
     private eventService: EventService,
     private datePipe: DatePipe,
     private route: Router,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private storageService: StorageService) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
-      street: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(100)])),
       date: new FormControl(new Date(), [Validators.required]),
       hourIni: new FormControl('', [Validators.required]),
       hourEnd: new FormControl('', [Validators.required]),
@@ -64,16 +65,15 @@ export class EventUpdateComponent implements OnInit {
     this.event = {
       _id: this.eventId ? this.eventId : event.name + '_' + this.datePipe.transform(event.date, 'yyyy-MM-dd') + '_' + event.hourIni,
       name: event.name,
-      street: event.street,
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
-      hourEnd: event.hourIni,
-      hourIni: event.hourEnd,
+      hourEnd: event.hourEnd,
+      hourIni: event.hourIni,
       minPrice: event.minPrice,
       maxPrice: event.maxPrice,
       measures: event.measures,
       link: event.link,
-      id_manager: '123',
-      id_room: '1234'
+      id_manager: this.storageService.getCurrentUser().id,
+      id_room: 'Camp Nou'
     };
 
     this.eventService.create(this.event).subscribe(() => {

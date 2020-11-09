@@ -3,7 +3,6 @@ import { Measure } from './measures';
 export interface Event {
   _id: string;
   name: string;
-  street: string;
   date: string;
   hourIni: string;
   hourEnd: string;
@@ -12,6 +11,6 @@ export interface Event {
   measures?: Array<Measure>;
   ratings?: number;
   link?: string;
-  id_manager: string;
+  id_manager: number;
   id_room: string;
 }
