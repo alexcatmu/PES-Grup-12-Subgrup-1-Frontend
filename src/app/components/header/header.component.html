@@ -18,7 +18,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button mat-button (click)="sidenav.toggle()">
+      <button *ngIf="storageService.isAuthenticated()" mat-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
 
@@ -42,9 +42,9 @@
         </button>
       </mat-menu>
       <mat-menu #translate="matMenu">
-        <button mat-menu-item (click)="useLanguage('en')">English</button>
-        <button mat-menu-item (click)="useLanguage('es')">Spanish</button>
-        <button mat-menu-item (click)="useLanguage('cat')">Catalan</button>
+        <button mat-menu-item (click)="useLanguage('en')">{{'Lang.En' | translate}}</button>
+        <button mat-menu-item (click)="useLanguage('es')">{{'Lang.Es' | translate}}</button>
+        <button mat-menu-item (click)="useLanguage('cat')">{{'Lang.Cat' | translate}}</button>
       </mat-menu>
 
       <button *ngIf="!storageService.isAuthenticated()" mat-button routerLink="login" routerLinkActive="active">
