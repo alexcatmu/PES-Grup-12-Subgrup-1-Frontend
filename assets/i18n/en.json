@@ -1,0 +1,15 @@
+{
+  "Header": {
+    "Login": "Login",
+    "Logout": "Logout",
+    "Contact": "Contact",
+    "Translate": "Translate",
+    "Welcome": "Welcome, "
+  },
+  "Home": "Home",
+  "Event": {
+    "Mine": "My events"
+  }
+}
+
+
