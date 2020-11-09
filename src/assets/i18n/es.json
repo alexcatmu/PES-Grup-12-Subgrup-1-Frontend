@@ -1,0 +1,13 @@
+{
+  "Header": {
+    "Login": "Iniciar sesión",
+    "Logout": "Cerrar sesión",
+    "Contact": "Contacto",
+    "Translate": "Traducir",
+    "Welcome": "Bienvenido, "
+  },
+  "Home": "Página principal",
+  "Event": {
+    "Mine": "Mis eventos"
+  }
+}

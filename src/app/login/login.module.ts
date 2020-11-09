@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSliderModule} from '@angular/material/slider';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -20,7 +21,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatDatepickerModule,
     MatNativeDateModule,
     SharedModule,
-    MatSliderModule
+    MatSliderModule,
+    TranslateModule
   ]
 })
 export class LoginModule {

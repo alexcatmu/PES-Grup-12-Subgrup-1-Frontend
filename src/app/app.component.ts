@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AuthService} from './services/auth.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,9 @@ import {AuthService} from './services/auth.service';
 })
 export class AppComponent {
   title = 'SecurEvent';
+  langs: string[] = [];
+
+  constructor( private translate: TranslateService ) {
+    this.translate.setDefaultLang('es');
+  }
 }

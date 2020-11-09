@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {map, shareReplay} from 'rxjs/operators';
 import {StorageService} from '../../services/storage.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
   constructor(protected authService: AuthService,
               private breakpointObserver: BreakpointObserver,
               public storageService: StorageService,
+              private translate: TranslateService
               ) { }
 
   ngOnInit(): void {
@@ -33,5 +35,9 @@ export class HeaderComponent implements OnInit {
     }, () => {
       this.storageService.logout();
     });
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
   }
 }
