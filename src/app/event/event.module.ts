@@ -12,6 +12,7 @@ import {EventUpdateComponent} from './event-update.component';
 import {EventDetailComponent} from './event-detail.component';
 import {SharedModule} from '../shared/shared.module';
 import {MatSliderModule} from '@angular/material/slider';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -20,16 +21,17 @@ import {MatSliderModule} from '@angular/material/slider';
     EventUpdateComponent,
     EventDetailComponent
   ],
-  imports: [
-    CommonModule,
-    EventRoutingModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    SharedModule,
-    MatSliderModule
-  ],
+    imports: [
+        CommonModule,
+        EventRoutingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        SharedModule,
+        MatSliderModule,
+        TranslateModule
+    ],
   providers: [DatePipe]
 })
 export class EventModule {
