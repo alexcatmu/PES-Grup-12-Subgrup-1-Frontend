@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HeaderComponent } from './header.component';
+import {HeaderComponent} from './header.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ActivatedRoute} from '@angular/router';
@@ -9,23 +9,25 @@ import {StorageService} from '../../services/storage.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MaterialModule} from '../../material/material.module';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   const fakeActivatedRoute = {
-    snapshot: { data: { } }
+    snapshot: {data: {}}
   } as ActivatedRoute;
   const fakeDatePipe = new DatePipe('en-US');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, NoopAnimationsModule],
-      declarations: [ HeaderComponent ],
-      providers: [ {provide: ActivatedRoute, useValue: fakeActivatedRoute}, {provide: DatePipe, useValue: fakeDatePipe},
-        StorageService ],
+      imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, NoopAnimationsModule,
+        TranslateModule.forRoot()],
+      declarations: [HeaderComponent],
+      providers: [{provide: ActivatedRoute, useValue: fakeActivatedRoute}, {provide: DatePipe, useValue: fakeDatePipe},
+        StorageService, TranslateService],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

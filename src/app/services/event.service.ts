@@ -11,7 +11,7 @@ import {StorageService} from './storage.service';
 export class EventService {
   baseURL = environment.apiURL + 'events/';
   headers = new HttpHeaders({
-    Authorization: 'Token ' + this.storageService.getCurrentSession().token,
+    Authorization: 'Token ' + this.storageService?.getCurrentSession()?.token,
   });
 
   constructor(private http: HttpClient, private storageService: StorageService) {
