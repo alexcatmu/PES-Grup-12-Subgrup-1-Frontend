@@ -13,6 +13,6 @@ export class AppComponent {
   langs: string[] = [];
 
   constructor( private translate: TranslateService ) {
-    this.translate.setDefaultLang('es');
+    this.translate.setDefaultLang('en');
   }
 }
