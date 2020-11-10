@@ -1,11 +1,10 @@
 {
   "Home": "Home",
   "Name": "Name",
-  "Date": "Date",
-  "StartAt": "Start at",
-  "EndAt": "End at",
-  "PriceRange": "Price Range",
-  "Actions": "Actions",
+  "Details": "Details",
+  "Filter": "Filter",
+  "Save": "Save",
+  "Measures": "Measures",
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
@@ -19,8 +18,17 @@
     "Contact": "Do you want an account?"
   },
   "Event": {
+    "Name": "Name of the event",
     "Mine": "My events",
-    "Create": "Create event"
+    "Create": "Create new event",
+    "Date": "Date",
+    "StartAt": "Start at",
+    "EndAt": "End at",
+    "PriceRange": "Price Range",
+    "Actions": "Actions",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Link": "Link"
   },
   "Lang": {
     "En": "English",
@@ -28,7 +36,10 @@
     "Cat": "Catalan"
   },
   "Error": {
-    "Req": " is required"
+    "Required": "This field is required",
+    "Req": " is required",
+    "MoreThan60Char": "Cannot exceed 60 characters",
+    "InvalidRange": "Invalid range"
   }
 }
 

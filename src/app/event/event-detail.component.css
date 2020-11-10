@@ -5,6 +5,22 @@ section {
   position: absolute;
 }
 
-span {
-  margin-right: 50px
+mat-card{
+  opacity: 0.95;
+  min-width: 500px;
+  max-height: 550px;
+}
+
+mat-card-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+mat-card-subtitle{
+  margin-bottom: 20px;
+}
+
+mat-divider{
+  margin-left: 20px;
+  max-width: 480px;
 }

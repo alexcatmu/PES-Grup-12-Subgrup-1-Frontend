@@ -1,11 +1,10 @@
 {
   "Home": "Pàgina principal",
   "Name": "Nom",
-  "Date": "Data",
-  "StartAt": "Comença a",
-  "EndAt": "Acaba a",
-  "PriceRange": "Rang de preus",
-  "Actions": "Accions",
+  "Details": "Detalls",
+  "Filter": "Filtrar",
+  "Save": "Guardar",
+  "Measures": "Mesures",
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
@@ -19,8 +18,17 @@
     "Contact": "Vols un compte?"
   },
   "Event": {
+    "Name": "Nom de l'esdeveniment",
     "Mine": "Els meus esdeveniments",
-    "Create": "Crear esdeveniment"
+    "Create": "Crear nou esdeveniment",
+    "Date": "Data",
+    "StartAt": "Comença a",
+    "EndAt": "Acaba a",
+    "PriceRange": "Rang de preus",
+    "Actions": "Accions",
+    "Minimum": "Mínim",
+    "Maximum": "Màxim",
+    "Link": "Enllaç"
   },
   "Lang": {
     "En": "Anglès",
@@ -28,6 +36,9 @@
     "Cat": "Català"
   },
   "Error": {
-    "Req": " és requerit"
+    "Required": "Aquest camp és requerit",
+    "Req": " és requerit",
+    "MoreThan60Char": "No pot excedir els 60 caràcters",
+    "InvalidRange": "Rang no vàlid"
   }
 }

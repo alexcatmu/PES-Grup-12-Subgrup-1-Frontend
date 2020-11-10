@@ -1,11 +1,10 @@
 {
   "Home": "Página principal",
   "Name": "Nombre",
-  "Date": "Fecha",
-  "StartAt": "Empieza a",
-  "EndAt": "Acaba a ",
-  "PriceRange": "Rango de precios",
-  "Actions": "Acciones",
+  "Details": "Detalles",
+  "Filter": "Filtrar",
+  "Save": "Guardar",
+  "Measures": "Medidas",
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
@@ -19,8 +18,17 @@
     "Contact": "¿Quieres una cuenta?"
   },
   "Event": {
+    "Name": "Nombre del evento",
     "Mine": "Mis eventos",
-    "Create": "Crear evento"
+    "Create": "Crear nuevo evento",
+    "Date": "Fecha",
+    "StartAt": "Empieza a",
+    "EndAt": "Acaba a",
+    "PriceRange": "Rango de precios",
+    "Actions": "Acciones",
+    "Minimum": "Mínimo",
+    "Maximum": "Máximo",
+    "Link": "Enlace"
   },
   "Lang": {
     "En": "Inglés",
@@ -28,6 +36,9 @@
     "Cat": "Catalán"
   },
   "Error": {
-    "Req": " es requerido"
+    "Required": "Este campo es requerido",
+    "Req": " es requerido",
+    "MoreThan60Char": "No puede exceder los 60 caracteres",
+    "InvalidRange": "Rango no válido"
   }
 }
