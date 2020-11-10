@@ -23,6 +23,11 @@
   color: white;
 }
 
+th {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 mat-paginator {
   margin-top: 30px;
 }
