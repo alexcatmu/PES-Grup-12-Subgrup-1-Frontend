@@ -17,6 +17,16 @@
     "Password": "Contraseña",
     "Contact": "¿Quieres una cuenta?"
   },
+  "Application": {
+    "Title": "Formulario de aplicación",
+    "Subtitle": "Llena el formulario por solicitar el servicios de SecurEvent",
+    "YourName": "Su nombre",
+    "CompanyName": "Nombre de su empresa",
+    "Email": "Su correo",
+    "PhoneNum": "Su número de teléfono",
+    "Reason": "Vuestros objetivos con SecurEvent",
+    "Send": "Enviar"
+  },
   "Event": {
     "Name": "Nombre del evento",
     "Mine": "Mis eventos",

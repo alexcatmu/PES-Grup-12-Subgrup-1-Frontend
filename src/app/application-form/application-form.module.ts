@@ -8,20 +8,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSliderModule} from '@angular/material/slider';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ApplicationFormComponent],
-  imports: [
-    CommonModule,
-    ApplicationFormRoutingModule,
-    SharedModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    SharedModule,
-    MatSliderModule
-  ]
+    imports: [
+        CommonModule,
+        ApplicationFormRoutingModule,
+        SharedModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        SharedModule,
+        MatSliderModule,
+        TranslateModule
+    ]
 })
 export class ApplicationFormModule {
 }

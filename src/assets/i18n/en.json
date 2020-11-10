@@ -17,6 +17,16 @@
     "Password": "Password",
     "Contact": "Do you want an account?"
   },
+  "Application": {
+    "Title": "Application form",
+    "Subtitle": "Write an application to be verified in SecurEvent",
+    "YourName": "Your Name",
+    "CompanyName": "Your company's name",
+    "Email": "Your email",
+    "PhoneNum": "Your telephone number",
+    "Reason": "Why do your company want to use SecurEvent?",
+    "Send": "Send"
+  },
   "Event": {
     "Name": "Name of the event",
     "Mine": "My events",

@@ -1,10 +1,10 @@
 <section fxLayout="row wrap" fxLayoutAlign="center">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
-      Application Form
+      {{ 'Application.Title' | translate}}
     </mat-card-title>
     <mat-card-subtitle fxLayoutAlign="center">
-      Write an application to be verified in SecurEvent
+      {{ 'Application.Subtitle' | translate}}
     </mat-card-subtitle>
 
     <form [formGroup]="applicationForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(applicationForm.value)" fxLayout="column wrap"
@@ -12,44 +12,52 @@
 
       <mat-card-content>
         <mat-form-field appearance="fill">
-          <mat-label>Your name</mat-label>
+          <mat-label>{{ 'Application.YourName' | translate}}</mat-label>
           <label for="Name"></label>
-          <input matInput type="text" placeholder="Name" id="Name" formControlName="name">
-          <mat-error *ngIf="hasError('name', 'required')">Your name is required</mat-error>
+          <input matInput type="text" id="Name" formControlName="name">
+          <mat-error *ngIf="hasError('name', 'required')">
+            {{ 'Application.YourName' | translate}}{{ 'Error.Req' | translate}}
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Your company's name</mat-label>
+          <mat-label>{{ 'Application.CompanyName' | translate}}</mat-label>
           <label for="Company"></label>
-          <input matInput type="text" placeholder="Company" id="Company" formControlName="company">
-          <mat-error *ngIf="hasError('company', 'required')">Your company's name is required</mat-error>
+          <input matInput type="text" id="Company" formControlName="company">
+          <mat-error *ngIf="hasError('company', 'required')">
+            {{ 'Application.CompanyName' | translate}}{{ 'Error.Req' | translate}}
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Your email</mat-label>
+          <mat-label>{{ 'Application.Email' | translate}}</mat-label>
           <label for="Email"></label>
           <input matInput type="email" placeholder="Email" id="Email" formControlName="email">
-          <mat-error *ngIf="hasError('email', 'required')">Your email is required</mat-error>
+          <mat-error *ngIf="hasError('email', 'required')">
+            {{ 'Application.Email' | translate}}{{ 'Error.Req' | translate}}
+          </mat-error>
           <mat-error *ngIf="hasError('email', 'email')">Invalid email</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Your telephone number</mat-label>
+          <mat-label>{{ 'Application.PhoneNum' | translate}}</mat-label>
           <label for="Tlf"></label>
-          <input matInput type="tel" placeholder="Telephone number" id="Tlf" formControlName="tlf">
+          <input matInput type="tel" id="Tlf" formControlName="tlf">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Why do your company want to use SecurEvent?</mat-label>
+          <mat-label>{{ 'Application.Reason' | translate}}</mat-label>
           <label for="Description"></label>
-          <textarea matInput placeholder="Ex. I want to use SecurEvent for..." id="Description" formControlName="description"></textarea>
-          <mat-error *ngIf="hasError('description', 'required')">Description is required</mat-error>
+          <textarea matInput id="Description" formControlName="description"></textarea>
+          <mat-error *ngIf="hasError('description', 'required')">{{ 'Error.Required' | translate}}</mat-error>
         </mat-form-field>
 
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!applicationForm.valid" (click)="openDialog()">Send email</button>
+        <button mat-stroked-button color="accent" class="btn-block" [disabled]="!applicationForm.valid" (click)="openDialog()">
+          {{ 'Application.Send' | translate}}
+        </button>
       </mat-card-actions>
     </form>
 

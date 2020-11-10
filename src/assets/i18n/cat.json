@@ -17,6 +17,16 @@
     "Password": "Contrasenya",
     "Contact": "Vols un compte?"
   },
+  "Application": {
+    "Title": "Formulari d'aplicació",
+    "Subtitle": "Omple el formulari per solicitar el serveis de SecurEvent",
+    "YourName": "El seu nom",
+    "CompanyName": "Nom de la seva empresa",
+    "Email": "El seu correu",
+    "PhoneNum": "Número de telèfon",
+    "Reason": "Els vostres objectius amb SecurEvent",
+    "Send": "Enviar"
+  },
   "Event": {
     "Name": "Nom de l'esdeveniment",
     "Mine": "Els meus esdeveniments",
