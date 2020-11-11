@@ -1,1 +1,35 @@
-<p>room-detail works!</p>
+<section fxLayout="row wrap" fxLayoutAlign="center">
+  <mat-card fxFlex="530px" fxFlex.xs="100%">
+    <div *ngIf="room">
+      <mat-list>
+        <mat-card-title fxLayoutAlign="center center">{{room.name | uppercase}}</mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center center">{{'Details' | translate}}</mat-card-subtitle>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.Name' | translate}}: {{room.name}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.Street' | translate}}: {{room.street}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.Capacity' | translate}}: {{room.capacity}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.Rows' | translate}}: {{room.rows}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.Columns' | translate}}: {{room.columns}}</mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.DistanceBetweenSeats' | translate}}: {{room.distance_between_seats}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>{{'Room.SeatsSize' | translate}}: {{room.seats_size}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+      </mat-list>
+    </div>
+  </mat-card>
+</section>
