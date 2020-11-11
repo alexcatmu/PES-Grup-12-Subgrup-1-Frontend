@@ -14,6 +14,10 @@
       <a mat-list-item routerLink="/event" style="color:white; text-decoration: none;" (click)="sidenav.toggle()">
         {{'Event.Mine' | translate}}
       </a>
+      <a mat-list-item routerLink="/application-form" style="color:white; text-decoration: none;" (click)="sidenav.toggle()">
+        {{'Contact' | translate}}
+      </a>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -35,10 +39,6 @@
         <button mat-menu-item [matMenuTriggerFor]="translate">
           <mat-icon>translate</mat-icon>
           <span>{{'Header.Translate' | translate}}</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>contact_page</mat-icon>
-          <span>{{'Header.Contact' | translate}}</span>
         </button>
       </mat-menu>
       <mat-menu #translate="matMenu">

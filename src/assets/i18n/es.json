@@ -1,5 +1,6 @@
 {
   "Home": "Página principal",
+  "Contact": "Contacta con nosotros",
   "Name": "Nombre",
   "Date": "Fecha",
   "StartAt": "Empieza a",
@@ -9,7 +10,6 @@
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
-    "Contact": "Contacto",
     "Translate": "Traducir",
     "Welcome": "Bienvenido, "
   },

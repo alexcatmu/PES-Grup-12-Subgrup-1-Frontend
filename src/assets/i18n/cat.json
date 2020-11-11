@@ -1,5 +1,6 @@
 {
   "Home": "Pàgina principal",
+  "Contact": "Contacta amb nosaltres",
   "Name": "Nom",
   "Date": "Data",
   "StartAt": "Comença a",
@@ -9,7 +10,6 @@
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
-    "Contact": "Contacte",
     "Translate": "Traduïr",
     "Welcome": "Benvingut, "
   },

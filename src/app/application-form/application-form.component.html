@@ -4,7 +4,7 @@
       Application Form
     </mat-card-title>
     <mat-card-subtitle fxLayoutAlign="center">
-      Write an application to be verified in SecurEvent
+      Write an application for SecurEvent's staff
     </mat-card-subtitle>
 
     <form [formGroup]="applicationForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(applicationForm.value)" fxLayout="column wrap"
@@ -40,9 +40,9 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Why do your company want to use SecurEvent?</mat-label>
+          <mat-label>Why do you want to contact us?</mat-label>
           <label for="Description"></label>
-          <textarea matInput placeholder="Ex. I want to use SecurEvent for..." id="Description" formControlName="description"></textarea>
+          <textarea matInput placeholder="Explain the reason of your contact" id="Description" formControlName="description"></textarea>
           <mat-error *ngIf="hasError('description', 'required')">Description is required</mat-error>
         </mat-form-field>
 
