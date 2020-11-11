@@ -1,5 +1,3 @@
-import { Measure } from './measures';
-
 export interface Event {
   _id: string;
   name: string;
@@ -8,7 +6,7 @@ export interface Event {
   hourEnd: string;
   minPrice?: number;
   maxPrice?: number;
-  measures?: Array<Measure>;
+  measures?: Array<string>;
   ratings?: number;
   link?: string;
   id_manager: number;

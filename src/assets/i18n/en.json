@@ -1,5 +1,6 @@
 {
   "Home": "Home",
+  "Contact": "Contact us",
   "Name": "Name",
   "Details": "Details",
   "Filter": "Filter",
@@ -8,7 +9,6 @@
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
-    "Contact": "Contact",
     "Translate": "Translate",
     "Welcome": "Welcome, "
   },

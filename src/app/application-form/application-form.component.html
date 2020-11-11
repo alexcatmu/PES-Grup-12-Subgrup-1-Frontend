@@ -41,14 +41,14 @@
 
         <mat-form-field appearance="fill">
           <mat-label>{{ 'Application.PhoneNum' | translate}}</mat-label>
-          <label for="Tlf"></label>
-          <input matInput type="tel" id="Tlf" formControlName="tlf">
+          <label for="Phone"></label>
+          <input matInput type="tel" id="Phone" formControlName="phone">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>{{ 'Application.Reason' | translate}}</mat-label>
           <label for="Description"></label>
-          <textarea matInput id="Description" formControlName="description"></textarea>
+          <textarea matInput id="Description" placeholder="Explain the reason of your contact" formControlName="description"></textarea>
           <mat-error *ngIf="hasError('description', 'required')">{{ 'Error.Required' | translate}}</mat-error>
         </mat-form-field>
 
