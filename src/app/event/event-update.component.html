@@ -1,7 +1,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center">
-  <mat-card fxFlex="500px" fxFlex.xs="100%">
+  <mat-card fxFlex="530px" fxFlex.xs="100%">
     <mat-card-title>
-      {{ titleForm }}
+      {{'Event.Create' | translate}}
     </mat-card-title>
 
     <form [formGroup]="formEvent" autocomplete="off" novalidate (ngSubmit)="onSubmit(formEvent.value)" fxLayout="column wrap"
@@ -9,20 +9,24 @@
       <mat-card-content>
 
         <mat-form-field appearance="fill">
-          <mat-label for="name">Name of the event</mat-label>
-          <label for="name"></label><input matInput type="text" placeholder="Name of the event" formControlName="name" id="name">
-          <mat-hint align="end">Not more then 60 characters long.</mat-hint>
-          <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
-          <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 60 characters</mat-error>
+          <mat-label for="name">{{'Event.Name' | translate}}</mat-label>
+          <label for="name"></label><input matInput type="text" placeholder="{{'Event.Name' | translate}}" formControlName="name" id="name">
+          <mat-hint align="end">{{'Error.MoreThan60Char' | translate}}.</mat-hint>
+          <mat-error *ngIf="hasError('name', 'required')">
+            {{'Event.Name' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">{{'Error.MoreThan60Char' | translate}}</mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
-          <mat-label>Choose a date</mat-label>
+          <mat-label>{{'Event.Date' | translate}}</mat-label>
           <label>
             <input matInput [matDatepicker]="picker" formControlName="date">
           </label>
-          <mat-error *ngIf="hasError('date', 'required')">Date is required</mat-error>
+          <mat-error *ngIf="hasError('date', 'required')">
+            {{'Event.Date' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -30,38 +34,46 @@
 
 
         <mat-form-field appearance="fill">
-          <mat-label>Starts at</mat-label>
+          <mat-label>{{'Event.StartAt' | translate}}</mat-label>
           <label for="hourIni"></label><input matInput type="time" placeholder="Starts at" formControlName="hourIni" id="hourIni">
 
-          <mat-error *ngIf="hasError('hourIni', 'required')">Start is required</mat-error>
+          <mat-error *ngIf="hasError('hourIni', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
         </mat-form-field>
 
 
         <mat-form-field appearance="fill">
-          <mat-label>Finishes at</mat-label>
+          <mat-label>{{'Event.EndAt' | translate}}</mat-label>
           <label for="hourEnd"></label><input matInput type="time" placeholder="Finishes at" formControlName="hourEnd" id="hourEnd">
-          <mat-error *ngIf="hasError('hourEnd', 'required')">Finish is required</mat-error>
+          <mat-error *ngIf="hasError('hourEnd', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
         </mat-form-field>
 
         <div>
-          <mat-label>Price Range</mat-label>
+          <mat-label>{{'Event.PriceRange' | translate}}</mat-label>
           <br>
           <mat-form-field appearance="fill" class="form-40-input">
-            <mat-label>Minimum</mat-label>
+            <mat-label>{{'Event.Minimum' | translate}}</mat-label>
             <label for="minPrice"></label><input matInput type="number" placeholder="Min" formControlName="minPrice" id="minPrice">
-            <mat-error *ngIf="hasError('minPrice', 'required')">Minimum price is required</mat-error>
+            <mat-error *ngIf="hasError('minPrice', 'required')">
+              {{'Error.Required' | translate}}
+            </mat-error>
 
           </mat-form-field>
           <span class="span-separator-between-inputs"></span>
           <mat-form-field appearance="fill" class="form-40-input">
-            <mat-label>Maximum</mat-label>
+            <mat-label>{{'Event.Maximum' | translate}}</mat-label>
             <label for="maxPrice"></label><input matInput type="number" placeholder="Max" formControlName="maxPrice" id="maxPrice" [errorStateMatcher]="errorMatcher">
-            <mat-error *ngIf="hasError('maxPrice', 'required')">Maximum price is required</mat-error>
-            <mat-error *ngIf="formEvent.hasError('range')">Invalid range</mat-error>
+            <mat-error *ngIf="hasError('maxPrice', 'required')">
+              {{'Error.Required' | translate}}
+            </mat-error>
+            <mat-error *ngIf="formEvent.hasError('range')">{{'Error.InvalidRange' | translate}}</mat-error>
           </mat-form-field>
         </div>
 
-        <mat-label>Measures</mat-label>
+        <mat-label>{{'Measures' | translate}}</mat-label>
         <div *ngFor="let m of measures">
           <label>
             <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)">
@@ -71,14 +83,16 @@
         <br>
 
         <mat-form-field appearance="fill">
-          <mat-label>Link</mat-label>
-          <label for="link"></label><input matInput type="text" placeholder="Link" formControlName="link" id="link">
-          <mat-error *ngIf="hasError('link', 'required')">Link is required</mat-error>
+          <mat-label>{{'Event.Link' | translate}}</mat-label>
+          <label for="link"></label><input matInput type="text" formControlName="link" id="link">
+          <mat-error *ngIf="hasError('link', 'required')">
+            {{'Event.Link' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
         </mat-form-field>
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-raised-button color="primary" [disabled]="!formEvent.valid">Save</button>
+        <button mat-raised-button color="primary" [disabled]="!formEvent.valid">{{'Save' | translate}}</button>
       </mat-card-actions>
     </form>
   </mat-card>

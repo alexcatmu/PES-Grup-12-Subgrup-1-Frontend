@@ -2,11 +2,10 @@
   "Home": "Home",
   "Contact": "Contact us",
   "Name": "Name",
-  "Date": "Date",
-  "StartAt": "Start at",
-  "EndAt": "End at",
-  "PriceRange": "Price Range",
-  "Actions": "Actions",
+  "Details": "Details",
+  "Filter": "Filter",
+  "Save": "Save",
+  "Measures": "Measures",
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
@@ -18,9 +17,28 @@
     "Password": "Password",
     "Contact": "Do you want an account?"
   },
+  "Application": {
+    "Title": "Application form",
+    "Subtitle": "Write an application to be verified in SecurEvent",
+    "YourName": "Your Name",
+    "CompanyName": "Your company's name",
+    "Email": "Your email",
+    "PhoneNum": "Your telephone number",
+    "Reason": "Why do your company want to use SecurEvent?",
+    "Send": "Send"
+  },
   "Event": {
+    "Name": "Name of the event",
     "Mine": "My events",
-    "Create": "Create event"
+    "Create": "Create new event",
+    "Date": "Date",
+    "StartAt": "Start at",
+    "EndAt": "End at",
+    "PriceRange": "Price Range",
+    "Actions": "Actions",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Link": "Link"
   },
   "Lang": {
     "En": "English",
@@ -28,7 +46,10 @@
     "Cat": "Catalan"
   },
   "Error": {
-    "Req": " is required"
+    "Required": "This field is required",
+    "Req": " is required",
+    "MoreThan60Char": "Cannot exceed 60 characters",
+    "InvalidRange": "Invalid range"
   }
 }
 

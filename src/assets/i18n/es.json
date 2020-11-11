@@ -2,11 +2,10 @@
   "Home": "Página principal",
   "Contact": "Contacta con nosotros",
   "Name": "Nombre",
-  "Date": "Fecha",
-  "StartAt": "Empieza a",
-  "EndAt": "Acaba a ",
-  "PriceRange": "Rango de precios",
-  "Actions": "Acciones",
+  "Details": "Detalles",
+  "Filter": "Filtrar",
+  "Save": "Guardar",
+  "Measures": "Medidas",
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
@@ -18,9 +17,28 @@
     "Password": "Contraseña",
     "Contact": "¿Quieres una cuenta?"
   },
+  "Application": {
+    "Title": "Formulario de aplicación",
+    "Subtitle": "Llena el formulario por solicitar el servicios de SecurEvent",
+    "YourName": "Su nombre",
+    "CompanyName": "Nombre de su empresa",
+    "Email": "Su correo",
+    "PhoneNum": "Su número de teléfono",
+    "Reason": "Vuestros objetivos con SecurEvent",
+    "Send": "Enviar"
+  },
   "Event": {
+    "Name": "Nombre del evento",
     "Mine": "Mis eventos",
-    "Create": "Crear evento"
+    "Create": "Crear nuevo evento",
+    "Date": "Fecha",
+    "StartAt": "Empieza a",
+    "EndAt": "Acaba a",
+    "PriceRange": "Rango de precios",
+    "Actions": "Acciones",
+    "Minimum": "Mínimo",
+    "Maximum": "Máximo",
+    "Link": "Enlace"
   },
   "Lang": {
     "En": "Inglés",
@@ -28,6 +46,9 @@
     "Cat": "Catalán"
   },
   "Error": {
-    "Req": " es requerido"
+    "Required": "Este campo es requerido",
+    "Req": " es requerido",
+    "MoreThan60Char": "No puede exceder los 60 caracteres",
+    "InvalidRange": "Rango no válido"
   }
 }
