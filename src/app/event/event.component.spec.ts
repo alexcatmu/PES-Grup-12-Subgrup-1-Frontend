@@ -6,6 +6,7 @@ import {EventComponent} from './event.component';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('EventComponent', () => {
   let component: EventComponent;
@@ -14,7 +15,7 @@ describe('EventComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EventComponent, EventUpdateComponent],
-      imports: [CommonModule, EventRoutingModule, HttpClientModule, RouterTestingModule]
+      imports: [CommonModule, EventRoutingModule, HttpClientModule, RouterTestingModule, TranslateModule.forRoot()]
     })
     .compileComponents();
   });

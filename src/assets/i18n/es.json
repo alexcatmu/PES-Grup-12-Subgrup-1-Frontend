@@ -1,0 +1,33 @@
+{
+  "Home": "Página principal",
+  "Name": "Nombre",
+  "Date": "Fecha",
+  "StartAt": "Empieza a",
+  "EndAt": "Acaba a ",
+  "PriceRange": "Rango de precios",
+  "Actions": "Acciones",
+  "Header": {
+    "Login": "Iniciar sesión",
+    "Logout": "Cerrar sesión",
+    "Contact": "Contacto",
+    "Translate": "Traducir",
+    "Welcome": "Bienvenido, "
+  },
+  "Login": {
+    "Username": "Nombre de usuario",
+    "Password": "Contraseña",
+    "Contact": "¿Quieres una cuenta?"
+  },
+  "Event": {
+    "Mine": "Mis eventos",
+    "Create": "Crear evento"
+  },
+  "Lang": {
+    "En": "Inglés",
+    "Es": "Español",
+    "Cat": "Catalán"
+  },
+  "Error": {
+    "Req": " es requerido"
+  }
+}

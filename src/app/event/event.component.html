@@ -1,6 +1,6 @@
 <div class="myEvents">
 
-  <p id="title">MY EVENTS</p>
+  <p id="title">{{'Event.Mine' | translate}}</p>
 
   <div class="table">
 
@@ -11,37 +11,37 @@
           <input matInput type="text" (keyup)="doFilter($event)" placeholder="Filter">
         </label>
       </mat-form-field>
-      <a routerLink="new" mat-button color="primary" style="font-size: 15px">Create Event</a>
+      <a routerLink="new" mat-button color="primary" style="font-size: 15px">{{'Event.Create' | translate}}</a>
     </div>
 
     <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" aria-describedby="event">
       <ng-container matColumnDef="name">
-        <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Name' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="date">
-        <th id="date" mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <th id="date" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Date' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.date}} </td>
       </ng-container>
 
       <ng-container matColumnDef="hourIni">
-        <th id="start-at" mat-header-cell *matHeaderCellDef mat-sort-header> Start at </th>
+        <th id="start-at" mat-header-cell *matHeaderCellDef mat-sort-header>{{'StartAt' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.hourIni}} </td>
       </ng-container>
 
       <ng-container matColumnDef="hourEnd">
-        <th id="ends-at" mat-header-cell *matHeaderCellDef mat-sort-header> Ends at </th>
+        <th id="ends-at" mat-header-cell *matHeaderCellDef mat-sort-header>{{'EndAt' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.hourEnd}} </td>
       </ng-container>
 
       <ng-container matColumnDef="price_range">
-        <th id="price-range" mat-header-cell *matHeaderCellDef mat-sort-header> Price range </th>
+        <th id="price-range" mat-header-cell *matHeaderCellDef mat-sort-header>{{'PriceRange' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.minPrice}} - {{element.maxPrice}}</td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
-        <th id="actions" mat-header-cell *matHeaderCellDef> Actions </th>
+        <th id="actions" mat-header-cell *matHeaderCellDef>{{'Actions' | translate}}</th>
         <td mat-cell *matCellDef="let element">
           <button mat-icon-button color="primary" (click)="redirectToDetails(element._id)">
             <mat-icon class="mat-18">pageview</mat-icon>

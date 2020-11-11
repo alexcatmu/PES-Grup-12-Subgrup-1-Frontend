@@ -1,0 +1,33 @@
+{
+  "Home": "Pàgina principal",
+  "Name": "Nom",
+  "Date": "Data",
+  "StartAt": "Comença a",
+  "EndAt": "Acaba a",
+  "PriceRange": "Rang de preus",
+  "Actions": "Accions",
+  "Header": {
+    "Login": "Iniciar sessió",
+    "Logout": "Tancar sessió",
+    "Contact": "Contacte",
+    "Translate": "Traduïr",
+    "Welcome": "Benvingut, "
+  },
+  "Login": {
+    "Username": "Nom d'usuari",
+    "Password": "Contrasenya",
+    "Contact": "Vols un compte?"
+  },
+  "Event": {
+    "Mine": "Els meus esdeveniments",
+    "Create": "Crear esdeveniment"
+  },
+  "Lang": {
+    "En": "Anglès",
+    "Es": "Espanyol",
+    "Cat": "Català"
+  },
+  "Error": {
+    "Req": " és requerit"
+  }
+}

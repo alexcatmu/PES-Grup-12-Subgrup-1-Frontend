@@ -7,6 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared/shared.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -16,13 +17,15 @@ describe('AppComponent', () => {
         AppRoutingModule,
         HttpClientModule,
         SharedModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        TranslateModule.forRoot()
       ],
       declarations: [
         AppComponent,
         FooterComponent,
-        HeaderComponent
+        HeaderComponent,
       ],
+      providers: [TranslateService]
     }).compileComponents();
   });
 

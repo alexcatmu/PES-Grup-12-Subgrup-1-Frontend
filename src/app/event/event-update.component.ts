@@ -33,7 +33,6 @@ export class EventUpdateComponent implements OnInit {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
-      street: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(100)])),
       date: new FormControl(new Date(), [Validators.required]),
       hourIni: new FormControl('', [Validators.required]),
       hourEnd: new FormControl('', [Validators.required]),
@@ -66,7 +65,6 @@ export class EventUpdateComponent implements OnInit {
     this.event = {
       _id: this.eventId ? this.eventId : event.name + '_' + this.datePipe.transform(event.date, 'yyyy-MM-dd') + '_' + event.hourIni,
       name: event.name,
-      street: event.street,
       date: this.datePipe.transform(event.date, 'yyyy-MM-dd'),
       hourEnd: event.hourEnd,
       hourIni: event.hourIni,
@@ -74,8 +72,8 @@ export class EventUpdateComponent implements OnInit {
       maxPrice: event.maxPrice,
       measures: event.measures,
       link: event.link,
-      id_manager: '123',
-      id_room: '1234'
+      id_manager: this.storageService.getCurrentUser().id,
+      id_room: 'Camp Nou'
     };
 
     this.eventService.create(this.event).subscribe(() => {

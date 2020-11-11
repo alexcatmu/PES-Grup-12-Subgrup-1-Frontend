@@ -1,0 +1,35 @@
+{
+  "Home": "Home",
+  "Name": "Name",
+  "Date": "Date",
+  "StartAt": "Start at",
+  "EndAt": "End at",
+  "PriceRange": "Price Range",
+  "Actions": "Actions",
+  "Header": {
+    "Login": "Login",
+    "Logout": "Logout",
+    "Contact": "Contact",
+    "Translate": "Translate",
+    "Welcome": "Welcome, "
+  },
+  "Login": {
+    "Username": "Username",
+    "Password": "Password",
+    "Contact": "Do you want an account?"
+  },
+  "Event": {
+    "Mine": "My events",
+    "Create": "Create event"
+  },
+  "Lang": {
+    "En": "English",
+    "Es": "Spanish",
+    "Cat": "Catalan"
+  },
+  "Error": {
+    "Req": " is required"
+  }
+}
+
+

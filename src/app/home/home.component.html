@@ -1,7 +1,7 @@
 <div>
-  <p>home works!!!!</p>
+  <p>{{'Home' | translate}}</p>
   <p *ngIf="!storageService.isAuthenticated()">You are not authenticated</p>
   <p *ngIf="storageService.isAuthenticated()">Hello, {{storageService.getCurrentUser().username}}</p>
-  <p>hiiii</p>
+  <p>hi!</p>
 </div>
 
