@@ -40,6 +40,10 @@
     "Maximum": "Maximum",
     "Link": "Link"
   },
+  "Room": {
+    "Name": "Name of the room",
+    "Mine": "My rooms"
+  },
   "Lang": {
     "En": "English",
     "Es": "Spanish",

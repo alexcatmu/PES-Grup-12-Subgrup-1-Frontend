@@ -14,6 +14,11 @@ const routes: Routes = [
     canActivate: [GuardUser]
   },
   {
+    path: 'room',
+    loadChildren: () => import('./room/room.module').then(m => m.RoomModule),
+    canActivate: [GuardUser]
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },

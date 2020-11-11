@@ -40,6 +40,10 @@
     "Maximum": "Màxim",
     "Link": "Enllaç"
   },
+  "Room": {
+    "Name": "Nom de la sala",
+    "Mine": "Les meves sales"
+  },
   "Lang": {
     "En": "Anglès",
     "Es": "Espanyol",

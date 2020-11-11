@@ -7,6 +7,7 @@ import {DatePipe} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
 import {StorageService} from '../services/storage.service';
+import {MeasuresService} from '../services/measures.service';
 import {Measure} from '../models/measures';
 
 @Component({
@@ -22,11 +23,7 @@ export class EventUpdateComponent implements OnInit {
   titleForm = 'Create a new event';
   formEvent: FormGroup;
   errorMatcher = new CrossFieldErrorMatcher();
-  public measures: Array<Measure> = [
-    {name: 'Distància de seguretat', indications: 'Els assistents de diferents bombolles familiars, estaràn en tot moment separats per la distància de seguretat indicada per l\'esdeveniment (com a mínim 1,5m) durant la duració d\'aquest, també inclosos els moments d\'accés/sortida del recinte.'},
-    {name: 'Ús de mascareta', indications: 'És obligatori l\'ús de mascareta durant tot el trascurs de l\'esdeveniment, tant dins com fora del recinte.'},
-    {name: 'Desinfecció de mans', indications: 'Els assistents s\'hauran de desinfectar les mans en moment d\'entrar al recinte de l\'esdeveniment.'}
-  ];
+  measures: Measure[];
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -34,7 +31,8 @@ export class EventUpdateComponent implements OnInit {
     private datePipe: DatePipe,
     private route: Router,
     private fb: FormBuilder,
-    private storageService: StorageService) {
+    private storageService: StorageService,
+    private measuresService: MeasuresService) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
@@ -52,6 +50,9 @@ export class EventUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
+      this.measuresService.getAll().subscribe((measures: Measure[]) => {
+        this.measures = measures;
+      });
       if (this.eventId) {
         this.eventService.get(this.eventId).subscribe((event) => {
           event = event[0];
@@ -64,6 +65,7 @@ export class EventUpdateComponent implements OnInit {
 
   private updateForm(event: Event): void {
     this.formEvent.patchValue(event);
+    this.formEvent.patchValue({measures: this.measures});
   }
 
   public onSubmit(event: Event): void {
@@ -96,12 +98,12 @@ export class EventUpdateComponent implements OnInit {
     const formArray: FormArray = this.formEvent.get('measures') as FormArray;
 
     /* Selected */
-    if (event.target.checked){
+    if (event.target.checked) {
       // Add a new control in the arrayForm
       formArray.push(new FormControl(event.target.value));
     }
     /* unselected */
-    else{
+    else {
       // find the unselected element
       let i = 0;
 
