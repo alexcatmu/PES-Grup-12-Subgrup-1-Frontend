@@ -61,11 +61,14 @@
           </mat-form-field>
         </div>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Measures</mat-label>
-          <label for="measures"></label><input matInput type="text" placeholder="Measures" formControlName="measures" id="measures">
-          <mat-error *ngIf="hasError('measures', 'required')">Measures is required</mat-error>
-        </mat-form-field>
+        <mat-label>Measures</mat-label>
+        <div *ngFor="let m of measures">
+          <label>
+            <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)">
+            {{m.name}}
+          </label>
+        </div>
+        <br>
 
         <mat-form-field appearance="fill">
           <mat-label>Link</mat-label>
@@ -73,9 +76,6 @@
           <mat-error *ngIf="hasError('link', 'required')">Link is required</mat-error>
         </mat-form-field>
       </mat-card-content>
-
-
-
 
       <mat-card-actions>
         <button mat-raised-button color="primary" [disabled]="!formEvent.valid">Save</button>

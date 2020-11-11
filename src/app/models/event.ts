@@ -8,7 +8,7 @@ export interface Event {
   hourEnd: string;
   minPrice?: number;
   maxPrice?: number;
-  measures?: Array<Measure>;
+  measures?: Array<String>;
   ratings?: number;
   link?: string;
   id_manager: number;
