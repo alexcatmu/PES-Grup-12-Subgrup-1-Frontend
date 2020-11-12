@@ -1,7 +1,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center">
   <mat-card fxFlex="530px" fxFlex.xs="100%">
     <mat-card-title>
-      {{'Room.Create' | translate}}
+      {{titleForm | translate}}
     </mat-card-title>
 
     <form [formGroup]="formRoom" autocomplete="off" novalidate (ngSubmit)="onSubmit(formRoom.value)" fxLayout="column wrap"

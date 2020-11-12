@@ -4,7 +4,6 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {StorageService} from '../../services/storage.service';
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room';
-import {Measure} from '../../models/measures';
 
 @Component({
   selector: 'app-room-update',
@@ -16,7 +15,7 @@ export class RoomUpdateComponent implements OnInit {
   formRoom: FormGroup;
   room: Room;
   roomId: string;
-  titleForm = 'Create a new room';
+  titleForm = 'Room.Create';
 
   constructor(protected activatedRoute: ActivatedRoute,
               private roomService: RoomService,
@@ -42,7 +41,7 @@ export class RoomUpdateComponent implements OnInit {
         this.roomService.get(this.roomId).subscribe((room) => {
           room = room[0];
           this.updateForm(room);
-          this.titleForm = 'Update room ' + this.formRoom.value.name;
+          this.titleForm = 'Room.Update';
         });
       }
     });

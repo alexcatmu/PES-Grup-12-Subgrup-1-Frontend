@@ -20,10 +20,11 @@ export class EventUpdateComponent implements OnInit {
 
   eventId: string;
   event: Event;
-  titleForm = 'Create a new event';
+  titleForm = 'Event.Create';
   formEvent: FormGroup;
   errorMatcher = new CrossFieldErrorMatcher();
   measures: Measure[];
+  isChecked = false;
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -57,7 +58,7 @@ export class EventUpdateComponent implements OnInit {
         this.eventService.get(this.eventId).subscribe((event) => {
           event = event[0];
           this.updateForm(event);
-          this.titleForm = 'Update event ' + this.formEvent.value.name;
+          this.titleForm = 'Event.Update';
         });
       }
     });
@@ -65,7 +66,7 @@ export class EventUpdateComponent implements OnInit {
 
   private updateForm(event: Event): void {
     this.formEvent.patchValue(event);
-    this.formEvent.patchValue({measures: this.measures});
+    this.formEvent.get('measures').patchValue(this.measures);
   }
 
   public onSubmit(event: Event): void {
@@ -94,7 +95,7 @@ export class EventUpdateComponent implements OnInit {
     return this.formEvent.controls[controlName].hasError(errorName);
   }
 
-  onCheckChange(event) {
+  onCheckChange(event): void {
     const formArray: FormArray = this.formEvent.get('measures') as FormArray;
 
     /* Selected */

@@ -1,7 +1,7 @@
 <section fxLayout="row wrap" fxLayoutAlign="center">
   <mat-card fxFlex="530px" fxFlex.xs="100%">
     <mat-card-title>
-      {{'Event.Create' | translate}}
+      {{ titleForm | translate}}
     </mat-card-title>
 
     <form [formGroup]="formEvent" autocomplete="off" novalidate (ngSubmit)="onSubmit(formEvent.value)" fxLayout="column wrap"
@@ -76,7 +76,7 @@
         <mat-label>{{'Measures' | translate}}</mat-label>
         <div *ngFor="let m of measures">
           <label>
-            <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)">
+            <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)" [checked]="isChecked">
             {{m.name}}
           </label>
         </div>
