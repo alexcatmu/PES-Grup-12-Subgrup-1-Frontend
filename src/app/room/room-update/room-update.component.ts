@@ -50,7 +50,7 @@ export class RoomUpdateComponent implements OnInit {
 
   onSubmit(room: Room): void {
     this.room = {
-      _id: this.roomId ? this.roomId : room.name + '_' + room.id_manager,
+      _id: this.roomId ? this.roomId : room.name + '_' + this.storageService.getCurrentUser().id,
       id_manager: this.storageService.getCurrentUser().id,
       name: room.name,
       street: room.street,
@@ -74,6 +74,6 @@ export class RoomUpdateComponent implements OnInit {
   }
 
   private updateForm(room: Room): void {
-
+    this.formRoom.patchValue(room);
   }
 }
