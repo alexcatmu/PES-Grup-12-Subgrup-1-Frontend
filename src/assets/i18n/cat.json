@@ -42,7 +42,17 @@
   },
   "Room": {
     "Name": "Nom de la sala",
-    "Mine": "Les meves sales"
+    "Mine": "Les meves sales",
+    "Create": "Crear nova sala",
+    "Capacity": "Capacitat",
+    "MaxCapacity": "Capacitat màxima",
+    "Street": "Adreça",
+    "Rows": "Files",
+    "NumberOfRows": "Nombre de files",
+    "NumberOfColumns": "Nombre de columnes",
+    "Columns": "Columnes",
+    "Distance": "Distància entre seients",
+    "SeatsSize": "Mida dels seients (en cm)"
   },
   "Lang": {
     "En": "Anglès",
@@ -54,5 +64,9 @@
     "Req": " és requerit",
     "MoreThan60Char": "No pot excedir els 60 caràcters",
     "InvalidRange": "Rang no vàlid"
+  },
+  "Confirmation": {
+    "Title": "Correu enviat!",
+    "Explanation": "\nEnhorabona, ara se us redirigirà a la nostra pàgina principal,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
   }
 }

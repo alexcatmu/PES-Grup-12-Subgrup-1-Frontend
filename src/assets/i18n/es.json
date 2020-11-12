@@ -42,7 +42,17 @@
   },
   "Room": {
     "Name": "Nombre de la sala",
-    "Mine": "Mis salas"
+    "Mine": "Mis salas",
+    "Create": "Crear nueva sala",
+    "Capacity": "Capacidad",
+    "MaxCapacity": "Capacidad máxima",
+    "Street": "Dirección",
+    "Rows": "Filas",
+    "NumberOfRows": "Numero de filas",
+    "NumberOfColumns": "Numero de columnas",
+    "Columns": "Columnas",
+    "Distance": "Distancia entre asientos",
+    "SeatsSize": "Tamaño de los asientos (en cm)"
   },
   "Lang": {
     "En": "Inglés",
@@ -54,5 +64,9 @@
     "Req": " es requerido",
     "MoreThan60Char": "No puede exceder los 60 caracteres",
     "InvalidRange": "Rango no válido"
+  },
+  "Confirmation": {
+    "Title": "Correo enviado!",
+    "Explanation": "\nFelicidades, ahora será redirigido a nuestra página principal,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
   }
 }

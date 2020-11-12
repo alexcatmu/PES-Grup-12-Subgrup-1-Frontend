@@ -1,5 +1,5 @@
 interface IRoom {
-  id: string;
+  _id: string;
   name: string;
   id_manager: number;
   street: string;
@@ -12,7 +12,7 @@ interface IRoom {
 
 
 export class Room implements IRoom {
-  id: string;
+  _id: string;
   name: string;
   id_manager: number;
   street: string;

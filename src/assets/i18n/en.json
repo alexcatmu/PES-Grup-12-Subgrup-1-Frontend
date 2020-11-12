@@ -42,7 +42,17 @@
   },
   "Room": {
     "Name": "Name of the room",
-    "Mine": "My rooms"
+    "Mine": "My rooms",
+    "Create": "Create a new room",
+    "Capacity": "Capacity",
+    "MaxCapacity": "Maximum capacity",
+    "Street": "Address",
+    "Rows": "Rows",
+    "NumberOfRows": "Number of rows",
+    "NumberOfColumns": "Number of columns",
+    "Columns": "Columns",
+    "Distance": "Distance between seats",
+    "SeatsSize": "Seat size (in cm)"
   },
   "Lang": {
     "En": "English",
@@ -54,6 +64,10 @@
     "Req": " is required",
     "MoreThan60Char": "Cannot exceed 60 characters",
     "InvalidRange": "Invalid range"
+  },
+  "Confirmation": {
+    "Title": "Email sent!",
+    "Explanation": "Congratulations, now you will be redirected to our main page,\n    wait for your account to be verified during the next 2 days. Thanks for choosing SecurEvent!"
   }
 }
 

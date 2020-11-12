@@ -7,15 +7,17 @@ import { RoomUpdateComponent } from './room-update/room-update.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../shared/shared.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [RoomComponent, RoomUpdateComponent, RoomDetailComponent],
-  imports: [
-    CommonModule,
-    RoomRoutingModule,
-    TranslateModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        RoomRoutingModule,
+        TranslateModule,
+        SharedModule,
+        ReactiveFormsModule
+    ]
 })
 export class RoomModule { }
