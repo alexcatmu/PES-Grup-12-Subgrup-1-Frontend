@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
   <mat-card fxFlex="530px" fxFlex.xs="100%">
     <mat-card-title>
       {{ titleForm | translate}}
@@ -52,7 +52,7 @@
         </mat-form-field>
 
         <div>
-          <mat-label>{{'Event.PriceRange' | translate}}</mat-label>
+          <div><mat-label>{{'Event.PriceRange' | translate}} :</mat-label></div>
           <br>
           <mat-form-field appearance="fill" class="form-40-input">
             <mat-label>{{'Event.Minimum' | translate}}</mat-label>
@@ -73,8 +73,8 @@
           </mat-form-field>
         </div>
 
-        <mat-label>{{'Measures' | translate}}</mat-label>
-        <div *ngFor="let m of measures">
+        <div class="margin-bottom"><mat-label>{{'Measures' | translate}}</mat-label></div>
+        <div *ngFor="let m of measures" class="margin-bottom">
           <label>
             <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)" [checked]="isChecked">
             {{m.name}}
@@ -92,6 +92,7 @@
       </mat-card-content>
 
       <mat-card-actions>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/event" > {{'Back' | translate}} </button>
         <button mat-raised-button color="primary" [disabled]="!formEvent.valid">{{'Save' | translate}}</button>
       </mat-card-actions>
     </form>

@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
     <mat-card fxFlex="530px" fxFlex.xs="100%">
         <div *ngIf="event">
             <mat-list>
@@ -29,7 +29,10 @@
                 <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
                 <mat-divider></mat-divider>
 
-              <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
+                <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
+                <mat-divider></mat-divider>
+
+              <button mat-stroked-button color="accent" class="btn-block" routerLink="/event" > {{'Back' | translate}} </button>
 
             </mat-list>
         </div>

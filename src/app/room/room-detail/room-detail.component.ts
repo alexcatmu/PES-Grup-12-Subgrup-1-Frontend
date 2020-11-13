@@ -6,7 +6,7 @@ import {RoomService} from '../../services/room.service';
 @Component({
   selector: 'app-room-detail',
   templateUrl: './room-detail.component.html',
-  styleUrls: ['./room-detail.component.css', '../../app.detail.component.css']
+  styleUrls: ['./room-detail.component.css']
 })
 export class RoomDetailComponent implements OnInit {
   roomId: string;

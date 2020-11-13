@@ -6,6 +6,7 @@
   "Filter": "Filter",
   "Save": "Save",
   "Measures": "Measures",
+  "Back": "Back",
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
@@ -65,7 +66,8 @@
     "Required": "This field is required",
     "Req": " is required",
     "MoreThan60Char": "Cannot exceed 60 characters",
-    "InvalidRange": "Invalid range"
+    "InvalidRange": "Invalid range",
+    "InvalidEmail": "Invalid email"
   },
   "Confirmation": {
     "Title": "Email sent!",

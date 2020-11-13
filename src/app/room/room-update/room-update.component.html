@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
   <mat-card fxFlex="530px" fxFlex.xs="100%">
     <mat-card-title>
       {{titleForm | translate}}
@@ -10,7 +10,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label for="name">{{'Room.Name' | translate}}</mat-label>
-          <label for="name"></label><input matInput type="text" placeholder="{{'Room.Name' | translate}}" formControlName="name" id="name">
+          <label for="name"></label><input matInput type="text" formControlName="name" id="name">
           <mat-hint align="end">{{'Error.MoreThan60Char' | translate}}.</mat-hint>
           <mat-error *ngIf="hasError('name', 'required')">
             {{'Room.Name' | translate}}{{'Error.Req' | translate}}
@@ -20,7 +20,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>{{'Room.Street' | translate}}</mat-label>
-          <label for="street"></label><input matInput type="text" placeholder="{{'Room.Street' | translate}}" formControlName="street" id="street">
+          <label for="street"></label><input matInput type="text" formControlName="street" id="street">
           <mat-error *ngIf="hasError('street', 'required')">
             {{'Room.Street' | translate}}{{'Error.Req' | translate}}
           </mat-error>
@@ -28,7 +28,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>{{'Room.Capacity' | translate}}</mat-label>
-          <label for="capacity"></label><input matInput type="text" placeholder="{{'Room.MaxCapacity' | translate}}" formControlName="capacity" id="capacity">
+          <label for="capacity"></label><input matInput type="number" placeholder="{{'Room.MaxCapacity' | translate}}" formControlName="capacity" id="capacity">
           <mat-error *ngIf="hasError('capacity', 'required')">
             {{'Error.Required' | translate}}
           </mat-error>
@@ -69,6 +69,7 @@
       </mat-card-content>
 
       <mat-card-actions>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room" > {{'Back' | translate}} </button>
         <button mat-raised-button color="primary" [disabled]="!formRoom.valid">{{'Save' | translate}}</button>
       </mat-card-actions>
     </form>

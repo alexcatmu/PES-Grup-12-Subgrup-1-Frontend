@@ -6,6 +6,7 @@
   "Filter": "Filtrar",
   "Save": "Guardar",
   "Measures": "Mesures",
+  "Back": "Enrera",
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
@@ -65,7 +66,8 @@
     "Required": "Aquest camp és requerit",
     "Req": " és requerit",
     "MoreThan60Char": "No pot excedir els 60 caràcters",
-    "InvalidRange": "Rang no vàlid"
+    "InvalidRange": "Rang no vàlid",
+    "InvalidEmail": "correu no vàlid"
   },
   "Confirmation": {
     "Title": "Correu enviat!",

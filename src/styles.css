@@ -45,6 +45,10 @@ th.mat-header-cell {
   width: 100%;
   position: absolute;
   background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .my-table-page-module {

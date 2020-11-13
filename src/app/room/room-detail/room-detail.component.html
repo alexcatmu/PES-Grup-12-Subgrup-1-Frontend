@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
   <mat-card fxFlex="530px" fxFlex.xs="100%">
     <div *ngIf="room">
       <mat-list>
@@ -28,6 +28,8 @@
 
         <mat-list-item>{{'Room.SeatsSize' | translate}}: {{room.seats_size}}</mat-list-item>
         <mat-divider></mat-divider>
+
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room" > {{'Back' | translate}} </button>
 
       </mat-list>
     </div>

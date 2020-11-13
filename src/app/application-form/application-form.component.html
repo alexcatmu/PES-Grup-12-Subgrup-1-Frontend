@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
       {{ 'Application.Title' | translate}}
@@ -36,7 +36,7 @@
           <mat-error *ngIf="hasError('email', 'required')">
             {{ 'Application.Email' | translate}}{{ 'Error.Req' | translate}}
           </mat-error>
-          <mat-error *ngIf="hasError('email', 'email')">Invalid email</mat-error>
+          <mat-error *ngIf="hasError('email', 'email')">{{'Error.InvalidEmail' | translate}}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -48,7 +48,7 @@
         <mat-form-field appearance="fill">
           <mat-label>{{ 'Application.Reason' | translate}}</mat-label>
           <label for="Description"></label>
-          <textarea matInput id="Description" placeholder="Explain the reason of your contact" formControlName="description"></textarea>
+          <textarea matInput id="Description" formControlName="description"></textarea>
           <mat-error *ngIf="hasError('description', 'required')">{{ 'Error.Required' | translate}}</mat-error>
         </mat-form-field>
 

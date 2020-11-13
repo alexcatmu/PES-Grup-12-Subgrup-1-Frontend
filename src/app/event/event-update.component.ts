@@ -13,7 +13,7 @@ import {Measure} from '../models/measures';
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
-  styleUrls: ['./event-update.component.css']
+  styleUrls: ['./event-update.component.css', '../app.detail.component.css']
 })
 
 export class EventUpdateComponent implements OnInit {

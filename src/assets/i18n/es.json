@@ -6,6 +6,7 @@
   "Filter": "Filtrar",
   "Save": "Guardar",
   "Measures": "Medidas",
+  "Back": "Atrás",
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
@@ -65,7 +66,8 @@
     "Required": "Este campo es requerido",
     "Req": " es requerido",
     "MoreThan60Char": "No puede exceder los 60 caracteres",
-    "InvalidRange": "Rango no válido"
+    "InvalidRange": "Rango no válido",
+    "InvalidEmail": "Correo no válido"
   },
   "Confirmation": {
     "Title": "Correo enviado!",
