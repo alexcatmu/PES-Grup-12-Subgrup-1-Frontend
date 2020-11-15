@@ -3,12 +3,14 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {EventService} from '../services/event.service';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../models/event';
+import {Room} from '../models/room';
 import {DatePipe} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
 import {StorageService} from '../services/storage.service';
 import {MeasuresService} from '../services/measures.service';
 import {Measure} from '../models/measures';
+import {RoomService} from '../services/room.service';
 
 @Component({
   selector: 'app-event-update',
@@ -25,6 +27,7 @@ export class EventUpdateComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();
   measures: Measure[];
   isChecked = false;
+  rooms: Room[];
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -33,7 +36,8 @@ export class EventUpdateComponent implements OnInit {
     private route: Router,
     private fb: FormBuilder,
     private storageService: StorageService,
-    private measuresService: MeasuresService) {
+    private measuresService: MeasuresService,
+    private roomService: RoomService) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
@@ -51,6 +55,9 @@ export class EventUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
+      this.roomService.getAll().subscribe((rooms: Room[]) => {
+        this.rooms = rooms;
+      });
       this.measuresService.getAll().subscribe((measures: Measure[]) => {
         this.measures = measures;
       });

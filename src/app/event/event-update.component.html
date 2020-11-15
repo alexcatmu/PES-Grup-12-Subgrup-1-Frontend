@@ -51,6 +51,15 @@
           </mat-error>
         </mat-form-field>
 
+        <mat-form-field appearance="fill">
+          <mat-label>Select the room</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let r of rooms" [value]="r.name">
+              {{r.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
         <div>
           <div><mat-label>{{'Event.PriceRange' | translate}} :</mat-label></div>
           <br>
