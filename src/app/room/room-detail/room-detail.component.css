@@ -1,7 +1,7 @@
 mat-card{
   opacity: 0.95;
   min-width: 500px;
-  max-height: 600px;
+  max-height: 560px;
 }
 
 mat-card-title{
@@ -23,3 +23,4 @@ mat-divider{
   margin-top: 35px;
   margin-left: 43%;
 }
+

@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {ConfirmationDialogComponent} from '../shared/confirmation-dialog.component';
+import {ApplyService} from '../services/apply.service';
+import {Apply} from '../models/apply';
 
 @Component({
   selector: 'app-signup',
@@ -14,12 +15,12 @@ export class ApplicationFormComponent implements OnInit {
 
   applicationForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private dialog: MatDialog, private router: Router) {
+  constructor(private fb: FormBuilder, private applyService: ApplyService, private dialog: MatDialog, private route: Router) {
     this.applicationForm = this.fb.group({
       name: new FormControl(null, [Validators.required]),
       company: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      tlf: new FormControl(null),
+      phone: new FormControl(null),
       description: new FormControl(null, [Validators.required]),
     });
   }
@@ -32,12 +33,17 @@ export class ApplicationFormComponent implements OnInit {
   }
 
   onSubmit(value: any): void {
-    const application = {
+    const application: Apply = {
       name: value.name,
       company: value.company,
       email: value.email,
-      description: value.description
+      phone: value.phone,
+      text: value.description
     };
+
+    this.applyService.send(application).subscribe(() => { }, error => {
+      console.error('Ha habido un error al hacer un apply', error);
+    });
   }
 
   openDialog(): void {
@@ -46,7 +52,7 @@ export class ApplicationFormComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.router.navigate([`/`]).then(() => console.log('redirect to home'));
+      this.route.navigate([`/`]).then(() => console.log('redirect to home'));
     });
   }
 }

@@ -38,3 +38,41 @@ th.mat-header-cell {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.my-main-page-module {
+  background-size: auto 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.my-table-page-module {
+  background: white;
+  margin: 60px;
+  border: groove #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  opacity: 0.95;
+}
+
+#my-title-page-module {
+  margin-top: 40px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+#my-table-page-module-data-source th {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+mat-paginator {
+  margin-top: 30px;
+}

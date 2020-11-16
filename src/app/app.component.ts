@@ -10,9 +10,8 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'SecurEvent';
-  langs: string[] = [];
 
   constructor( private translate: TranslateService ) {
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('es');
   }
 }

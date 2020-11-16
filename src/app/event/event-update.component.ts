@@ -1,27 +1,33 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {EventService} from '../services/event.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../models/event';
+import {Room} from '../models/room';
 import {DatePipe} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
 import {StorageService} from '../services/storage.service';
+import {MeasuresService} from '../services/measures.service';
+import {Measure} from '../models/measures';
+import {RoomService} from '../services/room.service';
 
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
-  styleUrls: ['./event-update.component.css']
+  styleUrls: ['./event-update.component.css', '../app.detail.component.css']
 })
 
 export class EventUpdateComponent implements OnInit {
 
   eventId: string;
   event: Event;
-  titleForm = 'Create a new event';
+  titleForm = 'Event.Create';
   formEvent: FormGroup;
   errorMatcher = new CrossFieldErrorMatcher();
-
+  measures: Measure[];
+  isChecked = false;
+  rooms: Room[];
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -29,7 +35,9 @@ export class EventUpdateComponent implements OnInit {
     private datePipe: DatePipe,
     private route: Router,
     private fb: FormBuilder,
-    private storageService: StorageService) {
+    private storageService: StorageService,
+    private measuresService: MeasuresService,
+    private roomService: RoomService) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
@@ -38,7 +46,8 @@ export class EventUpdateComponent implements OnInit {
       hourEnd: new FormControl('', [Validators.required]),
       minPrice: new FormControl(null, [Validators.required]),
       maxPrice: new FormControl(null, [Validators.required]),
-      measures: new FormControl(null),
+      measures: new FormArray([]),
+      id_room: new FormControl(null, [Validators.required]),
       link: new FormControl('')
     }, {validators: PriceRangeValid});
   }
@@ -47,11 +56,17 @@ export class EventUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
+      this.roomService.getAll().subscribe((rooms: Room[]) => {
+        this.rooms = rooms;
+      });
+      this.measuresService.getAll().subscribe((measures: Measure[]) => {
+        this.measures = measures;
+      });
       if (this.eventId) {
         this.eventService.get(this.eventId).subscribe((event) => {
           event = event[0];
           this.updateForm(event);
-          this.titleForm = 'Update event ' + this.formEvent.value.name;
+          this.titleForm = 'Event.Update';
         });
       }
     });
@@ -59,9 +74,10 @@ export class EventUpdateComponent implements OnInit {
 
   private updateForm(event: Event): void {
     this.formEvent.patchValue(event);
+    this.formEvent.get('measures').patchValue(this.measures);
   }
 
-  public onSubmit(event): void {
+  public onSubmit(event: Event): void {
     this.event = {
       _id: this.eventId ? this.eventId : event.name + '_' + this.datePipe.transform(event.date, 'yyyy-MM-dd') + '_' + event.hourIni,
       name: event.name,
@@ -73,7 +89,7 @@ export class EventUpdateComponent implements OnInit {
       measures: event.measures,
       link: event.link,
       id_manager: this.storageService.getCurrentUser().id,
-      id_room: 'Camp Nou'
+      id_room: event.id_room
     };
 
     this.eventService.create(this.event).subscribe(() => {
@@ -87,4 +103,27 @@ export class EventUpdateComponent implements OnInit {
     return this.formEvent.controls[controlName].hasError(errorName);
   }
 
+  onCheckChange(event): void {
+    const formArray: FormArray = this.formEvent.get('measures') as FormArray;
+
+    /* Selected */
+    if (event.target.checked) {
+      // Add a new control in the arrayForm
+      formArray.push(new FormControl(event.target.value));
+    }
+    /* unselected */
+    else {
+      // find the unselected element
+      let i = 0;
+
+      formArray.controls.forEach((ctrl: FormControl) => {
+        if (ctrl.value === event.target.value) {
+          // Remove the unselected element from the arrayForm
+          formArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
 }

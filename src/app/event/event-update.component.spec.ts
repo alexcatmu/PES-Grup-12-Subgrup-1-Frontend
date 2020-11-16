@@ -7,6 +7,7 @@ import { EventService } from '../services/event.service';
 import { DatePipe } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import {MaterialModule} from '../material/material.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('Update: Working', () => {
     let eventUpdate: EventUpdateComponent;
@@ -25,7 +26,7 @@ describe('Update: Working', () => {
 
         // refine the test module by declaring the test component
         TestBed.configureTestingModule({
-            imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule],
+            imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, TranslateModule.forRoot()],
             declarations: [EventUpdateComponent],
             providers: [ {provide: ActivatedRoute, useValue: fakeActivatedRoute}, {provide: DatePipe, useValue: fakeDatePipe},
                          EventService ],

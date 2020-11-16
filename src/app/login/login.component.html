@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center">
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>
       {{'Header.Login' | translate}}
@@ -11,7 +11,7 @@
         <mat-form-field appearance="fill">
           <mat-label>{{'Login.Username' | translate}}</mat-label>
           <label for="Username"></label>
-          <input matInput type="text" placeholder="Username" id="Username" formControlName="username">
+          <input matInput type="text" id="Username" formControlName="username">
           <mat-error *ngIf="hasError('username', 'required')">
             {{'Login.Username' | translate}}{{'Error.Req' | translate}}
           </mat-error>
@@ -23,7 +23,7 @@
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
-          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" id="Password" formControlName="password">
+          <input matInput [type]="hide ? 'password' : 'text'" id="Password" formControlName="password">
           <mat-error *ngIf="hasError('password', 'required')">
             {{'Login.Password' | translate}}{{'Error.Req' | translate}}
           </mat-error>

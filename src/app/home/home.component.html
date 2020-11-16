@@ -1,4 +1,4 @@
-<div>
+<div class="my-main-page-module">
   <p>{{'Home' | translate}}</p>
   <p *ngIf="!storageService.isAuthenticated()">You are not authenticated</p>
   <p *ngIf="storageService.isAuthenticated()">Hello, {{storageService.getCurrentUser().username}}</p>

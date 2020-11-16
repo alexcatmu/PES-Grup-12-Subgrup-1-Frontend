@@ -1,0 +1,77 @@
+<section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
+  <mat-card fxFlex="530px" fxFlex.xs="100%">
+    <mat-card-title>
+      {{titleForm | translate}}
+    </mat-card-title>
+
+    <form [formGroup]="formRoom" autocomplete="off" novalidate (ngSubmit)="onSubmit(formRoom.value)" fxLayout="column wrap"
+          fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card-content>
+
+        <mat-form-field appearance="fill">
+          <mat-label for="name">{{'Room.Name' | translate}}</mat-label>
+          <label for="name"></label><input matInput type="text" formControlName="name" id="name">
+          <mat-hint align="end">{{'Error.MoreThan60Char' | translate}}.</mat-hint>
+          <mat-error *ngIf="hasError('name', 'required')">
+            {{'Room.Name' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
+          <mat-error *ngIf="hasError('name', 'maxlength')">{{'Error.MoreThan60Char' | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'Room.Street' | translate}}</mat-label>
+          <label for="street"></label><input matInput type="text" formControlName="street" id="street">
+          <mat-error *ngIf="hasError('street', 'required')">
+            {{'Room.Street' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'Room.Capacity' | translate}}</mat-label>
+          <label for="capacity"></label><input matInput type="number" placeholder="{{'Room.MaxCapacity' | translate}}" formControlName="capacity" id="capacity">
+          <mat-error *ngIf="hasError('capacity', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'Room.Rows' | translate}}</mat-label>
+          <label for="rows"></label><input matInput type="number" placeholder="{{'Room.NumberOfRows' | translate}}" formControlName="rows" id="rows">
+          <mat-error *ngIf="hasError('rows', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-40-input">
+          <mat-label>{{'Room.Columns' | translate}}</mat-label>
+          <label for="columns"></label><input matInput type="number" placeholder="{{'Room.NumberOfColumns' | translate}}" formControlName="columns" id="columns">
+          <mat-error *ngIf="hasError('columns', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
+        </mat-form-field><tr></tr>
+
+        <mat-form-field appearance="fill" class="form-40-input">
+          <mat-label>{{'Room.Distance' | translate}}</mat-label>
+          <label for="distance_between_seats"></label><input matInput type="number" placeholder="{{ 'Room.Distance' | translate }}" formControlName="distance_between_seats" id="distance_between_seats">
+          <mat-error *ngIf="hasError('distance_between_seats', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'Room.SeatsSize' | translate}}</mat-label>
+          <label for="seats_size"></label><input matInput type="number" formControlName="seats_size" id="seats_size">
+          <mat-error *ngIf="hasError('seats_size', 'required')">
+            {{'Room.SeatsSize' | translate}}{{'Error.Req' | translate}}
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room" > {{'Back' | translate}} </button>
+        <button mat-raised-button color="primary" [disabled]="!formRoom.valid">{{'Save' | translate}}</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

@@ -1,7 +1,7 @@
 mat-card{
   opacity: 0.99;
-  min-width: 50px;
-  max-height: 960px;
+  min-width: 500px;
+  max-height: 810px;
 }
 
 mat-card-title{
@@ -15,14 +15,13 @@ mat-card-content{
   margin-right: 30px;
 }
 
-.margin-bottom{
-  font-weight: 430;
-  margin-bottom: 5px;
+.form-40-input {
+  width: 45%;
 }
 
 .btn-block{
   top: 10px;
-  right: 143px;
+  right: 145px;
 }
 
 .mat-raised-button{
