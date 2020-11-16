@@ -1,15 +1,15 @@
 {
   "Home": "Página principal",
+  "Contact": "Contacta con nosotros",
   "Name": "Nombre",
-  "Date": "Fecha",
-  "StartAt": "Empieza a",
-  "EndAt": "Acaba a ",
-  "PriceRange": "Rango de precios",
-  "Actions": "Acciones",
+  "Details": "Detalles",
+  "Filter": "Filtrar",
+  "Save": "Guardar",
+  "Measures": "Medidas",
+  "Back": "Atrás",
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
-    "Contact": "Contacto",
     "Translate": "Traducir",
     "Welcome": "Bienvenido, "
   },
@@ -18,9 +18,44 @@
     "Password": "Contraseña",
     "Contact": "¿Quieres una cuenta?"
   },
+  "Application": {
+    "Title": "Formulario de aplicación",
+    "Subtitle": "Llena el formulario por solicitar el servicios de SecurEvent",
+    "YourName": "Su nombre",
+    "CompanyName": "Nombre de su empresa",
+    "Email": "Su correo",
+    "PhoneNum": "Su número de teléfono",
+    "Reason": "Vuestros objetivos con SecurEvent",
+    "Send": "Enviar"
+  },
   "Event": {
+    "Name": "Nombre del evento",
     "Mine": "Mis eventos",
-    "Create": "Crear evento"
+    "Create": "Crear nuevo evento",
+    "Update": "Editar evento",
+    "Date": "Fecha",
+    "StartAt": "Empieza a",
+    "EndAt": "Acaba a",
+    "PriceRange": "Rango de precios",
+    "Actions": "Acciones",
+    "Minimum": "Mínimo",
+    "Maximum": "Máximo",
+    "Link": "Enlace"
+  },
+  "Room": {
+    "Name": "Nombre de la sala",
+    "Mine": "Mis salas",
+    "Create": "Crear nueva sala",
+    "Update": "Editar sala",
+    "Capacity": "Capacidad",
+    "MaxCapacity": "Capacidad máxima",
+    "Street": "Dirección",
+    "Rows": "Filas",
+    "NumberOfRows": "Numero de filas",
+    "NumberOfColumns": "Numero de columnas",
+    "Columns": "Columnas",
+    "Distance": "Distancia entre asientos",
+    "SeatsSize": "Tamaño de los asientos (en cm)"
   },
   "Lang": {
     "En": "Inglés",
@@ -28,6 +63,14 @@
     "Cat": "Catalán"
   },
   "Error": {
-    "Req": " es requerido"
+    "Required": "Este campo es requerido",
+    "Req": " es requerido",
+    "MoreThan60Char": "No puede exceder los 60 caracteres",
+    "InvalidRange": "Rango no válido",
+    "InvalidEmail": "Correo no válido"
+  },
+  "Confirmation": {
+    "Title": "Correo enviado!",
+    "Explanation": "\nFelicidades, ahora será redirigido a nuestra página principal,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
   }
 }

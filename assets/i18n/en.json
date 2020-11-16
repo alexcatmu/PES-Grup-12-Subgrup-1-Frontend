@@ -1,15 +1,15 @@
 {
   "Home": "Home",
+  "Contact": "Contact us",
   "Name": "Name",
-  "Date": "Date",
-  "StartAt": "Start at",
-  "EndAt": "End at",
-  "PriceRange": "Price Range",
-  "Actions": "Actions",
+  "Details": "Details",
+  "Filter": "Filter",
+  "Save": "Save",
+  "Measures": "Measures",
+  "Back": "Back",
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
-    "Contact": "Contact",
     "Translate": "Translate",
     "Welcome": "Welcome, "
   },
@@ -18,9 +18,44 @@
     "Password": "Password",
     "Contact": "Do you want an account?"
   },
+  "Application": {
+    "Title": "Application form",
+    "Subtitle": "Write an application to be verified in SecurEvent",
+    "YourName": "Your Name",
+    "CompanyName": "Your company's name",
+    "Email": "Your email",
+    "PhoneNum": "Your telephone number",
+    "Reason": "Why do your company want to use SecurEvent?",
+    "Send": "Send"
+  },
   "Event": {
+    "Name": "Name of the event",
     "Mine": "My events",
-    "Create": "Create event"
+    "Create": "Create new event",
+    "Update": "Edit event",
+    "Date": "Date",
+    "StartAt": "Start at",
+    "EndAt": "End at",
+    "PriceRange": "Price Range",
+    "Actions": "Actions",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Link": "Link"
+  },
+  "Room": {
+    "Name": "Name of the room",
+    "Mine": "My rooms",
+    "Create": "Create a new room",
+    "Update": "Edit room",
+    "Capacity": "Capacity",
+    "MaxCapacity": "Maximum capacity",
+    "Street": "Address",
+    "Rows": "Rows",
+    "NumberOfRows": "Number of rows",
+    "NumberOfColumns": "Number of columns",
+    "Columns": "Columns",
+    "Distance": "Distance between seats",
+    "SeatsSize": "Seat size (in cm)"
   },
   "Lang": {
     "En": "English",
@@ -28,7 +63,15 @@
     "Cat": "Catalan"
   },
   "Error": {
-    "Req": " is required"
+    "Required": "This field is required",
+    "Req": " is required",
+    "MoreThan60Char": "Cannot exceed 60 characters",
+    "InvalidRange": "Invalid range",
+    "InvalidEmail": "Invalid email"
+  },
+  "Confirmation": {
+    "Title": "Email sent!",
+    "Explanation": "Congratulations, now you will be redirected to our main page,\n    wait for your account to be verified during the next 2 days. Thanks for choosing SecurEvent!"
   }
 }
 

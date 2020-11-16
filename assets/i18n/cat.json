@@ -1,15 +1,15 @@
 {
   "Home": "Pàgina principal",
+  "Contact": "Contacta amb nosaltres",
   "Name": "Nom",
-  "Date": "Data",
-  "StartAt": "Comença a",
-  "EndAt": "Acaba a",
-  "PriceRange": "Rang de preus",
-  "Actions": "Accions",
+  "Details": "Detalls",
+  "Filter": "Filtrar",
+  "Save": "Guardar",
+  "Measures": "Mesures",
+  "Back": "Enrera",
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
-    "Contact": "Contacte",
     "Translate": "Traduïr",
     "Welcome": "Benvingut, "
   },
@@ -18,9 +18,44 @@
     "Password": "Contrasenya",
     "Contact": "Vols un compte?"
   },
+  "Application": {
+    "Title": "Formulari d'aplicació",
+    "Subtitle": "Omple el formulari per solicitar el serveis de SecurEvent",
+    "YourName": "El seu nom",
+    "CompanyName": "Nom de la seva empresa",
+    "Email": "El seu correu",
+    "PhoneNum": "Número de telèfon",
+    "Reason": "Els vostres objectius amb SecurEvent",
+    "Send": "Enviar"
+  },
   "Event": {
+    "Name": "Nom de l'esdeveniment",
     "Mine": "Els meus esdeveniments",
-    "Create": "Crear esdeveniment"
+    "Create": "Crear nou esdeveniment",
+    "Update": "Editar esdeveniment",
+    "Date": "Data",
+    "StartAt": "Comença a",
+    "EndAt": "Acaba a",
+    "PriceRange": "Rang de preus",
+    "Actions": "Accions",
+    "Minimum": "Mínim",
+    "Maximum": "Màxim",
+    "Link": "Enllaç"
+  },
+  "Room": {
+    "Name": "Nom de la sala",
+    "Mine": "Les meves sales",
+    "Create": "Crear nova sala",
+    "Room": "Editar sala",
+    "Capacity": "Capacitat",
+    "MaxCapacity": "Capacitat màxima",
+    "Street": "Adreça",
+    "Rows": "Files",
+    "NumberOfRows": "Nombre de files",
+    "NumberOfColumns": "Nombre de columnes",
+    "Columns": "Columnes",
+    "Distance": "Distància entre seients",
+    "SeatsSize": "Mida dels seients (en cm)"
   },
   "Lang": {
     "En": "Anglès",
@@ -28,6 +63,14 @@
     "Cat": "Català"
   },
   "Error": {
-    "Req": " és requerit"
+    "Required": "Aquest camp és requerit",
+    "Req": " és requerit",
+    "MoreThan60Char": "No pot excedir els 60 caràcters",
+    "InvalidRange": "Rang no vàlid",
+    "InvalidEmail": "correu no vàlid"
+  },
+  "Confirmation": {
+    "Title": "Correu enviat!",
+    "Explanation": "\nEnhorabona, ara se us redirigirà a la nostra pàgina principal,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
   }
 }
