@@ -53,11 +53,14 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Select the room</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let r of rooms" [value]="r.name">
+          <mat-select formControlName="id_room">
+            <mat-option *ngFor="let r of rooms" [value]="r._id">
               {{r.name}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="hasError('id_room', 'required')">
+            {{'Error.Required' | translate}}
+          </mat-error>
         </mat-form-field>
 
         <div>

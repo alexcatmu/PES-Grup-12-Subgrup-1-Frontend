@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MaterialModule} from '../material/material.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('SignupComponent', () => {
   let component: ApplicationFormComponent;
@@ -13,7 +14,7 @@ describe('SignupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, NoopAnimationsModule],
+      imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, NoopAnimationsModule, TranslateModule.forRoot()],
       declarations: [ ApplicationFormComponent ]
     })
     .compileComponents();
