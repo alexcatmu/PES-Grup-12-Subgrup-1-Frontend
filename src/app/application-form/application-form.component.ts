@@ -43,8 +43,8 @@ export class ApplicationFormComponent implements OnInit {
 
     this.formSent = true;
 
-    /*this.applyService.send(application).subscribe(() => { }, error => {
+    this.applyService.send(application).subscribe(() => { }, error => {
       console.error('Ha habido un error al hacer un apply', error);
-    });*/
+    });
   }
 }
