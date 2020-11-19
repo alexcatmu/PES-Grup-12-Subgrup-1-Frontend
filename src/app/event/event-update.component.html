@@ -89,7 +89,7 @@
         <div *ngFor="let m of measures" class="margin-bottom">
           <label>
             <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)" [checked]="isChecked">
-            {{m.name}}
+            {{m.name | translate }}
           </label>
         </div>
         <br>
