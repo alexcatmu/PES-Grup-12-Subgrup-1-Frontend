@@ -12,7 +12,10 @@ import {TranslateModule} from '@ngx-translate/core';
 import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [ApplicationFormComponent],
+    declarations: [ApplicationFormComponent],
+    exports: [
+        ApplicationFormComponent
+    ],
     imports: [
         CommonModule,
         ApplicationFormRoutingModule,
