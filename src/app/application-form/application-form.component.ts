@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import {ConfirmationDialogComponent} from '../shared/confirmation-dialog.component';
 import {ApplyService} from '../services/apply.service';
 import {Apply} from '../models/apply';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
@@ -14,8 +13,9 @@ import {Apply} from '../models/apply';
 export class ApplicationFormComponent implements OnInit {
 
   applicationForm: FormGroup;
+  formSent = false;
 
-  constructor(private fb: FormBuilder, private applyService: ApplyService, private dialog: MatDialog, private route: Router) {
+  constructor(private fb: FormBuilder, private applyService: ApplyService, private route: Router, private translate: TranslateService) {
     this.applicationForm = this.fb.group({
       name: new FormControl(null, [Validators.required]),
       company: new FormControl(null, [Validators.required]),
@@ -41,18 +41,10 @@ export class ApplicationFormComponent implements OnInit {
       text: value.description
     };
 
-    this.applyService.send(application).subscribe(() => { }, error => {
+    this.formSent = true;
+
+    /*this.applyService.send(application).subscribe(() => { }, error => {
       console.error('Ha habido un error al hacer un apply', error);
-    });
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.route.navigate([`/`]).then(() => console.log('redirect to home'));
-    });
+    });*/
   }
 }

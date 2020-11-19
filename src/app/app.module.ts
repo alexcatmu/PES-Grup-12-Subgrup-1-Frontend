@@ -14,9 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 
-export function HttpLoaderFactory(http: HttpClient){
+export function HttpTranslateLoader(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
@@ -39,12 +39,13 @@ export function HttpLoaderFactory(http: HttpClient){
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
+        useFactory: HttpTranslateLoader,
         deps: [HttpClient]
-      }
+      },
+      extend: true
     })
   ],
-  providers: [],
+  providers: [TranslateService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

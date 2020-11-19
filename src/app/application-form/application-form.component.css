@@ -14,3 +14,6 @@ mat-card-content{
   margin-right: 30px;
 }
 
+.note{
+  max-height: 100px;
+}

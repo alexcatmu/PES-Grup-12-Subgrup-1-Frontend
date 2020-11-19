@@ -74,7 +74,7 @@
   },
   "Confirmation": {
     "Title": "Email sent!",
-    "Explanation": "Congratulations, now you will be redirected to our main page,\n    wait for your account to be verified during the next 2 days. Thanks for choosing SecurEvent!"
+    "Explanation": "Congratulations, now you will recieve an email in the specified address confirming the registration,\n    wait for your account to be verified during the next 2 days. Thanks for choosing SecurEvent!"
   }
 }
 

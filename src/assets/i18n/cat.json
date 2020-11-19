@@ -74,6 +74,6 @@
   },
   "Confirmation": {
     "Title": "Correu enviat!",
-    "Explanation": "\nEnhorabona, ara se us redirigirà a la nostra pàgina principal,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
+    "Explanation": "\nEnhorabona, ara se us enviarà un correu a la direcció especificada confirmant l'ingrés,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
   }
 }
