@@ -11,7 +11,10 @@ import {MatSliderModule} from '@angular/material/slider';
 import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [ApplicationFormComponent],
+    declarations: [ApplicationFormComponent],
+    exports: [
+        ApplicationFormComponent
+    ],
     imports: [
         CommonModule,
         ApplicationFormRoutingModule,
