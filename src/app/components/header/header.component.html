@@ -10,15 +10,25 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#" style="color:white">{{'Home' | translate}}</a>
-      <a mat-list-item routerLink="/event" style="color:white; text-decoration: none;" (click)="sidenav.toggle()">
-        {{'Event.Mine' | translate}}
+      <div class="profile" fxLayout="column" fxLayoutAlign="center center">
+        <div>
+          <img class="circle" src="https://cdn.discordapp.com/attachments/702541508309680200/779053853088940072/22.jpeg" alt="logo">
+        </div>
+        <div class="username">
+          <span style="color:white">{{storageService?.getCurrentUser()?.username}}</span>
+        </div>
+      </div>
+      <a class="section" mat-list-item href="#">
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Home' | translate}}
       </a>
-      <a mat-list-item routerLink="/room" style="color:white; text-decoration: none;" (click)="sidenav.toggle()">
-        {{'Room.Mine' | translate}}
+      <a class="section" mat-list-item routerLink="/event" (click)="sidenav.toggle()">
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Event.Mine' | translate}}
       </a>
-      <a mat-list-item routerLink="/application-form" style="color:white; text-decoration: none;" (click)="sidenav.toggle()">
-        {{'Contact' | translate}}
+      <a class="section" mat-list-item routerLink="/room" (click)="sidenav.toggle()">
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Room.Mine' | translate}}
+      </a>
+      <a class="section" mat-list-item routerLink="/application-form" (click)="sidenav.toggle()">
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Contact' | translate}}
       </a>
 
     </mat-nav-list>
@@ -30,7 +40,7 @@
       </button>
 
       <a routerLink="/">
-        <img src="assets/logo.png" alt="logo" id="logo">
+        <img id="homeIcon" src="assets/logo.png" alt="logo">
       </a>
 
       <span class="spacer-for-right"></span>
@@ -40,7 +50,7 @@
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item [matMenuTriggerFor]="translate">
-          <mat-icon>translate</mat-icon>
+          <mat-icon style="color:#322d2d">translate</mat-icon>
           <span>{{'Header.Translate' | translate}}</span>
         </button>
       </mat-menu>
