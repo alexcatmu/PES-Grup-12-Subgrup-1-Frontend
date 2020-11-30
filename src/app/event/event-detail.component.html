@@ -23,7 +23,9 @@
 
                 <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Measures' | translate}}: {{event.measures}}</mat-list-item>
+                <mat-list-item>{{'Measures' | translate}}:
+                  {{event.measures[0] | translate }}, {{event.measures[1] | translate }}, {{event.measures[2] | translate }}
+                </mat-list-item>
                 <mat-divider></mat-divider>
 
                 <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>

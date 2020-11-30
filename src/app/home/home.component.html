@@ -1,7 +1,62 @@
-<div class="my-main-page-module">
-  <p>{{'Home' | translate}}</p>
-  <p *ngIf="!storageService.isAuthenticated()">You are not authenticated</p>
-  <p *ngIf="storageService.isAuthenticated()">Hello, {{storageService.getCurrentUser().username}}</p>
-  <p>hi!</p>
-</div>
+<div>
 
+  <div class="silder">
+    <div class="silder-content">
+      <h1>SecurEvent</h1>
+      <h3>Make Events Great Again</h3>
+    </div>
+  </div>
+  <div class="features">
+    <div class="row">
+      <div class="column">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">Espacios y salas</mat-icon>
+        <h3>Gestiona los espacios y salas donde se van a realizar tus eventos</h3>
+      </div>
+      <div class="column">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">Accesos</mat-icon>
+        <h3>Controlamos los accesos y horarios para evitar aglomeraciones </h3>
+      </div>
+      <div class="column">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">Medidas sanitarias</mat-icon>
+        <h3>En contacto con sanidad para aplicar la normativa sanitaria vigente</h3>
+      </div>
+    </div>
+  </div>
+  <div class="contents">
+    <div class="row">
+      <div class="column">
+        <img src="https://ideadrop.s3.eu-west-2.amazonaws.com/wp-content/uploads/2019/03/16124806/rsz_1digital-innovation-news-768x538.jpg">
+      </div>
+      <div class="column center-content">
+        <h3>Innovación constante
+        </h3>
+        <p>Nos mantenemos actualizados tanto en tecnología como en medidas sanitarias para ofrecer el mejor servicio
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column center-content">
+        <h3>Constante adaptación</h3>
+        <p>Estamos en un mundo y en un momento en constante evolución, nuestro sistema es capaz de adaptarse a
+          cualquier circunstancia en un tiempo record
+        </p>
+      </div>
+      <div class="column">
+        <img src="http://consultoriadental.com/wp-content/uploads/2018/10/cambio-sector-dontologico-770x400.jpg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="https://image.freepik.com/vetores-gratis/conceito-de-atendimento-ao-cliente-de-alta-qualidade_18591-20439.jpg">
+      </div>
+      <div class="column center-content">
+        <h3>Servicio de calidad
+        </h3>
+        <p>Ofrecemos un servicio personalizado y a medida para cada empresa, teniendo en cuenta tanto las necesidades
+          de la empresa como la de usuarios que usen nuestro servicio
+        </p>
+      </div>
+    </div>
+  </div>
+    <app-signup></app-signup>
+</div>

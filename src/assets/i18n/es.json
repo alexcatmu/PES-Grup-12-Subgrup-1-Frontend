@@ -7,6 +7,9 @@
   "Save": "Guardar",
   "Measures": "Medidas",
   "Back": "Atrás",
+  "Desinfecció de mans": "Desinfeccion de manos",
+  "Ús de mascareta": "Uso de mascarilla",
+  "Distància de seguretat": "Distáncia de seguridad",
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
@@ -71,6 +74,6 @@
   },
   "Confirmation": {
     "Title": "Correo enviado!",
-    "Explanation": "\nFelicidades, ahora será redirigido a nuestra página principal,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
+    "Explanation": "\nFelicidades, ahora se le enviará un correo a la dirección especificada confirmando el ingreso,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
   }
 }

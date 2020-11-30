@@ -1,4 +1,4 @@
-img {
+#homeIcon {
   margin-right: 30px;
   margin-left: 15px;
   margin-top: 0.45em;
@@ -6,8 +6,8 @@ img {
   max-width: 180px;
 }
 
-span {
-  font-family: "Courier New", serif;
+img {
+  max-height: 120px;
 }
 
 .mat-toolbar.mat-primary {
@@ -38,4 +38,34 @@ span {
 
 .mat-icon {
   color: white;
+}
+
+.profile{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.circle {
+  border-radius: 50%;
+}
+
+.username{
+  font-family: "Lucida Console", Monaco, monospace;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.section{
+  color:white;
+  text-decoration: none;
+  margin-bottom: 5px
+}
+
+.section:hover{
+  box-shadow: 0 0 15px rgba(0,0,0,0.9);
+  transform: scale(1.1, 1.1);
+}
+
+.menuA {
+  margin-right:5px;
+  font-weight: bolder;
 }
