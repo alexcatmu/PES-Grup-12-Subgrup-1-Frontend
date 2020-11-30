@@ -28,5 +28,4 @@ jobs:
           npm run-script test-headless
       - name: e2e Tests
         run: |
-          sudo apt-get install google-chrome-stable
           npm run e2e
