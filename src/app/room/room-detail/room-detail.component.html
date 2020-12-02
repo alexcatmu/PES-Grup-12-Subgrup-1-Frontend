@@ -28,8 +28,11 @@
 
         <mat-list-item>{{'Room.SeatsSize' | translate}}: {{room.seats_size}}</mat-list-item>
         <mat-divider></mat-divider>
-
-        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room" > {{'Back' | translate}} </button>
+        <mat-card-actions>
+          <button mat-stroked-button color="accent" class="btn-block"
+                  routerLink="/room"> {{'Back' | translate}} </button>
+          <button mat-raised-button color="primary" routerLink="/room/{{roomId}}/update">{{'Edit' | translate}}</button>
+        </mat-card-actions>
 
       </mat-list>
     </div>

@@ -5,6 +5,7 @@
   "Details": "Details",
   "Filter": "Filter",
   "Save": "Save",
+  "Edit": "Edit",
   "Measures": "Measures",
   "Back": "Back",
   "Desinfecció de mans": "Hand disinfection",
@@ -46,6 +47,7 @@
     "Link": "Link"
   },
   "Room": {
+    "Self": "Room",
     "Name": "Name of the room",
     "Mine": "My rooms",
     "Create": "Create a new room",

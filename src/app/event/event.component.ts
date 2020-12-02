@@ -14,7 +14,7 @@ import {StorageService} from '../services/storage.service';
 })
 export class EventComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'date', 'hourIni', 'hourEnd', 'price_range', 'actions'];
+  public displayedColumns = ['name', 'room', 'date', 'hourIni', 'hourEnd', 'price_range', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];

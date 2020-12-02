@@ -5,6 +5,7 @@
   "Details": "Detalles",
   "Filter": "Filtrar",
   "Save": "Guardar",
+  "Edit": "Editar",
   "Measures": "Medidas",
   "Back": "Atrás",
   "Desinfecció de mans": "Desinfeccion de manos",
@@ -46,6 +47,7 @@
     "Link": "Enlace"
   },
   "Room": {
+    "Self": "Sala",
     "Name": "Nombre de la sala",
     "Mine": "Mis salas",
     "Create": "Crear nueva sala",
