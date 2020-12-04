@@ -5,6 +5,8 @@
   "Details": "Detalls",
   "Filter": "Filtrar",
   "Save": "Guardar",
+  "Edit": "Editar",
+  "Delete": "Eliminar",
   "Measures": "Mesures",
   "Back": "Enrera",
   "Desinfecció de mans": "Desinfecció de mans",
@@ -46,6 +48,7 @@
     "Link": "Enllaç"
   },
   "Room": {
+    "Self": "Sala",
     "Name": "Nom de la sala",
     "Mine": "Les meves sales",
     "Create": "Crear nova sala",
@@ -59,6 +62,10 @@
     "Columns": "Columnes",
     "Distance": "Distància entre seients",
     "SeatsSize": "Mida dels seients (en cm)"
+  },
+  "Seats": {
+    "Occupation": "Ocupació",
+    "Status": "Estat"
   },
   "Lang": {
     "En": "Anglès",

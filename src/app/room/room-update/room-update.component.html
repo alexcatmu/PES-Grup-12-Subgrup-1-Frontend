@@ -4,7 +4,8 @@
       {{titleForm | translate}}
     </mat-card-title>
 
-    <form [formGroup]="formRoom" autocomplete="off" novalidate (ngSubmit)="onSubmit(formRoom.value)" fxLayout="column wrap"
+    <form [formGroup]="formRoom" autocomplete="off" novalidate (ngSubmit)="onSubmit(formRoom.value)"
+          fxLayout="column wrap"
           fxLayoutAlign="center center" fxLayoutGap="10px">
       <mat-card-content>
 
@@ -28,7 +29,8 @@
 
         <mat-form-field appearance="fill">
           <mat-label>{{'Room.Capacity' | translate}}</mat-label>
-          <label for="capacity"></label><input matInput type="number" placeholder="{{'Room.MaxCapacity' | translate}}" formControlName="capacity" id="capacity">
+          <label for="capacity"></label><input matInput type="number" placeholder="{{'Room.MaxCapacity' | translate}}"
+                                               formControlName="capacity" id="capacity">
           <mat-error *ngIf="hasError('capacity', 'required')">
             {{'Error.Required' | translate}}
           </mat-error>
@@ -37,7 +39,8 @@
 
         <mat-form-field appearance="fill">
           <mat-label>{{'Room.Rows' | translate}}</mat-label>
-          <label for="rows"></label><input matInput type="number" placeholder="{{'Room.NumberOfRows' | translate}}" formControlName="rows" id="rows">
+          <label for="rows"></label><input matInput type="number" placeholder="{{'Room.NumberOfRows' | translate}}"
+                                           formControlName="rows" id="rows">
           <mat-error *ngIf="hasError('rows', 'required')">
             {{'Error.Required' | translate}}
           </mat-error>
@@ -45,15 +48,21 @@
 
         <mat-form-field appearance="fill" class="form-40-input">
           <mat-label>{{'Room.Columns' | translate}}</mat-label>
-          <label for="columns"></label><input matInput type="number" placeholder="{{'Room.NumberOfColumns' | translate}}" formControlName="columns" id="columns">
+          <label for="columns"></label><input matInput type="number"
+                                              placeholder="{{'Room.NumberOfColumns' | translate}}"
+                                              formControlName="columns" id="columns">
           <mat-error *ngIf="hasError('columns', 'required')">
             {{'Error.Required' | translate}}
           </mat-error>
-        </mat-form-field><tr></tr>
+        </mat-form-field>
+        <tr></tr>
 
         <mat-form-field appearance="fill" class="form-40-input">
           <mat-label>{{'Room.Distance' | translate}}</mat-label>
-          <label for="distance_between_seats"></label><input matInput type="number" placeholder="{{ 'Room.Distance' | translate }}" formControlName="distance_between_seats" id="distance_between_seats">
+          <label for="distance_between_seats"></label><input matInput type="number"
+                                                             placeholder="{{ 'Room.Distance' | translate }}"
+                                                             formControlName="distance_between_seats"
+                                                             id="distance_between_seats">
           <mat-error *ngIf="hasError('distance_between_seats', 'required')">
             {{'Error.Required' | translate}}
           </mat-error>
@@ -69,7 +78,7 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room" > {{'Back' | translate}} </button>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/room"> {{'Back' | translate}} </button>
         <button mat-raised-button color="primary" [disabled]="!formRoom.valid">{{'Save' | translate}}</button>
       </mat-card-actions>
     </form>

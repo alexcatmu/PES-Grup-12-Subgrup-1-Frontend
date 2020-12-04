@@ -1,7 +1,7 @@
 mat-card{
-  opacity: 0.95;
+  opacity: 0.96;
   min-width: 500px;
-  max-height: 560px;
+  max-height: 570px;
 }
 
 mat-card-title{
@@ -19,8 +19,11 @@ mat-divider{
 }
 
 .btn-block{
-  padding: 0 20px;
-  margin-top: 35px;
-  margin-left: 43%;
+  top: 30px;
+  left: 25px;
 }
 
+.mat-raised-button{
+  top: 30px;
+  left: 340px;
+}

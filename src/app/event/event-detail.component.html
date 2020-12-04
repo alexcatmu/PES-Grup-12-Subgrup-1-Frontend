@@ -1,42 +1,48 @@
 <section fxLayout="row wrap" fxLayoutAlign="center" class="my-main-page-module">
-    <mat-card fxFlex="530px" fxFlex.xs="100%">
-        <div *ngIf="event">
-            <mat-list>
-                <mat-card-title fxLayoutAlign="center center">{{event.name | uppercase}}</mat-card-title>
-                <mat-card-subtitle fxLayoutAlign="center center">{{'Details' | translate}}</mat-card-subtitle>
+  <mat-card fxFlex="530px" fxFlex.xs="100%">
+    <div *ngIf="event">
+      <mat-list>
+        <mat-card-title fxLayoutAlign="center center">{{event.name | uppercase}}</mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center center">{{'Details' | translate}}</mat-card-subtitle>
 
-                <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Event.Name' | translate}}: {{event.name}}</mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>{{'Event.Name' | translate}}: {{event.name}}</mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Event.Date' | translate}}: {{event.date}}</mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>
+          {{'Room.Self' | translate}}: <a style="margin-left: 5px" href="/room/{{event.id_room}}/details">{{event.id_room.split('_')[0]}}</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Event.StartAt' | translate}}: {{event.hourIni}}</mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>{{'Event.Date' | translate}}: {{event.date}}</mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Event.EndAt' | translate}}: {{event.hourEnd}}</mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>{{'Event.StartAt' | translate}}: {{event.hourIni}}</mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Event.PriceRange' | translate}}: {{event.minPrice}} - {{event.maxPrice}}</mat-list-item>
+        <mat-list-item>{{'Event.EndAt' | translate}}: {{event.hourEnd}}</mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-divider></mat-divider>
+        <mat-list-item>{{'Event.PriceRange' | translate}}: {{event.minPrice}} - {{event.maxPrice}}</mat-list-item>
 
-                <mat-list-item>{{'Measures' | translate}}:
-                  {{event.measures[0] | translate }}, {{event.measures[1] | translate }}, {{event.measures[2] | translate }}
-                </mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>{{'Measures' | translate}}:
+          {{event.measures[0] | translate }}, {{event.measures[1] | translate }}, {{event.measures[2] | translate }}
+        </mat-list-item>
+        <mat-divider></mat-divider>
 
-                <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
-                <mat-divider></mat-divider>
+        <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
+        <mat-divider></mat-divider>
 
-              <button mat-stroked-button color="accent" class="btn-block" routerLink="/event" > {{'Back' | translate}} </button>
+        <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
+        <mat-divider></mat-divider>
 
-            </mat-list>
-        </div>
-    </mat-card>
+        <button mat-stroked-button color="accent" class="btn-block"
+                routerLink="/event"> {{'Back' | translate}} </button>
+
+      </mat-list>
+    </div>
+  </mat-card>
 </section>
