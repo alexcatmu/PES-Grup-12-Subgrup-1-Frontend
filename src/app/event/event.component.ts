@@ -14,7 +14,7 @@ import {StorageService} from '../services/storage.service';
 })
 export class EventComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'room', 'date', 'hourIni', 'hourEnd', 'price_range', 'actions'];
+  public displayedColumns = ['name', 'room', 'date', 'hourIni', 'hourEnd', 'occupation', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];
@@ -69,6 +69,10 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   public redirectToUpdate = (id: any) => {
     this.router.navigate([`/event/${id}/update`]).then(() => console.log('redirect to event update'));
+  }
+
+  public redirectToStatus = (id: any) => {
+    this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
   }
 
 }

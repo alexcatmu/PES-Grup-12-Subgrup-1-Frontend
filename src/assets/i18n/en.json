@@ -6,6 +6,7 @@
   "Filter": "Filter",
   "Save": "Save",
   "Edit": "Edit",
+  "Delete": "Delete",
   "Measures": "Measures",
   "Back": "Back",
   "Desinfecció de mans": "Hand disinfection",
@@ -61,6 +62,10 @@
     "Columns": "Columns",
     "Distance": "Distance between seats",
     "SeatsSize": "Seat size (in cm)"
+  },
+  "Seats": {
+    "Occupation": "Occupation",
+    "Status": "Status"
   },
   "Lang": {
     "En": "English",
