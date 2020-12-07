@@ -14,6 +14,7 @@ import {SharedModule} from '../shared/shared.module';
 import {MatSliderModule} from '@angular/material/slider';
 import {TranslateModule} from '@ngx-translate/core';
 import { EventStatusComponent } from './event-status/event-status.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { EventStatusComponent } from './event-status/event-status.component';
         SharedModule,
         MatSliderModule,
         TranslateModule,
-        FormsModule
+        FormsModule,
+        MatGridListModule
     ],
   providers: [DatePipe]
 })

@@ -1,37 +1,21 @@
 <div class="my-main-page-module">
-  <mat-card fxLayoutAlign="center center" fxFlex.xs="100%">
-    <div class="mid">
-      <div id="tablabutacas">
-        <table>
-          <tbody>
-          <tr data-rowid="0">
-            <td data-colid="0" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="1" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="2" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="3" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="4" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="5" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="6" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="7" data-fila="0"><span>&nbsp;</span></td>
-            <td data-colid="8" data-fila="0"><span>&nbsp;</span></td>
-          </tr>
-          <tr data-rowid="1">
-            <th class="FirstCol OtherRow"><span>14</span></th>
-            <td class="butaca_covid19" data-attr="0" data-colid="36" data-index="30" data-scode="1" data-butaca="1"
-                data-fila="14"><span data-butaca="1"></span></td>
-            <td data-colid="37" data-fila="0"><span>&nbsp;</span></td>
-            <th class="LastCol"><span>&nbsp;</span></th>
-          </tr>
-          <tr data-rowid="2">
-            <th class="FirstCol OtherRow"><span>13</span></th>
-            <td class="butaca_2 disponible" data-attr="0" data-colid="37" data-index="57" data-scode="1" data-butaca="1"
-                data-fila="13"><span data-butaca="1"></span></td>
-            <th class="LastCol"><span>&nbsp;</span></th>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+      <mat-card-title>{{event.name | uppercase}}</mat-card-title>
+      <mat-card-subtitle fxLayoutAlign="center center">{{'Seats.Occupation' | translate}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="mid">
+      <table>
+        <tbody>
+        <tr *ngFor="let x of seats; let i = index">
+          {{i}}:
+          <td *ngFor="let y of x">
+            <mat-icon *ngIf="y" style="color: darkgreen">event_seat</mat-icon>
+            <mat-icon *ngIf="!y" style="color: darkred">event_seat</mat-icon>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
   </mat-card>
 </div>
-

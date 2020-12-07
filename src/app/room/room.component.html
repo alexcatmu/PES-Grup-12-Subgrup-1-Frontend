@@ -40,6 +40,9 @@
           <button mat-icon-button color="warn" (click)="delete(element._id)">
             <mat-icon class="mat-18" title="{{'Delete' | translate}}">delete</mat-icon>
           </button>
+          <button mat-icon-button color="black" (click)="redirectToStatus(element._id)">
+            <mat-icon title="{{'Delete' | translate}}">event</mat-icon>
+          </button>
         </td>
       </ng-container>
 

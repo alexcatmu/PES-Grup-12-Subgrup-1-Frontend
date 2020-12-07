@@ -36,6 +36,7 @@
   "Event": {
     "Name": "Nom de l'esdeveniment",
     "Mine": "Els meus esdeveniments",
+    "Of": "Esdeveniments de",
     "Create": "Crear nou esdeveniment",
     "Update": "Editar esdeveniment",
     "Date": "Data",

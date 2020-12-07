@@ -21,7 +21,7 @@ export class EventComponent implements OnInit, AfterViewInit {
   selectedEvent: Event;
   public events: Event[];
   public eventCapacity: EventCapacity[];
-  public dataSource = new MatTableDataSource<EventCapacity>();
+  public dataSource = new MatTableDataSource<Event>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -32,8 +32,8 @@ export class EventComponent implements OnInit, AfterViewInit {
               private router: Router) {
   }
 
-  ngOnInit(): void {
-    this.fetchData();
+  async ngOnInit(): Promise<void> {
+    await this.fetchData();
   }
 
   ngAfterViewInit(): void {
@@ -45,7 +45,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.eventService.getAll().subscribe(events => {
       this.eventCapacity = [];
       this.events = events;
-      for (const entry of this.events) {
+      /*for (const entry of this.events) {
         let cap: number;
         let aux: EventCapacity;
         this.roomService.get(entry.id_room).subscribe((room) => {
@@ -53,12 +53,12 @@ export class EventComponent implements OnInit, AfterViewInit {
           aux = {event: entry, capacity: cap};
           this.eventCapacity.push(aux);
         });
-      }
-      this.dataSource.data = this.eventCapacity;
+      }*/
+      this.dataSource.data = this.events;
     }, error => {
       console.error('Ha habido un error al hacer get de eventos', error);
     });
-    //TODO: My events no mostra els events fins fer un sort inutil
+    // TODO: My events no mostra els events fins fer un sort inutil
   }
 
   delete(id: string): void {

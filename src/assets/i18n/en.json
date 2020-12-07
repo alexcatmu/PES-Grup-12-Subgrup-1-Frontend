@@ -36,6 +36,7 @@
   "Event": {
     "Name": "Name of the event",
     "Mine": "My events",
+    "Of": "Events of",
     "Create": "Create new event",
     "Update": "Edit event",
     "Date": "Date",

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {StorageService} from './storage.service';
 import {Observable} from 'rxjs';
+import {Event} from '../models/event';
 import {Room} from '../models/room';
 
 @Injectable({
@@ -13,7 +14,9 @@ export class RoomService {
   headers = new HttpHeaders({
     Authorization: 'Token ' + this.storageService?.getCurrentSession()?.token,
   });
-  constructor(private http: HttpClient, private storageService: StorageService) { }
+
+  constructor(private http: HttpClient, private storageService: StorageService) {
+  }
 
   getAll(): Observable<Room[]> {
     return this.http.get<Room[]>(this.baseURL, {headers: this.headers});
@@ -30,5 +33,11 @@ export class RoomService {
 
   delete(id: string): Observable<Room> {
     return this.http.delete<Room>(this.baseURL + id, {headers: this.headers});
+  }
+
+  getEvents(id: string): Observable<Event[]> {
+    const url = this.baseURL + id + '/events';
+    console.log(url);
+    return this.http.get<Event[]>(url, {headers: this.headers});
   }
 }
