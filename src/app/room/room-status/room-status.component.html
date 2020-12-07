@@ -6,16 +6,15 @@
 
     <div fxLayout fxLayout.lt-md="column wrap" fxLayoutAlign="center center" fxLayoutGap.gt-sm="250px"
          fxLayoutGap.lt-md="20px">
-      <mat-form-field fxFlex="40%">
+      <mat-form-field fxFlex="50%">
         <label>
           <input matInput type="text" (keyup)="doFilter($event)" placeholder="{{'Filter' | translate}}">
         </label>
       </mat-form-field>
-      <a routerLink="new" mat-button color="primary" style="font-size: 15px">{{'Event.Create' | translate}}</a>
     </div>
 
     <table id="my-table-page-module-data-source" mat-table [dataSource]="dataSource"  matSort matSortStart="desc"
-           aria-describedby="event">
+           aria-describedby="date">
       <ng-container matColumnDef="name">
         <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Name' | translate}}</th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
