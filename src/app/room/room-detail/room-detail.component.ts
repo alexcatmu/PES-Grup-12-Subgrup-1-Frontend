@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Room} from '../../models/room';
 import {RoomService} from '../../services/room.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-room-detail',
@@ -11,7 +12,10 @@ import {RoomService} from '../../services/room.service';
 export class RoomDetailComponent implements OnInit {
   roomId: string;
   room: Room;
-  constructor(private roomService: RoomService, protected activatedRoute: ActivatedRoute) { }
+
+  constructor(private roomService: RoomService, protected activatedRoute: ActivatedRoute,
+              private _location: Location) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -20,6 +24,10 @@ export class RoomDetailComponent implements OnInit {
         this.room = room[0];
       });
     });
+  }
+
+  goBack(): void {
+    this._location.back();
   }
 
 }

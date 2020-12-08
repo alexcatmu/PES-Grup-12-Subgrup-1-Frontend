@@ -104,7 +104,8 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-stroked-button color="accent" class="btn-block" routerLink="/event" > {{'Back' | translate}} </button>
+        <button mat-stroked-button color="accent" class="btn-block"
+                (click)="goBack()"> {{'Back' | translate}} </button>
         <button mat-raised-button color="primary" [disabled]="!formEvent.valid">{{'Save' | translate}}</button>
       </mat-card-actions>
     </form>

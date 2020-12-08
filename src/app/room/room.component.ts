@@ -43,12 +43,20 @@ export class RoomComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.roomService.delete(id).subscribe(() => {
+    this.roomService.getEvents(id).subscribe(events => {
+      if (events.length === 0) {
+        this.roomService.delete(id).subscribe(() => {
 
-      console.log('Evento con id: ' + id + ' borrado');
-      this.fetchData();
+          console.log('Evento con id: ' + id + ' borrado');
+          this.fetchData();
+        }, error => {
+          console.error('Ha habido un error al hacer delete del evento', error);
+        });
+      } else {
+        alert("¡No se puede borrar esta sala!");
+      }
     }, error => {
-      console.error('Ha habido un error al hacer delete del evento', error);
+      console.error('Ha habido un error al hacer get de eventos de una sala', error);
     });
   }
 

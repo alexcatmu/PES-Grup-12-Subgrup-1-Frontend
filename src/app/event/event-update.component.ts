@@ -4,7 +4,7 @@ import {EventService} from '../services/event.service';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../models/event';
 import {Room} from '../models/room';
-import {DatePipe} from '@angular/common';
+import {DatePipe, Location} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
 import {StorageService} from '../services/storage.service';
@@ -37,7 +37,8 @@ export class EventUpdateComponent implements OnInit {
     private fb: FormBuilder,
     private storageService: StorageService,
     private measuresService: MeasuresService,
-    private roomService: RoomService) {
+    private roomService: RoomService,
+    private _location: Location) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
@@ -101,6 +102,10 @@ export class EventUpdateComponent implements OnInit {
 
   public hasError = (controlName: string, errorName: string) => {
     return this.formEvent.controls[controlName].hasError(errorName);
+  }
+
+  goBack(): void {
+    this._location.back();
   }
 
   onCheckChange(event): void {

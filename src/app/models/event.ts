@@ -9,6 +9,8 @@ export interface Event {
   measures?: Array<string>;
   ratings?: number;
   link?: string;
+  seats?: string;
   id_manager: number;
   id_room: string;
+  matrix?: string[][];
 }

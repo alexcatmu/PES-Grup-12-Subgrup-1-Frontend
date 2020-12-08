@@ -28,7 +28,7 @@
 
         <mat-divider></mat-divider>
 
-        <mat-list-item>{{'Seats.Occupation' | translate }}: 13/{{capacity}} </mat-list-item>
+        <mat-list-item>{{'Seats.Occupation' | translate }}: {{occupation}}/{{capacity}} </mat-list-item>
 
         <mat-divider></mat-divider>
 
@@ -44,7 +44,7 @@
         <mat-divider></mat-divider>
 
         <button mat-stroked-button color="accent" class="btn-block"
-                routerLink="/event"> {{'Back' | translate}} </button>
+                (click)="goBack()"> {{'Back' | translate}} </button>
 
       </mat-list>
     </div>

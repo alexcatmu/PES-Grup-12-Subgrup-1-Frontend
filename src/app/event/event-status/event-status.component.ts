@@ -14,21 +14,18 @@ export class EventStatusComponent implements OnInit {
   eventId: string;
   event: Event;
   capacity: number;
-  seats: boolean[][];
+  seats: string[][];
 
   constructor(private eventService: EventService, private roomService: RoomService,
               protected activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.seats = [[true, false, false, true, false, false, true, true, false], [false, true, false, true, true, true, false, true, false],
-      [true, false, true, false, true, true, false, true, true], [true, false, false, true, true, false, true, true, false],
-      [true, false, false, true, false, true, false, false, true], [false, true, false, true, true, false, true, true, false],
-      [true, false, false, true, false, true, false, false, true], [false, true, false, true, true, false, true, true, false]];
     this.activatedRoute.params.subscribe((params) => {
       this.eventId = params.id;
       this.eventService.get(this.eventId).subscribe((event) => {
-        this.event = event[0];
+        this.event = event;
+        this.seats = this.event.matrix;
         this.roomService.get(this.event.id_room).subscribe((room) => {
           this.capacity = room[0].capacity;
         });
