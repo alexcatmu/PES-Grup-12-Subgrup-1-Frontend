@@ -44,7 +44,7 @@
 
       <ng-container matColumnDef="occupation">
         <th id="occupation" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Seats.Occupation' | translate}}</th>
-        <td mat-cell *matCellDef="let element"> 13/66</td>
+        <td mat-cell *matCellDef="let element"> {{element.occupation}}/{{element.capacity}}</td>
       </ng-container>
 
       <ng-container matColumnDef="actions">

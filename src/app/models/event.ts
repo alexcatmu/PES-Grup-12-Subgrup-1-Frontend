@@ -13,4 +13,6 @@ export interface Event {
   id_manager: number;
   id_room: string;
   matrix?: string[][];
+  occupation?: number;
+  capacity?: number;
 }

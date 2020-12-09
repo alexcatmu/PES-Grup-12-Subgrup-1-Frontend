@@ -43,7 +43,12 @@ export class RoomStatusComponent implements OnInit, AfterViewInit {
       this.roomId = params.id;
       this.roomService.getEvents(this.roomId).subscribe(events => {
         this.events = events;
-        console.log(this.events);
+        let cap: number;
+        for (const entry of this.events){
+          cap = ((entry.seats.split('\t').length - 1) + (entry.seats.split('\n').length - 1)) + 1;
+          entry.occupation = cap - (entry.seats.split('T').length - 1);
+          entry.capacity = cap;
+        }
         this.dataSource.data = this.events;
       }, error => {
         console.error('Ha habido un error al hacer get de eventos de una sala', error);

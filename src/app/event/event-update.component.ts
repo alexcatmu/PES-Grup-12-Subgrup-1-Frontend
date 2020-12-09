@@ -27,7 +27,9 @@ export class EventUpdateComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();
   measures: Measure[];
   isChecked = false;
+  update = false;
   rooms: Room[];
+  eventToUpdate: Event;
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -64,8 +66,10 @@ export class EventUpdateComponent implements OnInit {
         this.measures = measures;
       });
       if (this.eventId) {
+        this.update = true;
         this.eventService.get(this.eventId).subscribe((event) => {
-          event = event[0];
+          this.eventToUpdate = event;
+          console.log(event);
           this.updateForm(event);
           this.titleForm = 'Event.Update';
         });
@@ -92,12 +96,24 @@ export class EventUpdateComponent implements OnInit {
       id_manager: this.storageService.getCurrentUser().id,
       id_room: event.id_room
     };
-
-    this.eventService.create(this.event).subscribe(() => {
-      this.route.navigate(['/event']).then(() => console.log('Go to event'));
-    }, error => {
-      console.error('Ha habido un error al hacer create de evento', error);
-    });
+    if (this.eventId){
+      this.event._id = this.eventToUpdate._id;
+      this.event.seats = this.eventToUpdate.seats;
+      this.event.measures = this.eventToUpdate.measures;
+      this.event.matrix = this.eventToUpdate.matrix;
+      this.eventService.update(this.eventId, event).subscribe(() => {
+        this.route.navigate(['/event']).then(() => console.log('Go to event'));
+      }, error => {
+        console.error('Ha habido un error al hacer update de evento', error);
+      });
+    }
+    else {
+      this.eventService.create(this.event).subscribe(() => {
+        this.route.navigate(['/event']).then(() => console.log('Go to event'));
+      }, error => {
+        console.error('Ha habido un error al hacer create de evento', error);
+      });
+    }
   }
 
   public hasError = (controlName: string, errorName: string) => {
