@@ -101,7 +101,7 @@ export class EventUpdateComponent implements OnInit {
       this.event.seats = this.eventToUpdate.seats;
       this.event.measures = this.eventToUpdate.measures;
       this.event.matrix = this.eventToUpdate.matrix;
-      this.eventService.update(this.eventId, event).subscribe(() => {
+      this.eventService.update(this.eventId, this.event).subscribe(() => {
         this.route.navigate(['/event']).then(() => console.log('Go to event'));
       }, error => {
         console.error('Ha habido un error al hacer update de evento', error);
