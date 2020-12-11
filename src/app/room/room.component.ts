@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit, AfterViewInit {
-  public displayedColumns = ['name', 'capacity', 'street', 'actions'];
+  public displayedColumns = ['name', 'capacity', 'street', 'actions', 'viewEvents'];
 
   selectedRoom: Room;
   public rooms: Room[];
