@@ -53,7 +53,6 @@ export class RoomComponent implements OnInit, AfterViewInit {
           console.error('Ha habido un error al hacer delete del evento', error);
         });
       } else {
-        alert("¡No se puede borrar esta sala!");
       }
     }, error => {
       console.error('Ha habido un error al hacer get de eventos de una sala', error);
