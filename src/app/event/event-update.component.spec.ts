@@ -1,5 +1,5 @@
 import {ReactiveFormsModule, ValidationErrors} from '@angular/forms';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, inject, TestBed} from '@angular/core/testing';
 import { EventUpdateComponent } from './event-update.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
@@ -8,10 +8,16 @@ import { DatePipe } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import {MaterialModule} from '../material/material.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {of} from 'rxjs';
+import {RoomService} from '../services/room.service';
+import {Room} from '../models/room';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('Update: Working', () => {
     let eventUpdate: EventUpdateComponent;
+    let roomService: RoomService;
     let fixture: ComponentFixture<EventUpdateComponent>;
+
     const fakeActivatedRoute = {
         snapshot: { data: { } }
       } as ActivatedRoute;
@@ -26,22 +32,50 @@ describe('Update: Working', () => {
 
         // refine the test module by declaring the test component
         TestBed.configureTestingModule({
-            imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, TranslateModule.forRoot()],
+            imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, TranslateModule.forRoot(),
+              BrowserAnimationsModule],
             declarations: [EventUpdateComponent],
-            providers: [ {provide: ActivatedRoute, useValue: fakeActivatedRoute}, {provide: DatePipe, useValue: fakeDatePipe},
-                         EventService ],
+            providers: [ {provide: DatePipe, useValue: fakeDatePipe},
+                         EventService, RoomService, {
+                provide: ActivatedRoute,
+                useValue: { // Mock
+                  params: of(
+                    {
+                      id: 'Presentacio PES_2021-01-17_12:02'
+                    }
+                  )
+                }
+              } ],
         }).compileComponents();
-
-        // create component and test fixture
-        fixture = TestBed.createComponent(EventUpdateComponent);
-
-        // get test component from the fixture
-        eventUpdate = fixture.componentInstance;
     });
+
+    beforeEach(inject([RoomService], s => {
+      roomService = s;
+      fixture = TestBed.createComponent(EventUpdateComponent);
+      eventUpdate = fixture.componentInstance;
+      fixture.detectChanges();
+    }));
 
     afterEach(() => {
         eventUpdate = null;
     });
+
+    it('should create', () => {
+      expect(eventUpdate).toBeTruthy();
+    });
+
+    it('should call getAll and return list of rooms', (() => {
+      const response: Room[] = [];
+
+      spyOn(roomService, 'getAll').and.returnValue(of(response));
+
+      eventUpdate.ngOnInit();
+
+      fixture.detectChanges();
+
+      // @ts-ignore
+      expect(eventUpdate.rooms).toEqual(response);
+    }));
 
     it('form invalid when empty', () => {
         expect(eventUpdate.formEvent.valid).toBeFalsy();
