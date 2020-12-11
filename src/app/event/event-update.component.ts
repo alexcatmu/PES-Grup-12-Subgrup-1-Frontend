@@ -4,7 +4,7 @@ import {EventService} from '../services/event.service';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../models/event';
 import {Room} from '../models/room';
-import {DatePipe} from '@angular/common';
+import {DatePipe, Location} from '@angular/common';
 import {PriceRangeValid} from '../shared/price-range-valid.directive';
 import {CrossFieldErrorMatcher} from '../shared/cross-field-error-matcher.directive';
 import {StorageService} from '../services/storage.service';
@@ -27,7 +27,9 @@ export class EventUpdateComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();
   measures: Measure[];
   isChecked = false;
+  update = false;
   rooms: Room[];
+  eventToUpdate: Event;
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -37,7 +39,8 @@ export class EventUpdateComponent implements OnInit {
     private fb: FormBuilder,
     private storageService: StorageService,
     private measuresService: MeasuresService,
-    private roomService: RoomService) {
+    private roomService: RoomService,
+    private _location: Location) {
 
     this.formEvent = this.fb.group({
       name: new FormControl('', Validators.compose([Validators.required, Validators.maxLength(60)])),
@@ -63,8 +66,10 @@ export class EventUpdateComponent implements OnInit {
         this.measures = measures;
       });
       if (this.eventId) {
+        this.update = true;
         this.eventService.get(this.eventId).subscribe((event) => {
-          event = event[0];
+          this.eventToUpdate = event;
+          console.log(event);
           this.updateForm(event);
           this.titleForm = 'Event.Update';
         });
@@ -91,16 +96,32 @@ export class EventUpdateComponent implements OnInit {
       id_manager: this.storageService.getCurrentUser().id,
       id_room: event.id_room
     };
-
-    this.eventService.create(this.event).subscribe(() => {
-      this.route.navigate(['/event']).then(() => console.log('Go to event'));
-    }, error => {
-      console.error('Ha habido un error al hacer create de evento', error);
-    });
+    if (this.eventId){
+      this.event._id = this.eventToUpdate._id;
+      this.event.seats = this.eventToUpdate.seats;
+      this.event.measures = this.eventToUpdate.measures;
+      this.event.matrix = this.eventToUpdate.matrix;
+      this.eventService.update(this.eventId, this.event).subscribe(() => {
+        this.route.navigate(['/event']).then(() => console.log('Go to event'));
+      }, error => {
+        console.error('Ha habido un error al hacer update de evento', error);
+      });
+    }
+    else {
+      this.eventService.create(this.event).subscribe(() => {
+        this.route.navigate(['/event']).then(() => console.log('Go to event'));
+      }, error => {
+        console.error('Ha habido un error al hacer create de evento', error);
+      });
+    }
   }
 
   public hasError = (controlName: string, errorName: string) => {
     return this.formEvent.controls[controlName].hasError(errorName);
+  }
+
+  goBack(): void {
+    this._location.back();
   }
 
   onCheckChange(event): void {

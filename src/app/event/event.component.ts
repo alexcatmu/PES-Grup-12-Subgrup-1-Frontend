@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { EventService } from '../services/event.service';
-import { Event } from '../models/event';
+import {EventService} from '../services/event.service';
+import {Event} from '../models/event';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
-import {StorageService} from '../services/storage.service';
+import {RoomService} from '../services/room.service';
 
 @Component({
   selector: 'app-event',
@@ -14,7 +14,7 @@ import {StorageService} from '../services/storage.service';
 })
 export class EventComponent implements OnInit, AfterViewInit {
 
-  public displayedColumns = ['name', 'date', 'hourIni', 'hourEnd', 'price_range', 'actions'];
+  public displayedColumns = ['name', 'room', 'date', 'hourIni', 'hourEnd', 'occupation', 'actions'];
 
   selectedEvent: Event;
   public events: Event[];
@@ -25,10 +25,12 @@ export class EventComponent implements OnInit, AfterViewInit {
 
 
   constructor(protected eventService: EventService,
-              private router: Router) { }
+              protected roomService: RoomService,
+              private router: Router) {
+  }
 
-  ngOnInit(): void {
-    this.fetchData();
+  async ngOnInit(): Promise<void> {
+    await this.fetchData();
   }
 
   ngAfterViewInit(): void {
@@ -39,7 +41,13 @@ export class EventComponent implements OnInit, AfterViewInit {
   fetchData(): void {
     this.eventService.getAll().subscribe(events => {
       this.events = events;
-      this.dataSource.data = events;
+      let cap: number;
+      for (const entry of this.events){
+        cap = ((entry.seats.split('\t').length - 1) + (entry.seats.split('\n').length - 1)) + 1;
+        entry.occupation = cap - (entry.seats.split('T').length - 1);
+        entry.capacity = cap;
+      }
+      this.dataSource.data = this.events;
     }, error => {
       console.error('Ha habido un error al hacer get de eventos', error);
     });
@@ -71,4 +79,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.router.navigate([`/event/${id}/update`]).then(() => console.log('redirect to event update'));
   }
 
+  public redirectToStatus = (id: any) => {
+    this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
+  }
 }

@@ -34,6 +34,11 @@ jobs:
           sudo apt-get install chromium-chromedriver
           sudo apt-get upgrade google-chrome-stable -y
           npm run e2e
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:

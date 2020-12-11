@@ -5,6 +5,8 @@
   "Details": "Details",
   "Filter": "Filter",
   "Save": "Save",
+  "Edit": "Edit",
+  "Delete": "Delete",
   "Measures": "Measures",
   "Back": "Back",
   "Desinfecció de mans": "Hand disinfection",
@@ -34,6 +36,7 @@
   "Event": {
     "Name": "Name of the event",
     "Mine": "My events",
+    "Of": "Events of",
     "Create": "Create new event",
     "Update": "Edit event",
     "Date": "Date",
@@ -46,6 +49,7 @@
     "Link": "Link"
   },
   "Room": {
+    "Self": "Room",
     "Name": "Name of the room",
     "Mine": "My rooms",
     "Create": "Create a new room",
@@ -59,6 +63,10 @@
     "Columns": "Columns",
     "Distance": "Distance between seats",
     "SeatsSize": "Seat size (in cm)"
+  },
+  "Seats": {
+    "Occupation": "Occupation",
+    "Status": "Status"
   },
   "Lang": {
     "En": "English",

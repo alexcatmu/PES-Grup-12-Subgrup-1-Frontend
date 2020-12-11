@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit, AfterViewInit {
-  public displayedColumns = ['name', 'capacity', 'street', 'actions'];
+  public displayedColumns = ['name', 'capacity', 'street', 'actions', 'viewEvents'];
 
   selectedRoom: Room;
   public rooms: Room[];
@@ -43,12 +43,19 @@ export class RoomComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.roomService.delete(id).subscribe(() => {
+    this.roomService.getEvents(id).subscribe(events => {
+      if (events.length === 0) {
+        this.roomService.delete(id).subscribe(() => {
 
-      console.log('Evento con id: ' + id + ' borrado');
-      this.fetchData();
+          console.log('Evento con id: ' + id + ' borrado');
+          this.fetchData();
+        }, error => {
+          console.error('Ha habido un error al hacer delete del evento', error);
+        });
+      } else {
+      }
     }, error => {
-      console.error('Ha habido un error al hacer delete del evento', error);
+      console.error('Ha habido un error al hacer get de eventos de una sala', error);
     });
   }
 
@@ -64,8 +71,8 @@ export class RoomComponent implements OnInit, AfterViewInit {
     this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to room details'));
   }
 
-  public redirectToUpdate = (id: any) => {
-    this.router.navigate([`/room/${id}/update`]).then(() => console.log('redirect to room update'));
+  public redirectToStatus = (id: any) => {
+    this.router.navigate([`/room/${id}/status`]).then(() => console.log('redirect to room status'));
   }
 
 }

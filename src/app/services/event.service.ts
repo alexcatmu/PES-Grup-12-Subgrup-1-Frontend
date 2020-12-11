@@ -30,6 +30,11 @@ export class EventService {
     return this.http.post<Event>(this.baseURL, event, {headers: this.headers});
   }
 
+  update(id: string, event: Event): Observable<Event> {
+    const url = this.baseURL + id;
+    return this.http.put<Event>(url, event, {headers: this.headers});
+  }
+
   delete(id: string): Observable<Event> {
     return this.http.delete<Event>(this.baseURL + id, {headers: this.headers});
   }

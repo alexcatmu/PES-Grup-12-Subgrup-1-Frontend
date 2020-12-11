@@ -5,6 +5,8 @@
   "Details": "Detalles",
   "Filter": "Filtrar",
   "Save": "Guardar",
+  "Edit": "Editar",
+  "Delete": "Eliminar",
   "Measures": "Medidas",
   "Back": "Atrás",
   "Desinfecció de mans": "Desinfeccion de manos",
@@ -34,6 +36,7 @@
   "Event": {
     "Name": "Nombre del evento",
     "Mine": "Mis eventos",
+    "Of": "Eventos de",
     "Create": "Crear nuevo evento",
     "Update": "Editar evento",
     "Date": "Fecha",
@@ -46,6 +49,7 @@
     "Link": "Enlace"
   },
   "Room": {
+    "Self": "Sala",
     "Name": "Nombre de la sala",
     "Mine": "Mis salas",
     "Create": "Crear nueva sala",
@@ -59,6 +63,10 @@
     "Columns": "Columnas",
     "Distance": "Distancia entre asientos",
     "SeatsSize": "Tamaño de los asientos (en cm)"
+  },
+  "Seats": {
+    "Occupation": "Ocupación",
+    "Status": "Estado"
   },
   "Lang": {
     "En": "Inglés",
