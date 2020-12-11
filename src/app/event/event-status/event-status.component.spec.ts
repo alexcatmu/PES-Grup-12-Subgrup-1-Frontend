@@ -7,6 +7,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {MaterialModule} from '../../material/material.module';
 import {TranslateModule} from '@ngx-translate/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
+import {of} from 'rxjs';
 
 describe('EventStatusComponent', () => {
   let component: EventStatusComponent;
@@ -16,7 +18,18 @@ describe('EventStatusComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ EventStatusComponent ],
       imports: [ReactiveFormsModule, HttpClientModule, RouterTestingModule, MaterialModule, TranslateModule.forRoot()],
-      providers: [EventService]
+      providers: [{
+        provide: ActivatedRoute,
+        useValue: { // Mock
+          params: of(
+            {
+              id: 'Presentacio PES_2021-01-17_12:02'
+            }
+          )
+        }
+      },
+        EventService,
+      ]
     })
     .compileComponents();
   });

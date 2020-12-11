@@ -12,7 +12,7 @@ import {Event} from '../../models/event';
 export class EventStatusComponent implements OnInit {
 
   eventId: string;
-  event: Event;
+  event: Event = new Event();
   capacity: number;
   seats: string[][];
 
