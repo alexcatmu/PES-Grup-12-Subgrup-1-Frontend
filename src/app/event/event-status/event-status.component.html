@@ -6,11 +6,15 @@
     </mat-card-header>
     <mat-card-content class="mid">
       <table>
+        <caption></caption>
+        <tr *ngFor="let x of seats; let i = index">
+          <th *ngFor="let y of x" scope="col"></th>
+        </tr>
         <tbody>
         <tr *ngFor="let x of seats; let i = index">
           {{i}}:
           <td *ngFor="let y of x">
-            <mat-icon *ngIf='y ==="T"'style="color: #008d00">event_seat</mat-icon>
+            <mat-icon *ngIf='y ==="T"' style="color: #008d00">event_seat</mat-icon>
             <mat-icon *ngIf='y ==="F"' style="color: #707070">event_seat</mat-icon>
             <mat-icon *ngIf='y !="F" && y !="T"' style="color: #ae0000">event_seat</mat-icon>
           </td>

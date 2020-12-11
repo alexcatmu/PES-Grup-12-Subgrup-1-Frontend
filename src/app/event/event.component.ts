@@ -5,7 +5,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
-import {StorageService} from '../services/storage.service';
 import {RoomService} from '../services/room.service';
 
 @Component({
