@@ -25,6 +25,7 @@ describe('EventComponent', () => {
     .compileComponents();
   });
 
+
   beforeEach(inject([EventService], s => {
     eventService = s;
     fixture = TestBed.createComponent(EventComponent);
