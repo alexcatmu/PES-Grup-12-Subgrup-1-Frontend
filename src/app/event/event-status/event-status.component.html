@@ -1,26 +1,35 @@
-<div class="my-main-page-module">
+<div fxLayoutAlign="center start" class="my-main-page-module">
   <mat-card fxLayout="column" fxLayoutAlign="center center">
     <mat-card-header>
       <mat-card-title>{{event.name | uppercase}}</mat-card-title>
       <mat-card-subtitle fxLayoutAlign="center center">{{'Seats.Occupation' | translate}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content class="mid">
-      <table>
-        <caption></caption>
-        <tr *ngFor="let x of seats; let i = index">
-          <th *ngFor="let y of x" scope="col"></th>
-        </tr>
-        <tbody>
-        <tr *ngFor="let x of seats; let i = index">
-          {{i}}:
-          <td *ngFor="let y of x">
-            <mat-icon *ngIf='y ==="T"' style="color: #008d00">event_seat</mat-icon>
-            <mat-icon *ngIf='y ==="F"' style="color: #707070">event_seat</mat-icon>
-            <mat-icon *ngIf='y !="F" && y !="T"' style="color: #ae0000">event_seat</mat-icon>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <mat-card-content>
+      <div class="mid">
+        <table>
+          <caption></caption>
+          <tr *ngFor="let x of seats; let i = index">
+            <th *ngFor="let y of x" scope="col"></th>
+          </tr>
+          <tbody>
+          <tr *ngFor="let x of seats; let i = index">
+            {{i}}:
+            <td *ngFor="let y of x">
+              <mat-icon *ngIf='y ==="T"' style="color: #008d00">event_seat</mat-icon>
+              <mat-icon *ngIf='y ==="F"' style="color: #707070">event_seat</mat-icon>
+              <mat-icon *ngIf='y !="F" && y !="T"' style="color: #ae0000">event_seat</mat-icon>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="accent" class="btn-block"
+              routerLink="/event"> {{'Back' | translate}} </button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <p>holaa | asdasdsad</p>
+    </mat-card-footer>
   </mat-card>
 </div>

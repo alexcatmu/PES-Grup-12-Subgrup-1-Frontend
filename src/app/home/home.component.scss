@@ -120,7 +120,7 @@ img {
 }
 
 .silder {
-  background-image: url(https://i1.wp.com/www.eurolatinpresscultura.com/wp-content/uploads/2020/03/clubCapitolBarcelonacierra.jpg?resize=914%2C615&ssl=1);
+  background-image:  linear-gradient( rgba(25, 7, 110, 0.5), rgba(0, 0, 0, 0.2)), url("/assets/home2.jpg");
   height: 600px;
   background-size: cover;
   background-position: center;
@@ -145,12 +145,15 @@ img {
   h1 {
     color: #fff;
     margin: auto;
+    font-family: "Times New Roman", sans-serif;
     font-size: 50px;
   }
 
   h3 {
     color: #fff;
-    margin: auto;
+    margin-top: 5px;
+    font-family: "Brush Script MT", serif;
+    font-style: italic;
     font-size: 25px;
   }
 

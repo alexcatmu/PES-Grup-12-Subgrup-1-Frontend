@@ -11,7 +11,7 @@ img {
 }
 
 .mat-toolbar.mat-primary {
-  background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  background-image: linear-gradient( rgb(83, 0, 86, 0.5), rgba(0, 0, 0, 0.2)), url("/assets/wall2.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,7 +26,7 @@ img {
 }
 
 .sidenav {
-  background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  background: linear-gradient(to right, rgb(83, 0, 86, 0.5), rgba(0,0,0,0.2)), url("/assets/wall2.jpg");
   width: 12%;
   min-width: 200px;
   box-shadow: 10px 0 15px rgba(0,0,0,.24);

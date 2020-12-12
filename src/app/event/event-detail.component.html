@@ -36,7 +36,11 @@
 
           <mat-divider></mat-divider>
 
-          <mat-list-item>{{'Seats.Occupation' | translate }}: {{occupation}}/{{capacity}} </mat-list-item>
+          <mat-list-item>{{'Seats.Occupation' | translate }}:&nbsp;
+            <a href="/event/{{event._id}}/status">
+              {{occupation}}/{{capacity}}
+            </a>
+          </mat-list-item>
 
           <mat-divider></mat-divider>
 
