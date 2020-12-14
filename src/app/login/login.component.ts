@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
   hide = true;
+  captchaKO = true;
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
@@ -44,5 +45,10 @@ export class LoginComponent implements OnInit {
     }, (error => {
       console.error('Error with login', error);
     }));
+  }
+
+  resolved(captchaResponse: string): void {
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaKO = false;
   }
 }
