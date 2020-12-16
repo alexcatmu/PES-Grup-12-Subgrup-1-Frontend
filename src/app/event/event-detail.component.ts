@@ -28,7 +28,7 @@ export class EventDetailComponent implements OnInit {
       this.eventService.get(this.eventId).subscribe((event) => {
         this.event = event;
         this.capacity = this.event.matrix.length * this.event.matrix[0].length;
-        this.occupation = this.capacity - (this.event.seats.split('T').length - 1);
+        this.occupation = this.capacity - (this.event.seats.split('T').length - 1) - (this.event.seats.split('F').length - 1);
       });
     });
   }

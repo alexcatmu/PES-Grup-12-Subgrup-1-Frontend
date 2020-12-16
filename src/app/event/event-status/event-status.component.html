@@ -3,6 +3,8 @@
     <mat-card-header>
       <mat-card-title>{{event.name | uppercase}}</mat-card-title>
       <mat-card-subtitle fxLayoutAlign="center center">{{'Seats.Occupation' | translate}}</mat-card-subtitle>
+      <mat-card-subtitle fxLayoutAlign="center center">{{'Room.Self' | translate}}: <a style="margin-left: 5px"
+                                        href="/room/{{event.id_room}}/details">{{event.id_room.split('_')[0]}}</a> </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="mid">
@@ -29,7 +31,14 @@
               routerLink="/event"> {{'Back' | translate}} </button>
     </mat-card-actions>
     <mat-card-footer>
-      <p>holaa | asdasdsad</p>
+      <p>
+        <mat-icon style="color: #008d00">event_seat</mat-icon>
+        Disponible |
+        <mat-icon style="color: #707070">event_seat</mat-icon>
+        No disponible |
+        <mat-icon style="color: #ae0000">event_seat</mat-icon>
+        Ocupat
+      </p>
     </mat-card-footer>
   </mat-card>
 </div>

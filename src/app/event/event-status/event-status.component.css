@@ -3,3 +3,8 @@ mat-card{
   min-width: 400px;
   /*min-height: 800px;*/
 }
+
+table{
+  padding-left: 20px;
+  padding-right: 20px;
+}

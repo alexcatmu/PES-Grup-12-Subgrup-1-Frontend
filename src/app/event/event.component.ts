@@ -44,7 +44,7 @@ export class EventComponent implements OnInit, AfterViewInit {
       let cap: number;
       for (const entry of this.events){
         cap = ((entry.seats.split('\t').length - 1) + (entry.seats.split('\n').length - 1)) + 1;
-        entry.occupation = cap - (entry.seats.split('T').length - 1);
+        entry.occupation = cap - (entry.seats.split('T').length - 1) - (entry.seats.split('F').length - 1);
         entry.capacity = cap;
       }
       this.dataSource.data = this.events;
