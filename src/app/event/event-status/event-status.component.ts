@@ -15,6 +15,7 @@ export class EventStatusComponent implements OnInit {
   event: Event = new Event();
   capacity: number;
   seats: string[][];
+  auxRoomName: string;
 
   constructor(private eventService: EventService, private roomService: RoomService,
               protected activatedRoute: ActivatedRoute) {
@@ -25,6 +26,7 @@ export class EventStatusComponent implements OnInit {
       this.eventId = params.id;
       this.eventService.get(this.eventId).subscribe((event) => {
         this.event = event;
+        this.auxRoomName = this.event.id_room.split('_')[0];
         this.seats = this.event.matrix;
         this.roomService.get(this.event.id_room).subscribe((room) => {
           this.capacity = room[0].capacity;
