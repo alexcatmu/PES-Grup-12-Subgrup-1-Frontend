@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center start" class="my-main-page-module">
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+      <mat-card-title>{{room.name | uppercase}}</mat-card-title>
+      <mat-card-subtitle fxLayoutAlign="center center">Estadísticas</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div style="display: block">
+        <canvas baseChart
+                [datasets]="chartDatasets"
+                [chartType]="chartType"
+                [labels]="chartLabels"
+                [colors]="chartColors"
+                [options]="chartOptions"
+                [legend]="true"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

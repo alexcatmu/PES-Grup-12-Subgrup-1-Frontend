@@ -85,5 +85,8 @@ export class RoomComponent implements OnInit, AfterViewInit {
   public redirectToStatus = (id: any) => {
     this.router.navigate([`/room/${id}/status`]).then(() => console.log('redirect to room status'));
   }
+  public redirectToStats = (id: any) => {
+    this.router.navigate([`/room/${id}/stats`]).then(() => console.log('redirect to room status'));
+  }
 
 }

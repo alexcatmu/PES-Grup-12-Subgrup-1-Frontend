@@ -15,6 +15,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import {TranslateModule} from '@ngx-translate/core';
 import { EventStatusComponent } from './event-status/event-status.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { EventStatsComponent } from './event-stats/event-stats.component';
+import {ChartsModule} from 'ng2-charts';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     EventComponent,
     EventUpdateComponent,
     EventDetailComponent,
-    EventStatusComponent
+    EventStatusComponent,
+    EventStatsComponent
   ],
     imports: [
         CommonModule,
@@ -34,6 +37,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
         SharedModule,
         MatSliderModule,
         TranslateModule,
+        ChartsModule,
         FormsModule,
         MatGridListModule
     ],

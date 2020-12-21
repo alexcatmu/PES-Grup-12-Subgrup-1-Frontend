@@ -1,0 +1,24 @@
+<div fxLayoutAlign="center start" class="my-main-page-module">
+  <mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+      <mat-card-title>{{event.name | uppercase}}</mat-card-title>
+      <mat-card-subtitle fxLayoutAlign="center center">{{'Seats.Occupation' | translate}}</mat-card-subtitle>
+      <mat-card-subtitle fxLayoutAlign="center center">{{'Room.Self' | translate}}: <a style="margin-left: 5px"
+                                                                                       href="/room/{{event.id_room}}/details">{{auxRoomName}}</a>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

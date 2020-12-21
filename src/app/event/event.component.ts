@@ -76,6 +76,10 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.selectedEvent = event;
   }
 
+  public redirectToStats = (id: any) => {
+    this.router.navigate([`/event/${id}/stats`]).then(() => console.log('redirect to event status'));
+  }
+
   public doFilter = (event: any) => {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }
