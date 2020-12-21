@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
+import {DialogConfirmationComponent} from './components/dialog-confirmation/dialog-confirmation.component';
 
 // tslint:disable-next-line:typedef
 export function HttpTranslateLoader(http: HttpClient){
@@ -29,6 +30,7 @@ export function HttpTranslateLoader(http: HttpClient){
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
+    DialogConfirmationComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@
   "Delete": "Eliminar",
   "Measures": "Mesures",
   "Back": "Enrera",
+  "Yes": "Sí",
   "Desinfecció de mans": "Desinfecció de mans",
   "Ús de mascareta": "Ús de mascareta",
   "Distància de seguretat": "Distància de seguretat",
@@ -81,6 +82,8 @@
     "InvalidEmail": "correu no vàlid"
   },
   "Confirmation": {
+    "Self": "Confirmació",
+    "Delete": "Estàs segur d'eliminar-ho ?",
     "Title": "Correu enviat!",
     "Explanation": "\nEnhorabona, ara se us enviarà un correu a la direcció especificada confirmant l'ingrés,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
   }

@@ -9,6 +9,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
 import {of} from 'rxjs';
 import {EventService} from '../services/event.service';
+import {MatDialogModule} from '@angular/material/dialog';
 
 describe('EventComponent', () => {
 
@@ -19,7 +20,7 @@ describe('EventComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EventComponent, EventUpdateComponent],
-      imports: [CommonModule, EventRoutingModule, HttpClientModule, RouterTestingModule, TranslateModule.forRoot()],
+      imports: [CommonModule, EventRoutingModule, MatDialogModule, HttpClientModule, RouterTestingModule, TranslateModule.forRoot()],
       providers: [EventService]
     })
     .compileComponents();

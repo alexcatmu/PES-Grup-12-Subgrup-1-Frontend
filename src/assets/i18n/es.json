@@ -9,6 +9,7 @@
   "Delete": "Eliminar",
   "Measures": "Medidas",
   "Back": "Atrás",
+  "Yes": "Si",
   "Desinfecció de mans": "Desinfeccion de manos",
   "Ús de mascareta": "Uso de mascarilla",
   "Distància de seguretat": "Distáncia de seguridad",
@@ -81,6 +82,8 @@
     "InvalidEmail": "Correo no válido"
   },
   "Confirmation": {
+    "Self": "Confirmación",
+    "Delete": "¿ Estás seguro de eliminar-lo ?",
     "Title": "Correo enviado!",
     "Explanation": "\nFelicidades, ahora se le enviará un correo a la dirección especificada confirmando el ingreso,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
   }

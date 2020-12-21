@@ -3,8 +3,10 @@ import {RoomService} from '../services/room.service';
 import {Room} from '../models/room';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
+import {DialogConfirmationComponent} from '../components/dialog-confirmation/dialog-confirmation.component';
 
 @Component({
   selector: 'app-room',
@@ -22,7 +24,7 @@ export class RoomComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 
-  constructor(private roomService: RoomService, private router: Router) { }
+  constructor(private roomService: RoomService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchData();
@@ -43,20 +45,29 @@ export class RoomComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.roomService.getEvents(id).subscribe(events => {
-      if (events.length === 0) {
-        this.roomService.delete(id).subscribe(() => {
 
-          console.log('Evento con id: ' + id + ' borrado');
-          this.fetchData();
-        }, error => {
-          console.error('Ha habido un error al hacer delete del evento', error);
-        });
-      } else {
-      }
-    }, error => {
-      console.error('Ha habido un error al hacer get de eventos de una sala', error);
-    });
+    this.dialog
+      .open(DialogConfirmationComponent)
+      .afterClosed()
+      .subscribe((confirm: Boolean) => {
+        if (confirm) {
+          this.roomService.getEvents(id).subscribe(events => {
+            if (events.length === 0) {
+              this.roomService.delete(id).subscribe(() => {
+                console.log('Evento con id: ' + id + ' borrado');
+                this.fetchData();
+                alert('¡La sala "' + id.split('_')[0] + '" se borro correctamente!');
+              }, error => {
+                console.error('Ha habido un error al hacer delete del evento', error);
+              });
+            } else {
+              alert("Esta sala no se puede eliminar, contiene eventos")
+            }
+          }, error => {
+            console.error('Ha habido un error al hacer get de eventos de una sala', error);
+          });
+        }
+      });
   }
 
   onSelect(room: Room): void {

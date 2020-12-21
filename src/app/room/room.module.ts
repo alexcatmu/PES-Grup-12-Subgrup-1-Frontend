@@ -13,12 +13,12 @@ import { RoomStatusComponent } from './room-status/room-status.component';
 
 @NgModule({
   declarations: [RoomComponent, RoomUpdateComponent, RoomDetailComponent, RoomStatusComponent],
-    imports: [
-        CommonModule,
-        RoomRoutingModule,
-        TranslateModule,
-        SharedModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    RoomRoutingModule,
+    TranslateModule,
+    SharedModule,
+    ReactiveFormsModule
+  ]
 })
 export class RoomModule { }

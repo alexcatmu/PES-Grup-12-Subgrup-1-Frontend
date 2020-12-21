@@ -6,6 +6,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
 import {RoomService} from '../services/room.service';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogConfirmationComponent} from '../components/dialog-confirmation/dialog-confirmation.component';
 
 @Component({
   selector: 'app-event',
@@ -26,7 +28,7 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   constructor(protected eventService: EventService,
               protected roomService: RoomService,
-              private router: Router) {
+              private router: Router, public dialog: MatDialog) {
   }
 
   async ngOnInit(): Promise<void> {
@@ -54,13 +56,20 @@ export class EventComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.eventService.delete(id).subscribe(() => {
 
-      console.log('Evento con id: ' + id + ' borrado');
-      this.fetchData();
-    }, error => {
-      console.error('Ha habido un error al hacer delete del evento', error);
-    });
+    this.dialog
+      .open(DialogConfirmationComponent)
+      .afterClosed()
+      .subscribe((confirm: Boolean) => {
+        if (confirm) {
+          this.eventService.delete(id).subscribe(() => {
+            console.log('Evento con id: ' + id + ' borrado');
+            this.fetchData();
+          }, error => {
+            console.error('Ha habido un error al hacer delete del evento', error);
+          });
+        }
+      });
   }
 
   onSelect(event: Event): void {
