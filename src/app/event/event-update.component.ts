@@ -69,7 +69,6 @@ export class EventUpdateComponent implements OnInit {
         this.update = true;
         this.eventService.get(this.eventId).subscribe((event) => {
           this.eventToUpdate = event;
-          console.log(event);
           this.updateForm(event);
           this.titleForm = 'Event.Update';
         });
@@ -79,7 +78,8 @@ export class EventUpdateComponent implements OnInit {
 
   private updateForm(event: Event): void {
     this.formEvent.patchValue(event);
-    this.formEvent.get('measures').patchValue(this.measures);
+    this.formEvent.setControl('measures', this.fb.array(event.measures || []));
+    console.log(this.formEvent.value);
   }
 
   public onSubmit(event: Event): void {
@@ -99,7 +99,6 @@ export class EventUpdateComponent implements OnInit {
     if (this.eventId){
       this.event._id = this.eventToUpdate._id;
       this.event.seats = this.eventToUpdate.seats;
-      this.event.measures = this.eventToUpdate.measures;
       this.event.matrix = this.eventToUpdate.matrix;
       this.eventService.update(this.eventId, this.event).subscribe(() => {
         this.route.navigate(['/event']).then(() => console.log('Go to event'));
