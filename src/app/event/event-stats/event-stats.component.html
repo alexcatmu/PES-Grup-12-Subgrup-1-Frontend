@@ -10,13 +10,25 @@
     <mat-card-content>
       <div class="chart-wrapper">
         <canvas baseChart
-                [datasets]="lineChartData"
-                [labels]="lineChartLabels"
-                [options]="lineChartOptions"
-                [colors]="lineChartColors"
-                [legend]="lineChartLegend"
-                [chartType]="lineChartType"
-                [plugins]="lineChartPlugins">
+                [datasets]="dataGroups"
+                [labels]="labelsGroup"
+                [options]="options"
+                [colors]="colorsGroup"
+                [legend]="legendGroup"
+                chartType="bar"
+                [plugins]="pluginGroup">
+        </canvas>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="dataCapacity"
+                [labels]="labelsCapacity"
+                [options]="options"
+                [colors]="colorsCapacity"
+                [legend]="legendCapacity"
+                chartType="bar"
+                [plugins]="pluginCapacity">
         </canvas>
       </div>
     </mat-card-content>
