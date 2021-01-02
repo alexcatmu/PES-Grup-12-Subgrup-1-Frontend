@@ -47,7 +47,8 @@
     "Actions": "Actions",
     "Minimum": "Minimum",
     "Maximum": "Maximum",
-    "Link": "Link"
+    "Link": "Link",
+    "Logo":  "Logo"
   },
   "Room": {
     "Self": "Room",

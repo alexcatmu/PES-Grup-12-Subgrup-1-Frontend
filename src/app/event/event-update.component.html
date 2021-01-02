@@ -22,6 +22,13 @@
 
 
         <mat-form-field appearance="fill">
+          <mat-label for="logo">{{'Event.Logo' | translate}}</mat-label>
+          <label for="logo"></label><input matInput type="text" placeholder="{{'Event.Logo' | translate}}"
+                                           formControlName="logo" id="logo">
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
           <mat-label>{{'Event.Date' | translate}}</mat-label>
           <label>
             <input matInput [matDatepicker]="picker" formControlName="date">

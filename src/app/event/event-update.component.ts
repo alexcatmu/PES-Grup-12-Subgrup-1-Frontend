@@ -51,7 +51,8 @@ export class EventUpdateComponent implements OnInit {
       maxPrice: new FormControl(null, [Validators.required]),
       measures: new FormArray([]),
       id_room: new FormControl(null, [Validators.required]),
-      link: new FormControl('')
+      link: new FormControl(''),
+      logo: new FormControl('')
     }, {validators: PriceRangeValid});
   }
 
@@ -94,7 +95,8 @@ export class EventUpdateComponent implements OnInit {
       measures: event.measures,
       link: event.link,
       id_manager: this.storageService.getCurrentUser().id,
-      id_room: event.id_room
+      id_room: event.id_room,
+      logo: event.logo
     };
     if (this.eventId){
       this.event._id = this.eventToUpdate._id;
