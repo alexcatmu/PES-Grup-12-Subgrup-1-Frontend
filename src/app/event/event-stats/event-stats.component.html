@@ -8,7 +8,7 @@
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <div class="chart-wrapper">
+      <div class="groups">
         <canvas baseChart
                 [datasets]="dataGroups"
                 [labels]="labelsGroup"
@@ -20,17 +20,20 @@
         </canvas>
       </div>
 
-      <div class="chart-wrapper">
+      <div class="capacity">
         <canvas baseChart
                 [datasets]="dataCapacity"
                 [labels]="labelsCapacity"
-                [options]="options"
                 [colors]="colorsCapacity"
                 [legend]="legendCapacity"
-                chartType="bar"
+                chartType="pie"
                 [plugins]="pluginCapacity">
         </canvas>
       </div>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="accent" class="btn-block"
+              routerLink="/event"> {{'Back' | translate}} </button>
+    </mat-card-actions>
   </mat-card>
 </div>

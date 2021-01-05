@@ -1,5 +1,15 @@
 mat-card{
   opacity: 0.95;
-  min-width: 400px;
+  min-width: 650px;
+  padding-bottom: 40px;
   /*min-height: 800px;*/
+}
+
+.groups{
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+.capacity{
+  min-width: 570px;
+  padding-bottom: 20px;
 }

@@ -30,7 +30,6 @@ export class EventStatsComponent implements OnInit {
     }
   };
 
-
   dataGroups: ChartDataSets[] = [
     {data: [], label: 'Groups'},
   ];
@@ -53,12 +52,13 @@ export class EventStatsComponent implements OnInit {
     {data: [], label: 'Capacity'},
   ];
 
-  labelsCapacity: Label[] = ['Occupied', 'Covid', 'Free'];
+  labelsCapacity: Array<any> = ['Occupied', 'Covid', 'Free'];
 
   colorsCapacity: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: 'rgb(46,176,36)',
+      borderColor: ['#F7464A', '#949494', '#10ab11'],
+      backgroundColor: ['#FF5A5E', '#aeaeae', '#15c116'],
+      borderWidth: 2,
     },
   ];
 
