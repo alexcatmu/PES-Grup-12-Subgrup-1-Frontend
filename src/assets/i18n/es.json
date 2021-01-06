@@ -13,13 +13,19 @@
   "Ús de mascareta": "Uso de mascarilla",
   "Distància de seguretat": "Distáncia de seguridad",
   "Home": {
-    "Self" : "Página principal",
+    "Self": "Página principal",
     "SpaceRooms": "Espacios y salas",
     "SpaceRoomsSub": "Gestiona los espacios y salas donde se van a realizar tus eventos",
     "Access": "Accesos",
     "AccessSub": "Controla los accesos y horarios para evitar aglomeraciones",
     "Sanitary": "Medidas sanitarias",
-    "SanitarySub": "En contacto con sanidad para aplicar la normativa sanitaria vigente"
+    "SanitarySub": "En contacto con sanidad para aplicar la normativa sanitaria vigente",
+    "Innovation": "Innovación constante",
+    "InnovationSub": "Nos mantenemos actualizados tanto en tecnología como en medidas sanitarias para ofrecer el mejor servicio",
+    "ConstAdapt": "Constante adaptación",
+    "ConstAdaptSub": "Estamos en un momento en constante evolución, nuestro sistema es capaz de adaptarse a cualquier circunstancia en un tiempo record",
+    "Quality": "Servicio de calidad",
+    "QualitySub": "Ofrecemos un servicio personalizado y a medida para cada empresa, teniendo en cuenta tanto las necesidades de la empresa como la de usuarios que usen nuestro servicio"
   },
   "Header": {
     "Login": "Iniciar sesión",
@@ -56,7 +62,7 @@
     "Minimum": "Mínimo",
     "Maximum": "Máximo",
     "Link": "Enlace",
-    "Logo":  "Logo"
+    "Logo": "Logo"
   },
   "Room": {
     "Self": "Sala",

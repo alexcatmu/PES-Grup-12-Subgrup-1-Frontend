@@ -19,7 +19,13 @@
     "Access": "Accessos",
     "AccessSub": "Controla els accessos o horaris per evitar aglomeracions",
     "Sanitary": "Mesures sanitàrias",
-    "SanitarySub": "En contacte amb sanitat per a aplicar la normativa sanitària vigent"
+    "SanitarySub": "En contacte amb sanitat per a aplicar la normativa sanitària vigent",
+    "Innovation": "Innovació constant",
+    "InnovationSub": "Ens mantenim actualitzats tant en tecnologia com en mesures sanitàries per a oferir el millor servei",
+    "ConstAdapt": "Adaptació constant",
+    "ConstAdaptSub": "Estem en un moment en constant evolució, el nostre sistema és capaç d'adaptar-se a qualsevol circumstància en un temps rècord",
+    "Quality": "Servei de qualitat",
+    "QualitySub": "Oferim un servei personalitzat i a mesura per a cada empresa, tenint en compte tant les necessitats de l'empresa com la d'usuaris que usin el nostre servei"
   },
   "Header": {
     "Login": "Iniciar sessió",

@@ -19,7 +19,13 @@
     "Access": "Access",
     "AccessSub": "Control the access and schedules to avoid crowding",
     "Sanitary": "Sanitary measures",
-    "SanitarySub": "In contact with the health authorities to apply the current health regulations"
+    "SanitarySub": "In contact with the health authorities to apply the current health regulations",
+    "Innovation": "Constant innovation",
+    "InnovationSub": "We maintain ourselves up to date in both technology and sanitary measures to offer the best service",
+    "ConstAdapt": "Constant adaptation",
+    "ConstAdaptSub": "We are in a moment of constant evolution, our system is capable of adapting to any circumstance in record time",
+    "Quality": "Quality service",
+    "QualitySub": "We offer a personalized service tailored to each company, taking into account both the needs of the company and the users who use our service"
   },
   "Header": {
     "Login": "Login",
