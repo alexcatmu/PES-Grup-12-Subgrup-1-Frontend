@@ -1,5 +1,4 @@
 {
-  "Home": "Pàgina principal",
   "Contact": "Contacta amb nosaltres",
   "Name": "Nom",
   "Details": "Detalls",
@@ -13,6 +12,15 @@
   "Desinfecció de mans": "Desinfecció de mans",
   "Ús de mascareta": "Ús de mascareta",
   "Distància de seguretat": "Distància de seguretat",
+  "Home": {
+    "Self" : "Pàgina principal",
+    "SpaceRooms": "Espais y salas",
+    "SpaceRoomsSub": "Gestiona els espais i sales on se celebraran els vostres esdeveniments",
+    "Access": "Accessos",
+    "AccessSub": "Controla els accessos o horaris per evitar aglomeracions",
+    "Sanitary": "Mesures sanitàrias",
+    "SanitarySub": "En contacte amb sanitat per a aplicar la normativa sanitària vigent"
+  },
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
@@ -68,7 +76,8 @@
   },
   "Seats": {
     "Occupation": "Ocupació",
-    "Status": "Estat"
+    "Status": "Estat",
+    "Stats": "Estadístiques"
   },
   "Lang": {
     "En": "Anglès",
