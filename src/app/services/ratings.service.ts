@@ -17,8 +17,8 @@ export class RatingsService {
 
   constructor(private http: HttpClient, private storageService: StorageService) {
   }
-    get(id: string): Observable<Ratings> {
+    get(id: string): Observable<Ratings[]> {
       const url = this.baseURL + id;
-      return this.http.get<Ratings>(url, {headers: this.headers});
+      return this.http.get<Ratings[]>(url, {headers: this.headers});
     }
 }
