@@ -30,14 +30,13 @@ export class EventDetailComponent implements OnInit {
       this.eventId = params.id;
       this.eventService.get(this.eventId).subscribe((event) => {
         this.event = event;
-        this.capacity = this.event.matrix.length * this.event.matrix[0].length;
-        this.occupation = this.capacity - (this.event.seats.split('T').length - 1) - (this.event.seats.split('F').length - 1);
-        this.starsFilled = Math.floor(this.event.ratings);
-        if ((this.event.ratings - this.starsFilled) >= 0.5) {
+        this.capacity = this.event?.matrix?.length * this.event?.matrix[0]?.length;
+        this.occupation = this.capacity - (this.event?.seats?.split('T').length - 1) - (this.event?.seats?.split('F').length - 1);
+        this.starsFilled = Math.floor(this.event?.ratings);
+        if ((this.event?.ratings - this.starsFilled) >= 0.5) {
           this.starsHalf = 1;
         }
         this.starsEmpty = 5 - this.starsFilled - this.starsHalf;
-        console.log(Math.floor(this.event.ratings));
       });
     });
   }
