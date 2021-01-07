@@ -11,8 +11,9 @@ import {ActivatedRoute} from '@angular/router';
 export class EventCommentsComponent implements OnInit {
 
   eventId: string;
-  comments: Ratings = new Ratings();
+  comments: Ratings[];
   eventName: string;
+  math = Math;
 
   constructor(private ratingService: RatingsService,
               protected activatedRoute: ActivatedRoute) {
@@ -24,6 +25,7 @@ export class EventCommentsComponent implements OnInit {
       this.eventName = params.id.split('_')[0];
       this.ratingService.get(this.eventId).subscribe((comments) => {
         this.comments = comments;
+        console.log(this.comments);
       });
     });
   }

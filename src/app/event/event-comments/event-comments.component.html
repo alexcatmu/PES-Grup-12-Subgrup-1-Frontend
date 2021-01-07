@@ -6,7 +6,27 @@
       <mat-card-subtitle fxLayoutAlign="center center">{{'Room.Self' | translate}}: x</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <ng-
+      <mat-card *ngFor="let comment of comments">
+        <mat-card-title>{{comment.author}}</mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center center">
+          <div *ngFor="let a of [].constructor(math.floor(comment.rate))">
+            <mat-icon  style="color: #ff7700">star</mat-icon>
+          </div>
+          <div *ngIf="comment.rate - math.floor(comment.rate) == 0.5">
+            <mat-icon style="color: #ff7700">star_half</mat-icon>
+          </div>
+          <div *ngFor="let a of [].constructor(math.floor(5 - comment.rate))">
+            <mat-icon  style="color: #ff7700">star_border</mat-icon>
+          </div>
+        </mat-card-subtitle>
+        <mat-card-content fxLayoutAlign="center center">
+          {{comment.comment}}
+        </mat-card-content>
+      </mat-card>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="accent" class="btn-block"
+              routerLink="/event/{{eventId}}/details"> {{'Back' | translate}} </button>
+    </mat-card-actions>
   </mat-card>
 </div>
