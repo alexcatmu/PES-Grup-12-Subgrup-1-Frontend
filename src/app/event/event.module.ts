@@ -17,6 +17,7 @@ import { EventStatusComponent } from './event-status/event-status.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { EventStatsComponent } from './event-stats/event-stats.component';
 import {ChartsModule} from 'ng2-charts';
+import { EventCommentsComponent } from './event-comments/event-comments.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {ChartsModule} from 'ng2-charts';
     EventUpdateComponent,
     EventDetailComponent,
     EventStatusComponent,
-    EventStatsComponent
+    EventStatsComponent,
+    EventCommentsComponent
   ],
     imports: [
         CommonModule,

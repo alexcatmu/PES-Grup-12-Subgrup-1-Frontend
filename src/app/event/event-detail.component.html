@@ -49,7 +49,7 @@
           </mat-list-item>
           <mat-divider></mat-divider>
 
-          <mat-list-item>Ratings: {{event.ratings}}
+          <mat-list-item> <a href="/event/{{event._id}}/comments">Ratings: </a> {{event.ratings}}
             <div *ngFor="let sf of [].constructor(starsFilled)">
               <mat-icon  style="color: #ff7700">star</mat-icon>
             </div>
