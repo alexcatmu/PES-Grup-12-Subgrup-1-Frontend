@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EventStatsComponent } from './event-stats.component';
 
 describe('EventStatsComponent', () => {
