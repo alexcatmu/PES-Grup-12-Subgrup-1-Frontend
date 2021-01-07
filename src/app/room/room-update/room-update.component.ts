@@ -29,8 +29,8 @@ export class RoomUpdateComponent implements OnInit {
       capacity: new FormControl('', [Validators.required]),
       rows: new FormControl('', [Validators.required]),
       columns: new FormControl(null, [Validators.required]),
-      distance_between_seats: new FormControl(null, [Validators.required]),
-      seats_size: new FormControl(null, [Validators.required]),
+      distance_between_seats: new FormControl(0.2),
+      seats_size: new FormControl(0.7)
     });
   }
 

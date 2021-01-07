@@ -78,7 +78,7 @@
     "NumberOfRows": "Nombre de files",
     "NumberOfColumns": "Nombre de columnes",
     "Columns": "Columnes",
-    "Distance": "Distància entre seients",
+    "Distance": "Distància entre seients (en m)",
     "SeatsSize": "Mida dels seients (en m)"
   },
   "Seats": {

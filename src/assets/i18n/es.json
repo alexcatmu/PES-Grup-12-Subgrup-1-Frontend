@@ -78,7 +78,7 @@
     "NumberOfRows": "Numero de filas",
     "NumberOfColumns": "Numero de columnas",
     "Columns": "Columnas",
-    "Distance": "Distancia entre asientos",
+    "Distance": "Distancia entre asientos (en m)",
     "SeatsSize": "Tamaño de los asientos (en m)"
   },
   "Seats": {
