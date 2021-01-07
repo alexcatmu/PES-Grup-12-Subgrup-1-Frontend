@@ -7,8 +7,8 @@
         <mat-card-subtitle fxLayoutAlign="center center">{{'Details' | translate}}</mat-card-subtitle>
       </mat-card-header>
 
-      <img mat-card-image fxLayoutAlign="center center"
-           src="https://www.fib.upc.edu/sites/fib/files/images/fib/espais/aula_a5s101.jpg"
+      <img mat-card-image fxLayoutAlign="center center" *ngIf="event.logo"
+           src="{{event.logo}}"
            alt="image">
 
       <mat-card-content fxLayout="column" fxLayoutAlign="center start">
@@ -49,7 +49,7 @@
           </mat-list-item>
           <mat-divider></mat-divider>
 
-          <mat-list-item> <a href="/event/{{event._id}}/comments">Ratings: </a> {{event.ratings}}
+          <mat-list-item> <a style="margin-right:10px" href="/event/{{event._id}}/comments">Ratings: </a> {{event.ratings}}
             <div *ngFor="let sf of [].constructor(starsFilled)">
               <mat-icon  style="color: #ff7700">star</mat-icon>
             </div>

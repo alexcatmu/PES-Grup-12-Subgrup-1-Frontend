@@ -7,6 +7,7 @@
   "Edit": "Editar",
   "Delete": "Eliminar",
   "Measures": "Medidas",
+  "Ratings": "Valoraciones",
   "Back": "Atrás",
   "Yes": "Si",
   "Desinfecció de mans": "Desinfeccion de manos",
@@ -78,7 +79,7 @@
     "NumberOfColumns": "Numero de columnas",
     "Columns": "Columnas",
     "Distance": "Distancia entre asientos",
-    "SeatsSize": "Tamaño de los asientos (en cm)"
+    "SeatsSize": "Tamaño de los asientos (en m)"
   },
   "Seats": {
     "Occupation": "Ocupación",

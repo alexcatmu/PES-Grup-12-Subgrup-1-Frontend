@@ -7,6 +7,7 @@
   "Edit": "Edit",
   "Delete": "Delete",
   "Measures": "Measures",
+  "Ratings": "Ratings",
   "Back": "Back",
   "Yes": "Yes",
   "Desinfecció de mans": "Hand disinfection",
@@ -78,7 +79,7 @@
     "NumberOfColumns": "Number of columns",
     "Columns": "Columns",
     "Distance": "Distance between seats",
-    "SeatsSize": "Seat size (in cm)"
+    "SeatsSize": "Seat size (in m)"
   },
   "Seats": {
     "Occupation": "Occupation",
