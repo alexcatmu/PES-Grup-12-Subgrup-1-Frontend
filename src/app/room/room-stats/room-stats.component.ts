@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Event} from '../../models/event';
-import {ChartDataSets} from 'chart.js';
-import {Color, Label} from 'ng2-charts';
+import {Component, OnInit} from '@angular/core';
 import {EventService} from '../../services/event.service';
 import {RoomService} from '../../services/room.service';
 import {ActivatedRoute} from '@angular/router';
 import {Room} from '../../models/room';
+import {Event} from '../../models/event';
 
 @Component({
   selector: 'app-room-stats',
@@ -15,14 +13,12 @@ import {Room} from '../../models/room';
 export class RoomStatsComponent implements OnInit {
   roomId: string;
   room: Room;
+  events: Event[];
   public chartType: string = 'line';
 
-  public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
-  ];
+  public chartDatasets: Array<any> = [];
 
-  public chartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public chartLabels: Array<string> = [];
 
   public chartColors: Array<any> = [
     {
@@ -38,7 +34,16 @@ export class RoomStatsComponent implements OnInit {
   ];
 
   public chartOptions: any = {
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+          beginAtZero: true,
+          precision: 0
+        }
+      }]
+    }
   };
 
   constructor(private eventService: EventService, private roomService: RoomService,
@@ -50,10 +55,41 @@ export class RoomStatsComponent implements OnInit {
       this.roomId = params.id;
       this.roomService.get(this.roomId).subscribe((room) => {
         this.room = room[0];
+        this.roomService.getEvents(this.room._id).subscribe((events) => {
+          this.events = events;
+          console.log(this.room);
+          this.chartLabels = this.events.map((e) => {
+            return e.name;
+          });
+          const covid = this.events.map((e) => {
+            console.log(e);
+            return e.seats.split('F').length - 1;
+          });
+          const free = this.events.map((e) => {
+            return e.seats.split('T').length - 1;
+          });
+          const occupied = this.events.map((e) => {
+            const cov = e.seats.split('F').length - 1;
+            const fr = e.seats.split('T').length - 1;
+            return this.room.capacity - cov - fr;
+          });
+          console.log(covid);
+          console.log(free);
+          console.log(occupied);
+          this.chartDatasets = [
+            { data: occupied, label: 'Occupied' },
+            { data: covid, label: 'Covid'},
+            { data: free, label: 'Free'}
+          ];
+        });
       });
     });
   }
-  public chartClicked(e: any): void { }
-  public chartHovered(e: any): void { }
+
+  public chartClicked(e: any): void {
+  }
+
+  public chartHovered(e: any): void {
+  }
 
 }
