@@ -22,13 +22,18 @@ export class RoomStatsComponent implements OnInit {
 
   public chartColors: Array<any> = [
     {
-      backgroundColor: 'rgba(105, 0, 132, .2)',
-      borderColor: 'rgba(200, 99, 132, .7)',
+      backgroundColor: 'rgb(246,0,0)',
+      borderColor: 'rgb(171,0,0)',
       borderWidth: 2,
     },
     {
-      backgroundColor: 'rgba(0, 137, 132, .2)',
-      borderColor: 'rgba(0, 10, 130, .7)',
+      backgroundColor: 'rgba(145,145,145,0.2)',
+      borderColor: 'rgba(81,81,81,0.7)',
+      borderWidth: 2,
+    },
+    {
+      backgroundColor: 'rgb(31,202,0)',
+      borderColor: 'rgb(30,122,0)',
       borderWidth: 2,
     }
   ];
