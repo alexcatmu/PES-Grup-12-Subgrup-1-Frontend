@@ -13,6 +13,10 @@ mat-card-subtitle{
   margin-bottom: 20px;
 }
 
+mat-list-item{
+  max-width: 450px;
+}
+
 mat-divider{
   margin-left: 20px;
   max-width: 480px;
@@ -20,15 +24,15 @@ mat-divider{
 
 img{
   max-width: 450px;
-  margin-left: 22px;
+  margin-left: 20px;
 }
 
 .btn-block{
-  margin-top: 35px;
+  margin-top: 30px;
   left: 20px;
 }
 
 .mat-raised-button{
-  margin-top: 35px;
+  margin-top: 30px;
   left: 346px;
 }

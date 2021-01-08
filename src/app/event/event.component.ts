@@ -6,6 +6,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Router} from '@angular/router';
 import {RoomService} from '../services/room.service';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogConfirmationComponent} from '../components/dialog-confirmation/dialog-confirmation.component';
 
 @Component({
   selector: 'app-event',
@@ -26,7 +28,7 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   constructor(protected eventService: EventService,
               protected roomService: RoomService,
-              private router: Router) {
+              private router: Router, public dialog: MatDialog) {
   }
 
   async ngOnInit(): Promise<void> {
@@ -44,7 +46,7 @@ export class EventComponent implements OnInit, AfterViewInit {
       let cap: number;
       for (const entry of this.events){
         cap = ((entry.seats.split('\t').length - 1) + (entry.seats.split('\n').length - 1)) + 1;
-        entry.occupation = cap - (entry.seats.split('T').length - 1);
+        entry.occupation = cap - (entry.seats.split('T').length - 1) - (entry.seats.split('F').length - 1);
         entry.capacity = cap;
       }
       this.dataSource.data = this.events;
@@ -54,17 +56,28 @@ export class EventComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.eventService.delete(id).subscribe(() => {
 
-      console.log('Evento con id: ' + id + ' borrado');
-      this.fetchData();
-    }, error => {
-      console.error('Ha habido un error al hacer delete del evento', error);
-    });
+    this.dialog
+      .open(DialogConfirmationComponent)
+      .afterClosed()
+      .subscribe((confirm: Boolean) => {
+        if (confirm) {
+          this.eventService.delete(id).subscribe(() => {
+            console.log('Evento con id: ' + id + ' borrado');
+            this.fetchData();
+          }, error => {
+            console.error('Ha habido un error al hacer delete del evento', error);
+          });
+        }
+      });
   }
 
   onSelect(event: Event): void {
     this.selectedEvent = event;
+  }
+
+  public redirectToStats = (id: any) => {
+    this.router.navigate([`/event/${id}/stats`]).then(() => console.log('redirect to event status'));
   }
 
   public doFilter = (event: any) => {

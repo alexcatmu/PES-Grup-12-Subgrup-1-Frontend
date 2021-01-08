@@ -1,5 +1,4 @@
 {
-  "Home": "Pàgina principal",
   "Contact": "Contacta amb nosaltres",
   "Name": "Nom",
   "Details": "Detalls",
@@ -8,10 +7,27 @@
   "Edit": "Editar",
   "Delete": "Eliminar",
   "Measures": "Mesures",
+  "Ratings": "Valoracions",
   "Back": "Enrera",
+  "Yes": "Sí",
   "Desinfecció de mans": "Desinfecció de mans",
   "Ús de mascareta": "Ús de mascareta",
   "Distància de seguretat": "Distància de seguretat",
+  "Home": {
+    "Self" : "Pàgina principal",
+    "SpaceRooms": "Espais y salas",
+    "SpaceRoomsSub": "Gestiona els espais i sales on se celebraran els vostres esdeveniments",
+    "Access": "Accessos",
+    "AccessSub": "Controla els accessos o horaris per evitar aglomeracions",
+    "Sanitary": "Mesures sanitàrias",
+    "SanitarySub": "En contacte amb sanitat per a aplicar la normativa sanitària vigent",
+    "Innovation": "Innovació constant",
+    "InnovationSub": "Ens mantenim actualitzats tant en tecnologia com en mesures sanitàries per a oferir el millor servei",
+    "ConstAdapt": "Adaptació constant",
+    "ConstAdaptSub": "Estem en un moment en constant evolució, el nostre sistema és capaç d'adaptar-se a qualsevol circumstància en un temps rècord",
+    "Quality": "Servei de qualitat",
+    "QualitySub": "Oferim un servei personalitzat i a mesura per a cada empresa, tenint en compte tant les necessitats de l'empresa com la d'usuaris que usin el nostre servei"
+  },
   "Header": {
     "Login": "Iniciar sessió",
     "Logout": "Tancar sessió",
@@ -46,7 +62,8 @@
     "Actions": "Accions",
     "Minimum": "Mínim",
     "Maximum": "Màxim",
-    "Link": "Enllaç"
+    "Link": "Enllaç",
+    "Logo":  "Logo"
   },
   "Room": {
     "Self": "Sala",
@@ -61,12 +78,13 @@
     "NumberOfRows": "Nombre de files",
     "NumberOfColumns": "Nombre de columnes",
     "Columns": "Columnes",
-    "Distance": "Distància entre seients",
-    "SeatsSize": "Mida dels seients (en cm)"
+    "Distance": "Distància entre seients (en m)",
+    "SeatsSize": "Mida dels seients (en m)"
   },
   "Seats": {
     "Occupation": "Ocupació",
-    "Status": "Estat"
+    "Status": "Estat",
+    "Stats": "Estadístiques"
   },
   "Lang": {
     "En": "Anglès",
@@ -81,6 +99,8 @@
     "InvalidEmail": "correu no vàlid"
   },
   "Confirmation": {
+    "Self": "Confirmació",
+    "Delete": "Estàs segur d'eliminar-ho ?",
     "Title": "Correu enviat!",
     "Explanation": "\nEnhorabona, ara se us enviarà un correu a la direcció especificada confirmant l'ingrés,\n    espereu que es verifiqui el vostre compte durant els propers 2 dies. Gràcies per triar SecurEvent!"
   }

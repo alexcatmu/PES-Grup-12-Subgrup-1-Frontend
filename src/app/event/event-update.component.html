@@ -22,6 +22,13 @@
 
 
         <mat-form-field appearance="fill">
+          <mat-label for="logo">{{'Event.Logo' | translate}}</mat-label>
+          <label for="logo"></label><input matInput type="text" placeholder="{{'Event.Logo' | translate}}"
+                                           formControlName="logo" id="logo">
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
           <mat-label>{{'Event.Date' | translate}}</mat-label>
           <label>
             <input matInput [matDatepicker]="picker" formControlName="date">
@@ -97,7 +104,8 @@
         </div>
         <div *ngFor="let m of measures" class="margin-bottom">
           <label>
-            <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)" [checked]="isChecked">
+            <input type="checkbox" [value]="m.name" (change)="onCheckChange($event)"
+                   [checked]="eventToUpdate?.measures?.includes(m.name)">
             {{m.name | translate }}
           </label>
         </div>

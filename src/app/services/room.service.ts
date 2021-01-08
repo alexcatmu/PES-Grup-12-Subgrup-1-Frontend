@@ -37,7 +37,6 @@ export class RoomService {
 
   getEvents(id: string): Observable<Event[]> {
     const url = this.baseURL + id + '/events';
-    console.log(url);
     return this.http.get<Event[]>(url, {headers: this.headers});
   }
 }

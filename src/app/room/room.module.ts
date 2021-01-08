@@ -9,16 +9,19 @@ import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { RoomStatusComponent } from './room-status/room-status.component';
+import { RoomStatsComponent } from './room-stats/room-stats.component';
+import {ChartsModule} from 'ng2-charts';
 
 
 @NgModule({
-  declarations: [RoomComponent, RoomUpdateComponent, RoomDetailComponent, RoomStatusComponent],
-    imports: [
-        CommonModule,
-        RoomRoutingModule,
-        TranslateModule,
-        SharedModule,
-        ReactiveFormsModule
-    ]
+  declarations: [RoomComponent, RoomUpdateComponent, RoomDetailComponent, RoomStatusComponent, RoomStatsComponent],
+  imports: [
+    CommonModule,
+    RoomRoutingModule,
+    TranslateModule,
+    SharedModule,
+    ChartsModule,
+    ReactiveFormsModule
+  ]
 })
 export class RoomModule { }

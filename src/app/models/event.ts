@@ -9,6 +9,7 @@ interface IEvent {
   measures?: Array<string>;
   ratings?: number;
   link?: string;
+  logo?: string;
   seats?: string;
   id_manager: number;
   id_room: string;
@@ -28,6 +29,7 @@ export class Event implements IEvent {
   measures?: Array<string>;
   ratings?: number;
   link?: string;
+  logo?: string;
   seats?: string;
   id_manager: number;
   id_room: string;

@@ -6,6 +6,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {ActivatedRoute, Router} from '@angular/router';
+import {DialogConfirmationComponent} from '../../components/dialog-confirmation/dialog-confirmation.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-room-status',
@@ -25,7 +27,7 @@ export class RoomStatusComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private roomService: RoomService, private activatedRoute: ActivatedRoute,
-              private eventService: EventService, private router: Router) {
+              private eventService: EventService, private router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -61,12 +63,19 @@ export class RoomStatusComponent implements OnInit, AfterViewInit {
   }
 
   delete(id: string): void {
-    this.eventService.delete(id).subscribe(() => {
-      console.log('Evento con id: ' + id + ' borrado');
-      this.fetchData();
-    }, error => {
-      console.error('Ha habido un error al hacer delete del evento', error);
-    });
+    this.dialog
+      .open(DialogConfirmationComponent)
+      .afterClosed()
+      .subscribe((confirm: Boolean) => {
+        if (confirm) {
+          this.eventService.delete(id).subscribe(() => {
+            console.log('Evento con id: ' + id + ' borrado');
+            this.fetchData();
+          }, error => {
+            console.error('Ha habido un error al hacer delete del evento', error);
+          });
+        }
+      });
   }
 
   onSelect(event: Event): void {
@@ -83,6 +92,10 @@ export class RoomStatusComponent implements OnInit, AfterViewInit {
 
   public redirectToStatus = (id: any) => {
     this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
+  }
+
+  public redirectToStats = (id: any) => {
+    this.router.navigate([`/event/${id}/stats`]).then(() => console.log('redirect to event status'));
   }
 
 }

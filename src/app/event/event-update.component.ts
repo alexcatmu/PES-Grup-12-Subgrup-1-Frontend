@@ -51,7 +51,8 @@ export class EventUpdateComponent implements OnInit {
       maxPrice: new FormControl(null, [Validators.required]),
       measures: new FormArray([]),
       id_room: new FormControl(null, [Validators.required]),
-      link: new FormControl('')
+      link: new FormControl(''),
+      logo: new FormControl('')
     }, {validators: PriceRangeValid});
   }
 
@@ -69,7 +70,6 @@ export class EventUpdateComponent implements OnInit {
         this.update = true;
         this.eventService.get(this.eventId).subscribe((event) => {
           this.eventToUpdate = event;
-          console.log(event);
           this.updateForm(event);
           this.titleForm = 'Event.Update';
         });
@@ -79,7 +79,8 @@ export class EventUpdateComponent implements OnInit {
 
   private updateForm(event: Event): void {
     this.formEvent.patchValue(event);
-    this.formEvent.get('measures').patchValue(this.measures);
+    this.formEvent.setControl('measures', this.fb.array(event.measures || []));
+    console.log(this.formEvent.value);
   }
 
   public onSubmit(event: Event): void {
@@ -94,12 +95,12 @@ export class EventUpdateComponent implements OnInit {
       measures: event.measures,
       link: event.link,
       id_manager: this.storageService.getCurrentUser().id,
-      id_room: event.id_room
+      id_room: event.id_room,
+      logo: event.logo
     };
     if (this.eventId){
       this.event._id = this.eventToUpdate._id;
       this.event.seats = this.eventToUpdate.seats;
-      this.event.measures = this.eventToUpdate.measures;
       this.event.matrix = this.eventToUpdate.matrix;
       this.eventService.update(this.eventId, this.event).subscribe(() => {
         this.route.navigate(['/event']).then(() => console.log('Go to event'));

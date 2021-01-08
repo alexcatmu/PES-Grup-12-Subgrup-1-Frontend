@@ -11,6 +11,7 @@ import {EventComponent} from '../event/event.component';
 import {of} from 'rxjs';
 import {RoomService} from '../services/room.service';
 import {Room} from '../models/room';
+import {MatDialogModule} from '@angular/material/dialog';
 
 describe('RoomComponent', () => {
 
@@ -21,7 +22,7 @@ describe('RoomComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ RoomComponent ],
-      imports: [CommonModule, RoomRoutingModule, HttpClientModule, RouterTestingModule, TranslateModule.forRoot()]
+      imports: [CommonModule, RoomRoutingModule, MatDialogModule, HttpClientModule, RouterTestingModule, TranslateModule.forRoot()]
     })
     .compileComponents();
   });

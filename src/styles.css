@@ -39,14 +39,15 @@ th.mat-header-cell {
   padding-right: 10px;
 }
 .my-main-page-module {
-  background: url("https://wallpaperforu.com/wp-content/uploads/2020/07/neon-wallpaper-20070214082515-scaled.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url("/assets/wall2.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
   width: 100%;
-  position: absolute;
+  min-height: 100vh;
+  position: relative;
 }
 
 

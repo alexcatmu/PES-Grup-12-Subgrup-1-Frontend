@@ -12,23 +12,30 @@
     <mat-nav-list>
       <div class="profile" fxLayout="column" fxLayoutAlign="center center">
         <div>
-          <img class="circle" src="https://cdn.discordapp.com/attachments/702541508309680200/779053853088940072/22.jpeg" alt="logo">
+          <img class="circle" *ngIf="storageService?.getCurrentUser()?.username === 'Alex'"
+               src="https://cdn.discordapp.com/attachments/702541508309680200/779053853088940072/22.jpeg" alt="logo">
+          <img class="circle" *ngIf="storageService?.getCurrentUser()?.username === 'Silverio'"
+               src="https://futur.upc.edu/imatges/items/10108403_5d3-6128-small-rectangle-120.png" alt="logo">
         </div>
         <div class="username">
           <span style="color:white">{{storageService?.getCurrentUser()?.username}}</span>
         </div>
       </div>
       <a class="section" mat-list-item href="#">
-        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Home' | translate}}
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>
+        {{'Home.Self' | translate}}
       </a>
       <a class="section" mat-list-item routerLink="/event" (click)="sidenav.toggle()">
-        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Event.Mine' | translate}}
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>
+        {{'Event.Mine' | translate}}
       </a>
       <a class="section" mat-list-item routerLink="/room" (click)="sidenav.toggle()">
-        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Room.Mine' | translate}}
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>
+        {{'Room.Mine' | translate}}
       </a>
       <a class="section" mat-list-item routerLink="/application-form" (click)="sidenav.toggle()">
-        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>{{'Contact' | translate}}
+        <mat-icon class="menuA">keyboard_arrow_right</mat-icon>
+        {{'Contact' | translate}}
       </a>
 
     </mat-nav-list>

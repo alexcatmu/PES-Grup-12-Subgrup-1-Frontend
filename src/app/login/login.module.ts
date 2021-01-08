@@ -9,21 +9,24 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSliderModule} from '@angular/material/slider';
 import {TranslateModule} from '@ngx-translate/core';
+import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [
-    CommonModule,
-    LoginRoutingModule,
-    SharedModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    SharedModule,
-    MatSliderModule,
-    TranslateModule
-  ]
+    imports: [
+        CommonModule,
+        LoginRoutingModule,
+        SharedModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        SharedModule,
+        MatSliderModule,
+        TranslateModule,
+        RecaptchaModule,
+        RecaptchaFormsModule,
+    ]
 })
 export class LoginModule {
 }

@@ -7,8 +7,8 @@
         <mat-card-subtitle fxLayoutAlign="center center">{{'Details' | translate}}</mat-card-subtitle>
       </mat-card-header>
 
-      <img mat-card-image fxLayoutAlign="center center"
-           src="https://blogs.upc.edu.pe/sites/default/files/upc/blogs/lista_blogs/upc_alumni/blog_post/2017/junio/blogpost_imagen_principal/o9b9108.jpg"
+      <img mat-card-image fxLayoutAlign="center center" *ngIf="event.logo"
+           src="{{event.logo}}"
            alt="image">
 
       <mat-card-content fxLayout="column" fxLayoutAlign="center start">
@@ -36,7 +36,11 @@
 
           <mat-divider></mat-divider>
 
-          <mat-list-item>{{'Seats.Occupation' | translate }}: {{occupation}}/{{capacity}} </mat-list-item>
+          <mat-list-item>{{'Seats.Occupation' | translate }}:&nbsp;
+            <a href="/event/{{event._id}}/status">
+              {{occupation}}/{{capacity}}
+            </a>
+          </mat-list-item>
 
           <mat-divider></mat-divider>
 
@@ -45,7 +49,17 @@
           </mat-list-item>
           <mat-divider></mat-divider>
 
-          <mat-list-item>Ratings: {{event.ratings}}</mat-list-item>
+          <mat-list-item> <a style="margin-right:10px" href="/event/{{event._id}}/comments">Ratings: </a> {{event.ratings}}
+            <div *ngFor="let sf of [].constructor(starsFilled)">
+              <mat-icon  style="color: #ff7700">star</mat-icon>
+            </div>
+            <div *ngFor="let sf of [].constructor(starsHalf)">
+              <mat-icon  style="color: #ff7700">star_half</mat-icon>
+            </div>
+            <div *ngFor="let sf of [].constructor(starsEmpty)">
+              <mat-icon  style="color: #ff7700">star_border</mat-icon>
+            </div>
+          </mat-list-item>
           <mat-divider></mat-divider>
 
           <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
