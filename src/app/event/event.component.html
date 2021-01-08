@@ -23,8 +23,8 @@
 
       <ng-container matColumnDef="room">
         <th id="room" mat-header-cell *matHeaderCellDef mat-sort-header>{{'Room.Self' | translate}}</th>
-        <td mat-cell *matCellDef="let element"><a
-          href="/room/{{element.id_room}}/details"> {{element.id_room.split('_')[0]}}</a></td>
+        <td mat-cell *matCellDef="let element"><a href="javascript:void(0)" (click)="redirectToRoomSelf(element.id_room)">
+          {{element.id_room.split('_')[0]}}</a></td>
       </ng-container>
 
       <ng-container matColumnDef="date">

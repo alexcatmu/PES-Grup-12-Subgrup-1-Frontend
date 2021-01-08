@@ -26,9 +26,3 @@ jobs:
       - name: Tests
         run: |
           npm run-script test-headless
-      - name: e2e Tests
-        run: |
-          sudo apt-get update
-          sudo apt-get install chromium-chromedriver
-          sudo apt-get upgrade google-chrome-stable -y
-          npm run e2e

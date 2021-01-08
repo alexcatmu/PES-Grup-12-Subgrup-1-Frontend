@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Event} from '../models/event';
 import {EventService} from '../services/event.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../services/room.service';
 import {Location} from '@angular/common';
 
@@ -22,7 +22,8 @@ export class EventDetailComponent implements OnInit {
   starsEmpty: number;
 
   constructor(private eventService: EventService, private roomService: RoomService,
-              protected activatedRoute: ActivatedRoute, private _location: Location) {
+              protected activatedRoute: ActivatedRoute, private _location: Location,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -43,5 +44,17 @@ export class EventDetailComponent implements OnInit {
 
   goBack(): void {
     this._location.back();
+  }
+
+  public redirectToRoomSelf = (id: any) => {
+    this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to event status'));
+  }
+
+  public redirectToStatus = (id: any) => {
+    this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
+  }
+
+  public redirectToEventRatings = (id: string) => {
+    this.router.navigate([`/event/${id}/comments`]).then(() => console.log('redirect to event status'));
   }
 }

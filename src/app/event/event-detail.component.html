@@ -19,7 +19,8 @@
 
           <mat-list-item>
             {{'Room.Self' | translate}}: <a style="margin-left: 5px"
-                                            href="/room/{{event.id_room}}/details">{{event.id_room.split('_')[0]}}</a>
+                                            href="javascript:void(0)" (click)="redirectToRoomSelf(event.id_room)">
+            {{event.id_room.split('_')[0]}}</a>
           </mat-list-item>
           <mat-divider></mat-divider>
 
@@ -37,7 +38,8 @@
           <mat-divider></mat-divider>
 
           <mat-list-item>{{'Seats.Occupation' | translate }}:&nbsp;
-            <a href="/event/{{event._id}}/status">
+            <a
+              href="javascript:void(0)" (click)="redirectToStatus(event._id)">
               {{occupation}}/{{capacity}}
             </a>
           </mat-list-item>
@@ -49,20 +51,22 @@
           </mat-list-item>
           <mat-divider></mat-divider>
 
-          <mat-list-item> <a style="margin-right:10px" href="/event/{{event._id}}/comments">Ratings: </a> {{event.ratings}}
+          <mat-list-item><a style="margin-right:10px"
+                            href="javascript:void(0)" (click)="redirectToEventRatings(event._id)"
+          >Ratings: </a> {{event.ratings}}
             <div *ngFor="let sf of [].constructor(starsFilled)">
-              <mat-icon  style="color: #ff7700">star</mat-icon>
+              <mat-icon style="color: #ff7700">star</mat-icon>
             </div>
             <div *ngFor="let sf of [].constructor(starsHalf)">
-              <mat-icon  style="color: #ff7700">star_half</mat-icon>
+              <mat-icon style="color: #ff7700">star_half</mat-icon>
             </div>
             <div *ngFor="let sf of [].constructor(starsEmpty)">
-              <mat-icon  style="color: #ff7700">star_border</mat-icon>
+              <mat-icon style="color: #ff7700">star_border</mat-icon>
             </div>
           </mat-list-item>
           <mat-divider></mat-divider>
 
-          <mat-list-item>{{'Link' | translate}}: <a href="{{event.link}}">{{event.link}}</a></mat-list-item>
+          <mat-list-item>{{'Link' | translate}}: <a target="_blank" rel="noopener noreferrer" href="{{event.link}}">{{event.link}}</a></mat-list-item>
           <mat-divider></mat-divider>
 
         </mat-list>

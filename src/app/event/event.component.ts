@@ -60,7 +60,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.dialog
       .open(DialogConfirmationComponent)
       .afterClosed()
-      .subscribe((confirm: Boolean) => {
+      .subscribe((confirm: boolean) => {
         if (confirm) {
           this.eventService.delete(id).subscribe(() => {
             console.log('Evento con id: ' + id + ' borrado');
@@ -94,5 +94,9 @@ export class EventComponent implements OnInit, AfterViewInit {
 
   public redirectToStatus = (id: any) => {
     this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
+  }
+
+  public redirectToRoomSelf = (id: any) => {
+    this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to event status'));
   }
 }

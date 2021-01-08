@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventService} from '../../services/event.service';
 import {RoomService} from '../../services/room.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Event} from '../../models/event';
 
 @Component({
@@ -18,7 +18,7 @@ export class EventStatusComponent implements OnInit {
   auxRoomName: string;
 
   constructor(private eventService: EventService, private roomService: RoomService,
-              protected activatedRoute: ActivatedRoute) {
+              protected activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,6 +33,9 @@ export class EventStatusComponent implements OnInit {
         });
       });
     });
+  }
+  public redirectToRoomSelf = (id: any) => {
+    this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to event status'));
   }
 
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Event} from '../../models/event';
 import {EventService} from '../../services/event.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ChartDataSets} from 'chart.js';
 import {Color, Label} from 'ng2-charts';
 
@@ -67,7 +67,7 @@ export class EventStatsComponent implements OnInit {
 
 
   constructor(private eventService: EventService,
-              protected activatedRoute: ActivatedRoute) {
+              protected activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -122,5 +122,9 @@ export class EventStatsComponent implements OnInit {
       {data: capacity, label: 'Capacity'}
     ];
     console.log(capacity);
+  }
+
+  public redirectToRoomSelf = (id: any) => {
+    this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to event status'));
   }
 }
