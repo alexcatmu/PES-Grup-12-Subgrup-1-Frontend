@@ -1,5 +1,4 @@
 {
-  "Home": "Página principal",
   "Contact": "Contacta con nosotros",
   "Name": "Nombre",
   "Details": "Detalles",
@@ -8,10 +7,27 @@
   "Edit": "Editar",
   "Delete": "Eliminar",
   "Measures": "Medidas",
+  "Ratings": "Valoraciones",
   "Back": "Atrás",
+  "Yes": "Si",
   "Desinfecció de mans": "Desinfeccion de manos",
   "Ús de mascareta": "Uso de mascarilla",
   "Distància de seguretat": "Distáncia de seguridad",
+  "Home": {
+    "Self": "Página principal",
+    "SpaceRooms": "Espacios y salas",
+    "SpaceRoomsSub": "Gestiona los espacios y salas donde se van a realizar tus eventos",
+    "Access": "Accesos",
+    "AccessSub": "Controla los accesos y horarios para evitar aglomeraciones",
+    "Sanitary": "Medidas sanitarias",
+    "SanitarySub": "En contacto con sanidad para aplicar la normativa sanitaria vigente",
+    "Innovation": "Innovación constante",
+    "InnovationSub": "Nos mantenemos actualizados tanto en tecnología como en medidas sanitarias para ofrecer el mejor servicio",
+    "ConstAdapt": "Constante adaptación",
+    "ConstAdaptSub": "Estamos en un momento en constante evolución, nuestro sistema es capaz de adaptarse a cualquier circunstancia en un tiempo record",
+    "Quality": "Servicio de calidad",
+    "QualitySub": "Ofrecemos un servicio personalizado y a medida para cada empresa, teniendo en cuenta tanto las necesidades de la empresa como la de usuarios que usen nuestro servicio"
+  },
   "Header": {
     "Login": "Iniciar sesión",
     "Logout": "Cerrar sesión",
@@ -46,7 +62,8 @@
     "Actions": "Acciones",
     "Minimum": "Mínimo",
     "Maximum": "Máximo",
-    "Link": "Enlace"
+    "Link": "Enlace",
+    "Logo": "Logo"
   },
   "Room": {
     "Self": "Sala",
@@ -61,12 +78,13 @@
     "NumberOfRows": "Numero de filas",
     "NumberOfColumns": "Numero de columnas",
     "Columns": "Columnas",
-    "Distance": "Distancia entre asientos",
-    "SeatsSize": "Tamaño de los asientos (en cm)"
+    "Distance": "Distancia entre asientos (en m)",
+    "SeatsSize": "Tamaño de los asientos (en m)"
   },
   "Seats": {
     "Occupation": "Ocupación",
-    "Status": "Estado"
+    "Status": "Estado",
+    "Stats": "Estadísticas"
   },
   "Lang": {
     "En": "Inglés",
@@ -81,6 +99,8 @@
     "InvalidEmail": "Correo no válido"
   },
   "Confirmation": {
+    "Self": "Confirmación",
+    "Delete": "¿ Estás seguro de eliminar-lo ?",
     "Title": "Correo enviado!",
     "Explanation": "\nFelicidades, ahora se le enviará un correo a la dirección especificada confirmando el ingreso,\n    espere a que se verifique su cuenta durante los próximos 2 días. Gracias por elegir SecurEvent!"
   }

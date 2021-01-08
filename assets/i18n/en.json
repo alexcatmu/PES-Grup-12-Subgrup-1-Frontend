@@ -1,5 +1,4 @@
 {
-  "Home": "Home",
   "Contact": "Contact us",
   "Name": "Name",
   "Details": "Details",
@@ -8,10 +7,27 @@
   "Edit": "Edit",
   "Delete": "Delete",
   "Measures": "Measures",
+  "Ratings": "Ratings",
   "Back": "Back",
+  "Yes": "Yes",
   "Desinfecció de mans": "Hand disinfection",
   "Ús de mascareta": "Using mask required",
   "Distància de seguretat": "Safety distance",
+  "Home": {
+    "Self" : "Home",
+    "SpaceRooms": "Spaces and rooms",
+    "SpaceRoomsSub": "Manage the spaces and rooms where your events will take place",
+    "Access": "Access",
+    "AccessSub": "Control the access and schedules to avoid crowding",
+    "Sanitary": "Sanitary measures",
+    "SanitarySub": "In contact with the health authorities to apply the current health regulations",
+    "Innovation": "Constant innovation",
+    "InnovationSub": "We maintain ourselves up to date in both technology and sanitary measures to offer the best service",
+    "ConstAdapt": "Constant adaptation",
+    "ConstAdaptSub": "We are in a moment of constant evolution, our system is capable of adapting to any circumstance in record time",
+    "Quality": "Quality service",
+    "QualitySub": "We offer a personalized service tailored to each company, taking into account both the needs of the company and the users who use our service"
+  },
   "Header": {
     "Login": "Login",
     "Logout": "Logout",
@@ -46,7 +62,8 @@
     "Actions": "Actions",
     "Minimum": "Minimum",
     "Maximum": "Maximum",
-    "Link": "Link"
+    "Link": "Link",
+    "Logo":  "Logo"
   },
   "Room": {
     "Self": "Room",
@@ -61,12 +78,13 @@
     "NumberOfRows": "Number of rows",
     "NumberOfColumns": "Number of columns",
     "Columns": "Columns",
-    "Distance": "Distance between seats",
-    "SeatsSize": "Seat size (in cm)"
+    "Distance": "Distance between seats (in m)",
+    "SeatsSize": "Seat size (in m)"
   },
   "Seats": {
     "Occupation": "Occupation",
-    "Status": "Status"
+    "Status": "Status",
+    "Stats": "Statistics"
   },
   "Lang": {
     "En": "English",
@@ -81,6 +99,8 @@
     "InvalidEmail": "Invalid email"
   },
   "Confirmation": {
+    "Self": "Confirmation",
+    "Delete": "Are you sure you want to remove it?",
     "Title": "Email sent!",
     "Explanation": "Congratulations, now you will recieve an email in the specified address confirming the registration,\n    wait for your account to be verified during the next 2 days. Thanks for choosing SecurEvent!"
   }
