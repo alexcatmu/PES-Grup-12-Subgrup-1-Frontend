@@ -60,7 +60,7 @@ export class EventComponent implements OnInit, AfterViewInit {
     this.dialog
       .open(DialogConfirmationComponent)
       .afterClosed()
-      .subscribe((confirm: Boolean) => {
+      .subscribe((confirm: boolean) => {
         if (confirm) {
           this.eventService.delete(id).subscribe(() => {
             console.log('Evento con id: ' + id + ' borrado');

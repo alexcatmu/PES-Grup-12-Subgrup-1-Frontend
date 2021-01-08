@@ -11,7 +11,7 @@ img {
 }
 
 .mat-toolbar.mat-primary {
-  background-image: linear-gradient( rgb(83, 0, 86, 0.5), rgba(0, 0, 0, 0.2)), url("https://media.discordapp.net/attachments/766384289121697803/796917154191638558/unknown.png?width=1202&height=676");
+  background-image: linear-gradient( rgba(83, 0, 86, 0.5), rgba(0, 0, 0, 0.2)), url("https://media.discordapp.net/attachments/766384289121697803/796917154191638558/unknown.png?width=1202&height=676");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,7 +26,7 @@ img {
 }
 
 .sidenav {
-  background: linear-gradient(to right, rgb(83, 0, 86, 0.5), rgba(0,0,0,0.2)), url("https://media.discordapp.net/attachments/766384289121697803/796917154191638558/unknown.png?width=1202&height=676");
+  background: linear-gradient(to right, rgba(83, 0, 86, 0.5), rgba(0,0,0,0.2)), url("https://media.discordapp.net/attachments/766384289121697803/796917154191638558/unknown.png?width=1202&height=676");
   width: 12%;
   min-width: 200px;
   box-shadow: 10px 0 15px rgba(0,0,0,.24);
