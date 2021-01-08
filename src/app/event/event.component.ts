@@ -95,4 +95,8 @@ export class EventComponent implements OnInit, AfterViewInit {
   public redirectToStatus = (id: any) => {
     this.router.navigate([`/event/${id}/status`]).then(() => console.log('redirect to event status'));
   }
+
+  public redirectToRoomSelf = (id: any) => {
+    this.router.navigate([`/room/${id}/details`]).then(() => console.log('redirect to event status'));
+  }
 }

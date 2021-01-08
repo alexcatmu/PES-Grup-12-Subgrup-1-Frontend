@@ -3,8 +3,11 @@
     <mat-card-header>
       <mat-card-title>{{event.name | uppercase}}</mat-card-title>
       <mat-card-subtitle fxLayoutAlign="center center">{{'Seats.Occupation' | translate}}</mat-card-subtitle>
-      <mat-card-subtitle fxLayoutAlign="center center">{{'Room.Self' | translate}}: <a style="margin-left: 5px"
-                                        href="/room/{{event.id_room}}/details">{{auxRoomName}}</a> </mat-card-subtitle>
+      <mat-card-subtitle fxLayoutAlign="center center">{{'Room.Self' | translate}}:
+        <a style="margin-left: 5px"
+           href="javascript:void(0)"
+           (click)="redirectToRoomSelf(event.id_room)"
+        >{{auxRoomName}}</a></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="mid">
